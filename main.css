@@ -1,0 +1,6 @@
+.texte {
+    font-size: 50px;
+    position: absolute; /* Assurez-vous de définir position: absolute pour pouvoir utiliser top et left */
+    top: 364px;
+    left: 800px;
+}
