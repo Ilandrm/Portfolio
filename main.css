@@ -1,6 +1,105 @@
-.texte {
-    font-size: 50px;
-    position: absolute; /* Assurez-vous de définir position: absolute pour pouvoir utiliser top et left */
-    top: 364px;
-    left: 800px;
+@font-face {
+    font-family: 'Spartan';
+    src: url('asset/League_Spartan/LeagueSpartan-VariableFont_wght.ttf') format('truetype');
+    
+}
+@font-face {
+    font-family: 'Pop';
+    src: url('asset/Poppins/Poppins-Light.ttf') format('truetype');
+    
+}
+body{
+    background-image: url("asset/bg-image.png");
+}
+header{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Spartan';
+    font-size: 25px;
+}
+.nom{
+    margin-top: 5px;
+    margin-left: 860px;
+    color:#FFDEAC;    
+}
+.titre{
+    margin-top: 5px;
+    margin-left: 890px;
+    color: #E8B25F;
+}
+.logoEns img{
+    width: 30%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.logoEns #git{
+    margin-right: 40px;
+}
+.logoEns{
+    position:absolute;
+    margin-left:1750px;
+    margin-top: 20px;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    background-color:#E8B25F ;
+    border-radius: 30px;
+    margin-left: 630px;
+    padding-bottom:8px;
+    padding-left:18px;
+    padding-right: 20px;
+    width:37.1% ;
+    overflow: hidden; /* Pour cacher le dépassement des liens */
+}
+
+nav a {
+    text-decoration: none;
+    color: #FFDEAC;
+    margin-right: 50px;
+    margin-top: 5px;
+    transition: background-color 0.3s ease; /* Transition pour l'animation */
+}
+
+nav a:hover {
+    background-color: #94571e; /* Couleur de fond au survol */
+    border-radius: 30px; /* Pour le bord arrondi au survol */
+    
+}
+
+.ensH1Photo{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    width: 20%;
+}
+.middle{
+    display: flex;
+    flex-direction: row;
+    font-family: 'Spartan';
+    margin-left: 23em;
+    margin-top: 60px;
+}
+.middle h1{
+    margin-left: 50px;
+    color:#E8B25F;
+}
+.middle p{
+    font-size: 15px;
+    margin-left: 20px;
+    margin-top: 30px;
+    color:#e8b15fa2;
+    font-weight: 500;
+    font-family: 'Pop';
+}
+.ensH1Photo img{
+    width: 95%;
+    border-radius: 30px;
+    border: solid 2px #E8B25F ;
+}
+.IntroPara{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
 }
