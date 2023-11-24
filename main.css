@@ -103,3 +103,60 @@ nav a:hover {
     flex-direction: column;
     margin-top: 50px;
 }
+.skills{
+    display: flex;
+    flex-direction: column;
+    margin-left: 795px;
+    margin-top: 50px;
+    
+}
+
+.button-54 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 250px;
+    height: 50px;
+    margin-bottom:60px ;
+  }
+  
+  .button-54:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+  }
+  
+  @media (min-width: 768px) {
+    .button-54 {
+      padding: 0.25em 0.75em;
+    }
+  }
+
+#front{
+    color:rgb(105, 166, 168)
+}  
+#DB{
+    color:rgb(75, 1, 109)
+}  
+#back{
+    color:rgb(255, 136, 0)
+}  
+#outil{
+    color:rgb(34, 61, 18)
+}  
+.TextFront p {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    margin-bottom: 300px;
+}
