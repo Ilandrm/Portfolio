@@ -1,3 +1,4 @@
+
 function deplacerNom() {
     const nom = document.getElementById('nom');
     let marginLeftActuel = parseFloat(getComputedStyle(nom).marginLeft);
@@ -81,3 +82,5 @@ deplacerNom();
 deplacertitre();
 deplacerNav();
 deplacerEns();
+
+

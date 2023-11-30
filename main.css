@@ -84,7 +84,7 @@ nav a:hover {
     flex-direction: column;
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
-    width: 20%;
+    width: 25%;
 }
 
 .middle{
@@ -92,7 +92,13 @@ nav a:hover {
     flex-direction: row;
     font-family: 'Spartan';
     margin-left: 23em;
-    margin-top: 60px;
+    margin-top: 70px;
+}
+.IntroPara h2{
+    color:#392e2c;
+    margin-left:20px;
+    font-size: 30px;
+   
 }
 .middle h1{
     margin-left: 50px;
@@ -116,13 +122,13 @@ nav a:hover {
 .IntroPara{
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 45px;
 }
 .skills{
     display: flex;
     flex-direction: column;
     margin-left: 795px;
-    margin-top: 50px;
+    margin-top: 80px;
     position: absolute;
 }
 
