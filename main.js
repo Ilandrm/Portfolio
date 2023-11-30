@@ -39,7 +39,7 @@ function AfficheBack() {
     }
     if (marginLeftActuelens <= 295) {
         buttonB.style.color = 'gray';
-        buttonF.style.color = 'rgb(105, 166, 168)';
+        buttonF.style.color = 'rgb(86, 136, 138)';
         buttonDB.style.color = 'rgb(75, 1, 109)';
         buttonO.style.color = 'black';
         otxt.style.opacity = '0';
@@ -57,7 +57,7 @@ function AfficheFront() {
     }
     if (marginLeftActuelens <= 295) {
         buttonF.style.color = 'gray';
-        buttonB.style.color = 'rgb(255, 136, 0)';
+        buttonB.style.color = 'rgb(202, 109, 2)';
         buttonDB.style.color = 'rgb(75, 1, 109)';
         buttonO.style.color = 'black';
 
@@ -74,8 +74,8 @@ function AfficheDB() {
         requestAnimationFrame(AfficheDB);
     }
     if (marginLeftActuelens <= 295) {
-        buttonF.style.color = 'rgb(105, 166, 168)';
-        buttonB.style.color = 'rgb(255, 136, 0)';
+        buttonF.style.color = 'rgb(86, 136, 138)';
+        buttonB.style.color = 'rgb(202, 109, 2)';
         buttonDB.style.color = "gray";
         buttonO.style.color = 'black';
 
@@ -93,8 +93,8 @@ function AfficheO() {
         requestAnimationFrame(AfficheO);
     }
     if (marginLeftActuelens <= 295) {
-        buttonF.style.color = 'rgb(105, 166, 168)';
-        buttonB.style.color = 'rgb(255, 136, 0)';
+        buttonF.style.color = 'rgb(86, 136, 138)';
+        buttonB.style.color = 'rgb(202, 109, 2)';
         buttonO.style.color = "gray";
         buttonDB.style.color = "rgb(75, 1, 109)";
 
@@ -121,3 +121,6 @@ window.addEventListener('scroll', animateTimelineItems);
 
 // Lance l'animation au chargement de la page
 animateTimelineItems();
+
+
+

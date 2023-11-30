@@ -10,23 +10,31 @@
 }
 
 body{
-    background-image: url("asset/bg-image.png");
+    /*background-image: url("asset/bg-image.png");*/
+    height: 100vh;
+    background: linear-gradient(#CCAEA4, #b58879);
+    
+}
+#bodyP{
+    height: 100%;
+    background: linear-gradient(#CCAEA4, #b58879);
 }
 header{
     display: flex;
     flex-direction: column;
     font-family: 'Spartan';
     font-size: 25px;
+    
 }
 .nom{
     margin-top: 5px;
     margin-left: 860px;
-    color:#FFDEAC;    
+    color:#392e2c;    
 }
 .titre{
     margin-top: 5px;
     margin-left: 890px;
-    color: #E8B25F;
+    color: #b39188;
 }
 .logoEns img{
     width: 30%;
@@ -41,29 +49,32 @@ header{
     margin-left:1750px;
     margin-top: 20px;
 }
+.logoEns a{
+    text-decoration: none;
+}
 nav{
     display: flex;
     flex-direction: row;
-    background-color:#E8B25F ;
+    background-color:#b39188 ;
     border-radius: 30px;
     margin-left: 630px;
     padding-bottom:8px;
     padding-left:18px;
-    padding-right: 20px;
+    padding-right: 30px;
     width:37.1% ;
     overflow: hidden; /* Pour cacher le dépassement des liens */
 }
 
 nav a {
     text-decoration: none;
-    color: #FFDEAC;
+    color: #392e2c;
     margin-right: 50px;
     margin-top: 5px;
     transition: background-color 0.3s ease; /* Transition pour l'animation */
 }
 
 nav a:hover {
-    background-color: #94571e; /* Couleur de fond au survol */
+    background-color: #b89ba7; /* Couleur de fond au survol */
     border-radius: 30px; /* Pour le bord arrondi au survol */
     
 }
@@ -75,6 +86,7 @@ nav a:hover {
     padding: 0px 0px 0px 0px;
     width: 20%;
 }
+
 .middle{
     display: flex;
     flex-direction: row;
@@ -84,20 +96,22 @@ nav a:hover {
 }
 .middle h1{
     margin-left: 50px;
-    color:#E8B25F;
+    color:#b39188;
 }
 .middle p{
     font-size: 17px;
     margin-left: 20px;
     margin-top: 30px;
-    color:#e8b15fa2;
+    color:#392e2c;
     font-weight: 500;
     font-family: 'Pop';
 }
+
 .ensH1Photo img{
     width: 95%;
+   
     border-radius: 30px;
-    border: solid 2px #E8B25F ;
+    border: solid 2px #b39188 ;
 }
 .IntroPara{
     display: flex;
@@ -144,13 +158,13 @@ nav a:hover {
   }
 
 #front{
-    color:rgb(105, 166, 168);
+    color:rgb(86, 136, 138);
 }  
 #DB{
     color:rgb(75, 1, 109);
 }  
 #back{
-    color:rgb(255, 136, 0);
+    color:rgb(202, 109, 2);
 }  
 #outil{
     color:black;
@@ -166,7 +180,7 @@ nav a:hover {
     flex-direction: column;
 }
 .Textcomp h2{
-    color: rgb(105, 166, 168);
+    color:rgb(86, 136, 138);
     font-family: 'Pop';
     margin-bottom:30px ;
 }
@@ -202,10 +216,10 @@ nav a:hover {
 .Textcomp p {
     font-family: 'Pop';
     font-size: 17px;
-    color:black;
+    color:#392e2c;
 }
 #lga{
-    color: rgb(105, 166, 168);
+    color:rgb(86, 136, 138);
 }
 #C{
    width: 90.9px;
@@ -228,10 +242,10 @@ nav a:hover {
     height: 100px;   
 }
 #txtb h2{
-    color:rgb(255, 136, 0);
+    color:rgb(202, 109, 2);
 }
 #lgaB{
-    color:rgb(255, 136, 0);
+    color:rgb(202, 109, 2);
 }
 #txtDB h2{
     color:rgb(121, 74, 143);
@@ -280,7 +294,7 @@ nav a:hover {
 }
 
 .timeline-item {
-    background: #E8B25F;
+    background: #b39188;
     border-left: 2px solid #333;
     border-radius: 30px;
     margin: 20px 0;
@@ -393,6 +407,57 @@ nav a:hover {
     color: black;
   }
   #gamejam{
-    width: 42.6px;
+    width: 79.95px;
     height: 60px;
   }
+  @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+
+form { max-width:420px; margin:50px auto; }
+
+.feedback-input {
+  color:white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid #b39188;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+.feedback-input:focus { border:2px solid #ffae9d; }
+
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+
+[type="submit"] {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  width: 100%;
+  background:#b39188;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+[type="submit"]:hover { background:#ffae9d; }
+
+#pentree{
+    width: 60px;
+    height: 60px;
+}
