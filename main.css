@@ -45,7 +45,7 @@ header{
     margin-right: 40px;
 }
 .logoEns{
-    position:absolute;
+    position:absolute;      
     margin-left:1750px;
     margin-top: 20px;
 }
@@ -91,7 +91,7 @@ nav a:hover {
     display: flex;
     flex-direction: row;
     font-family: 'Spartan';
-    margin-left: 23em;
+    margin-left: 368px;
     margin-top: 70px;
 }
 .IntroPara h2{
@@ -466,4 +466,83 @@ textarea {
 #pentree{
     width: 60px;
     height: 60px;
+}
+
+@media screen and (max-width: 1280px) {
+    header{
+        display: flex;
+        flex-direction: column;
+        font-family: 'Spartan';
+        font-size: 16.5px;
+        
+    }
+    .nom{
+        margin-top: 3.3px;
+        margin-left: 567.5px;
+        color:#392e2c;    
+    }
+    .titre{
+        margin-top: 3.3px;
+        margin-left: 587.4px;
+        color: #b39188;
+    }
+    .logoEns #git{
+        margin-right: 26.4px;
+    }
+    .logoEns{
+        position:absolute;
+        margin-left:1155px;
+        margin-top: 13.2px;
+    }
+    nav{
+        display: flex;
+        flex-direction: row;
+        background-color:#b39188 ;
+        border-radius: 30px;
+        margin-left: 415.8px;
+        padding-bottom:5.2px;
+        padding-left:11.88px;
+        padding-right: 19.8px;
+        width:37.1% ;
+        overflow: hidden; /* Pour cacher le dépassement des liens */
+    }
+    nav a {
+        text-decoration: none;
+        color: #392e2c;
+        margin-right: 33px;
+        margin-top: 3.3px;
+        transition: background-color 0.3s ease; /* Transition pour l'animation */
+    }
+    .middle{
+        display: flex;
+        flex-direction: row;
+        font-family: 'Spartan';
+        margin-left: 242.88px;
+        margin-top: 46.2px;
+    }
+    .ensH1Photo{
+        display: flex;
+        flex-direction: column;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        width: 25%;
+    }
+    .middle p{
+        font-size: 11.22px;
+        margin-left: 13.2px;
+        margin-top: 19.8px;
+        color:#392e2c;
+        font-weight: 500;
+        font-family: 'Pop';
+    }
+    .IntroPara{
+        display: flex;
+        flex-direction: column;
+        margin-top: 29.7px;
+    }
+    .middle h1{
+        margin-left: 23.3px;
+        color:#b39188;
+    }
+    
 }
