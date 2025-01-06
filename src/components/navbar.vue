@@ -1,4 +1,13 @@
 <script setup lang="ts">
+import { transformExpression } from "@vue/compiler-core";
+import {ref} from "vue";
+
+const email = "ilandarmon28@gmail.com"
+const textCopy = ref<string>("Copier" )
+const copyToClip = () =>{
+  navigator.clipboard.writeText(email)
+  textCopy.value = "Copie!"
+}
 
 </script>
 
@@ -7,15 +16,15 @@
   <div class="d-flex justify-content-between">
     <div class="d-flex">
       <div class="divBtn ms-5">
-      <button class="emailbtn">ilandarmon28@gmail.com</button>
-      <button class="copyEmailBtn">Copier</button>
+      <button class="emailbtn">{{ email }}</button>
+      <button class="copyEmailBtn" @click="copyToClip">{{ textCopy }}</button>
       </div>
       <button class="copyEmailBtn ms-2">CV</button>
     </div>
     <div class="linkSection d-flex me-5">
-      <a href="#" class="me-2">Linkedin </a>
-      <a href="#" class="ms-2 me-2">Github </a>
-      <a href="#" class="ms-2">Gitlab</a>
+      <a href="https://www.linkedin.com/in/ilan-darmon-0889ab1a0/" class="me-2">Linkedin </a>
+      <a href="https://github.com/Ilandrm" class="ms-2 me-2">Github </a>
+      <a href="https://gricad-gitlab.univ-grenoble-alpes.fr/darmoni" class="ms-2">Gitlab</a>
     </div>
   </div>
 </nav>

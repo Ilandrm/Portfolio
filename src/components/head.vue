@@ -1,4 +1,59 @@
 <script setup lang="ts">
+import { onMounted, ref, nextTick } from "vue";
+
+const images = ref<string[]>([]);
+const carouselRef = ref<HTMLElement | null>(null);
+const isAnimating = ref(false);
+onMounted(async () => {
+  images.value = [
+    "icon/Angular.png",
+    "icon/cpp.png",
+    "icon/Java.png",
+    "icon/laravel-icon.png",
+    "icon/mongodb-logo.png",
+    "icon/Vue.png",
+    "icon/nodejs-logo.png",
+    "icon/symfony-icon.png",
+  ];
+
+  await nextTick();
+
+  startCarousel();
+});
+
+function startCarousel() {
+  const carousel = carouselRef.value;
+
+  if (!carousel) return;
+
+  isAnimating.value = true;
+
+  const scrollStep = 1;
+  const interval = 16;
+  const totalScrollWidth = carousel.scrollWidth / 2;
+
+  let currentScroll = 0;
+
+  const scrollInterval = setInterval(() => {
+    if (!isAnimating.value) {
+      clearInterval(scrollInterval);
+      return;
+    }
+
+    currentScroll += scrollStep;
+
+    if (currentScroll >= totalScrollWidth) {
+      currentScroll = 0;
+      carousel.scrollLeft = 0;
+    } else {
+      carousel.scrollLeft = currentScroll;
+    }
+  }, interval);
+}
+
+function stopCarousel() {
+  isAnimating.value = false;
+}
 </script>
 
 <template>
@@ -13,31 +68,37 @@
     <div class="d-flex justify-content-center mb-3 ">
     <h1 class="brandTitle ">"Ne jamais s'arreter d'apprendre"</h1>
     </div>
-      <div class="d-flex justify-content-center ">
+      <div class="d-flex justify-content-center">
       <button class="lastProject">
         Projets
       </button>
       </div>
     </div>
   </div>
-  <div class="carousel-container">
-    <div class="carousel">
-      <span>place</span>
-      <span>place</span>
-      <span>place</span>
-      <span>place</span>
-      <span>place</span>
+  <div class="carousel-container" @mouseenter="stopCarousel" @mouseleave="startCarousel">
+    <div class="carousel" ref="carouselRef">
+      <img
+          class="iconDev"
+          v-for="(image, index) in [...images, ...images]"
+          :key="index"
+          :src="image"
+          alt="Image"
+      />
     </div>
   </div>
 </template>
+
 
 <style scoped lang="scss">
 .container-head {
   height: 70vh;
   background-color: #EEEDEC;
-  border-radius: 0 0 30px 30px;
+  border-radius: 0 0 50px 50px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 24px;
+
   align-items: center;
 }
+
 .lastProject{
   border-radius: 30px;
   background-color: black;
@@ -89,7 +150,7 @@
 }
 .carousel-container {
   overflow: hidden;
-  height: 50px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,19 +160,21 @@
 
 .carousel {
   display: flex;
-  animation: scroll 10s linear infinite;
+  animation: scroll 50s linear infinite;
+  white-space: nowrap;
 }
 
-.carousel span {
-  font-size: 1.5rem;
-  font-weight: bold;
+.carousel img {
+  align-self: center;
+  width: 120px;
+  height: fit-content;
   margin-right: 200px;
-  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 @keyframes scroll {
   from {
-    transform: translateX(100%);
+    transform: translateX(50%);
   }
   to {
     transform: translateX(-100%);
