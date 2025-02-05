@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'GillSans';
+    src: url('public/police/Gill Sans.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GillSans';
+    src: url('public/police/Gill Sans Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+*{
+    font-family: 'GillSans', sans-serif;
+}
