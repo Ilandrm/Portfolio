@@ -14,3 +14,7 @@
 *{
     font-family: 'GillSans', sans-serif;
 }
+hr{
+    border-top: 4px solid #000b31;
+    opacity: 100%;
+}

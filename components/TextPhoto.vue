@@ -27,12 +27,15 @@
   padding: 3%;
   width: 700px;
   color: white;
+  align-self: center;
+
 }
 .paragraphe p {
-  font-size: 25px;
+  font-size: 20px;
 }
 .imgPf{
   width: 700px;
+  height: ;
 }
 
 </style>

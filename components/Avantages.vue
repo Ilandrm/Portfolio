@@ -1,16 +1,21 @@
 <script setup lang="ts">
 import {TextClassique} from '#components'
+import {BoxeText} from "#components";
+
 const textTriangle = [
-  {titre: 'Actif' ,
-    paragraphe:  'Les actifs liés aux contrats d’assurance-vie sont déposés - séparément des autres engagements de la compagnie d’assurance- auprès d’une banque dépositaire préalablement approuvée par le Commissariat aux Assurances.'
+  {titre: 'Dépôt des actifs auprès d\'une banque dépositaire' ,
+    paragraphe:  'Les actifs liés aux contrats d’assurance-vie sont déposés - séparément des autres engagements de la compagnie d’assurance- auprès d’une banque dépositaire préalablement approuvée par le Commissariat aux Assurances.',
+    src:'icone_banque.png'
   },
   {
-    titre: 'Convention' ,
-    paragraphe: 'Le « triangle de sécurité » est matérialisé par la signature d’une convention tripartite de dépôt entre la compagnie d’assurances, la banque dépositaire et l’autorité de contrôle des assurances au Luxembourg (le Commissariat aux Assurances). Le cloisonnement des actifs est contrôlé chaque trimestre par le commissariat aux assurances.'
+    titre: 'La convention tripartite' ,
+    paragraphe: 'Le « triangle de sécurité » est matérialisé par la signature d’une convention tripartite de dépôt entre la compagnie d’assurances, la banque dépositaire et l’autorité de contrôle des assurances au Luxembourg (le Commissariat aux Assurances). Le cloisonnement des actifs est contrôlé chaque trimestre par le commissariat aux assurances.',
+    src:'icone_doc.png'
   },
   {
-    titre: 'Protection' ,
-    paragraphe: 'En cas de défaillance de l’assureur, l’autorité de contrôle peut bloquer les comptes pour protéger les droits des souscripteurs. Ainsi, les avoirs des clients déposés sur leur contrat d’assurance vie Luxembourgeois sont totalement indépendants des fonds propres de la compagnie d’assurance. En cas de faillite de la compagnie d’assurance, les créanciers ordinaires ne pourront exercer leur droit de recouvrement sur les actifs des contrats d’assurance vie Luxembourgeois, ainsi votre capital est protégé.'
+    titre: 'Le super-privilège des souscripteurs' ,
+    paragraphe: 'En cas de défaillance de l’assureur, l’autorité de contrôle peut bloquer les comptes pour protéger les droits des souscripteurs. Ainsi, les avoirs des clients déposés sur leur contrat d’assurance vie Luxembourgeois sont totalement indépendants des fonds propres de la compagnie d’assurance. En cas de faillite de la compagnie d’assurance, les créanciers ordinaires ne pourront exercer leur droit de recouvrement sur les actifs des contrats d’assurance vie Luxembourgeois, ainsi votre capital est protégé.',
+    src:'icone_privilege.png'
   }
 ]
 const textAvantage = [{
@@ -49,15 +54,12 @@ const textAvantage = [{
 <template>
 <h1 class="fw-bold d-flex justify-content-around mt-5">Les avantages de l'assurance-vie luxembourgeoise</h1>
   <h3 class="fw-bold d-flex justify-content-around mt-2">Triangle de securité</h3>
-<img alt ="triangle" class="imgTriangle d-flex justify-content-around" src="">
- <TextClassique :text="textTriangle"/>
+<img alt ="triangle" class="imgTriangle d-flex justify-content-around w-50 mt-5 mx-auto" src="public/triangledesecurité.png">
+ <BoxeText :text="textTriangle"/>
   <hr class="w-100"/>
   <TextClassique :text="textAvantage"/>
 </template>
 
 <style scoped>
-hr{
-  border-top: 4px solid #000b31;
-  opacity: 100%;
-}
+
 </style>

@@ -5,7 +5,9 @@ import {TextPhoto} from "#components";
 import {Contrat} from "#components";
 import {Avantages} from "#components";
 import {TableComparatif} from "#components";
-import {Souplesse} from "~/components/Souplesse.vue";
+import {Souplesse} from "#components";
+import {FAQ} from '#components';
+import {Footer} from "#components";
 </script>
 
 <template>
@@ -16,6 +18,8 @@ import {Souplesse} from "~/components/Souplesse.vue";
   <Avantages/>
   <TableComparatif/>
   <Souplesse/>
+  <FAQ/>
+  <Footer/>
 </template>
 
 <style scoped>

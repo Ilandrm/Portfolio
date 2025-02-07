@@ -1,7 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  css: ["bootstrap/dist/css/bootstrap.min.css","./asset/main.css"],
+  css: ["bootstrap/dist/css/bootstrap.min.css","./asset/main.css","primeicons/primeicons.css"],
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   ssr:true,
+  app: {
+    baseURL: '/PaliKao/',
+  },
+  nitro: {
+    prerender: {
+      routes: ['/'],
+    },
+  },
 })
