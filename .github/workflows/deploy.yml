@@ -32,5 +32,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: main
-          folder: .output/public  # 🔴 C'est le bon dossier à déployer
+          folder: .output/public
+          token: ${{ secrets.GITHUB_TOKEN }}
 
