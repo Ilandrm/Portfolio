@@ -79,8 +79,8 @@ const message = ref("")
   </div>
     <div class="paliPres d-flex flex-column col-4 mt-5">
 
-      <img class="w-25 mt-2 mx-auto" alt="logo" src="public/logo-pali-blanc.png">
-      
+      <img class="w-25 mt-5 mx-auto" alt="logo" src="public/logo-pali-blanc.png">
+
       <div class="d-flex mx-auto mt-4">
       <i class="pi pi-map-marker" style="font-size: 25px"></i>
         <p class=" ms-3">58 rue Pierre Damours, 75017 Paris</p>
