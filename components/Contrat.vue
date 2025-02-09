@@ -353,14 +353,14 @@ const reset = ()=>{
         <!-- Première colonne -->
         <div class="col-6 d-flex flex-column justify-content-around">
           <img class="logo-contrat" alt="onelife" src="public/onelife.png" @click="changeContrat('onelife','onelife.png')">
-          <img class="logo-contrat" alt="Lombard" src="public/Lombard.png">
-          <img class="logo-contrat" alt="generali" src="public/generali.png">
+          <img class="logo-contrat" alt="Lombard" src="public/Lombard.png" @click="changeContrat('lombard','Lombard.png')">
+          <img class="logo-contrat" alt="generali" src="public/generali.png" @click="changeContrat('generali','generali.png')">
         </div>
         <!-- Deuxième colonne -->
         <div class="col-6 d-flex flex-column justify-content-around">
-          <img class="logo-contrat" alt="wealins" src="public/wealins.png">
-          <img class="logo-contrat" alt="cardif" src="public/cardif.png">
-          <img class="logo-contrat" alt="baloise" src="public/baloise.png">
+          <img class="logo-contrat" alt="wealins" src="public/wealins.png" @click="changeContrat('wealins','wealins.png')">
+          <img class="logo-contrat" alt="cardif" src="public/cardif.png" @click="changeContrat('cardif','cardif.png')">
+          <img class="logo-contrat" alt="baloise" src="public/baloise.png" @click="changeContrat('baloise','baloise.png')">
         </div>
       </div>
     </div>
