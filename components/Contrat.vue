@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import {ContratsDetails} from "#components";
+import {useMediaQuery} from "@vueuse/core";
 
+const isMobile = useMediaQuery("(max-width: 768px)");
 const isContratActif =ref(false)
 const currentNote = ref([])
 const currentAvantages = ref("")
@@ -74,7 +76,7 @@ const reset = ()=>{
 <template>
   <div v-if="!isContratActif">
   <h1 class="titleContrat d-flex justify-content-around mt-5 fw-bold ">Nos contrats d'assurance-vie luxembourgeoise</h1>
-  <div class="contrats mx-auto mt-5 w-100">
+  <div class="contrats mx-auto mt-5 w-100" v-if="!isMobile">
     <div class="w-100 ">
     <div class="d-flex justify-content-around w-100 row">
       <img class="logo-contrat col-3" alt="onelife" src="public/onelife.png" @click="changeContrat('onelife','onelife.png')">
@@ -88,6 +90,24 @@ const reset = ()=>{
     </div>
   </div>
   </div>
+    <div v-else>
+      <div class="contrats mx-auto mt-5 w-100" v-if="isMobile">
+      <div class="row justify-content-center">
+        <!-- Première colonne -->
+        <div class="col-6 d-flex flex-column justify-content-around">
+          <img class="logo-contrat" alt="onelife" src="public/onelife.png" @click="changeContrat('onelife','onelife.png')">
+          <img class="logo-contrat" alt="Lombard" src="public/Lombard.png">
+          <img class="logo-contrat" alt="generali" src="public/generali.png">
+        </div>
+        <!-- Deuxième colonne -->
+        <div class="col-6 d-flex flex-column justify-content-around">
+          <img class="logo-contrat" alt="wealins" src="public/wealins.png">
+          <img class="logo-contrat" alt="cardif" src="public/cardif.png">
+          <img class="logo-contrat" alt="baloise" src="public/baloise.png">
+        </div>
+      </div>
+    </div>
+    </div>
   </div>
   <div v-else>
     <ContratsDetails :src="currentSrc" :notes="currentNote" :avantage="currentAvantages" @back="reset"/>
@@ -115,5 +135,23 @@ const reset = ()=>{
 }
 .titleContrat {
   color: #000b31;
+}
+@media (max-width: 768px) {
+  .logo-contrat {
+    width: 100%;
+    max-width: 150px;
+    height: 100PX;
+    padding: 1%;
+    margin-bottom: 5px;
+    border: 3px solid #000b31;
+
+  }
+
+  .titleContrat {
+    font-size: 20px;
+    margin-right:auto ;
+    margin-left: auto;
+    width: 75%;
+  }
 }
 </style>

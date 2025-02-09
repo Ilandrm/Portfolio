@@ -33,4 +33,18 @@ hr{
   border-top: 3px solid #000b31;
   opacity: 100%;
 }
+@media (max-width: 768px) {
+  h1{
+    font-size: 20px;
+  }
+  h4{
+    font-size: 17px;
+  }
+  p{
+    font-size: 15px;
+  }
+  .text-block,.blue-text-block {
+    width: 80%;
+  }
+}
 </style>

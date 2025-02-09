@@ -1,10 +1,12 @@
 <script setup lang="ts">
-const title = "ABOUT"
-
+import {Formulaire} from "#components";
 </script>
 
 <template>
-<h1>{{ title }}</h1>
+<Navbar/>
+<HeadHome :contact="true" class="mt-5"/>
+  <Formulaire/>
+  <Footer class="mt-5"/>
 </template>
 
 <style scoped>

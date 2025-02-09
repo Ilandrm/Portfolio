@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import {TextClassique} from '#components'
 import {BoxeText} from "#components";
+import {useMediaQuery} from "@vueuse/core";
+
+const isMobile = useMediaQuery("(max-width: 768px)");
 
 const textTriangle = [
   {titre: 'Dépôt des actifs auprès d\'une banque dépositaire' ,
@@ -52,14 +55,30 @@ const textAvantage = [{
 </script>
 
 <template>
-<h1 class="fw-bold d-flex justify-content-around mt-5">Les avantages de l'assurance-vie luxembourgeoise</h1>
-  <h3 class="fw-bold d-flex justify-content-around mt-2">Triangle de securité</h3>
-<img alt ="triangle" class="imgTriangle d-flex justify-content-around w-50 mt-5 mx-auto" src="public/triangledesecurité.png">
+<h1 class="fw-bold d-flex justify-content-around mt-5 responsTitle">Les avantages de l'assurance-vie luxembourgeoise</h1>
+  <h3 class="fw-bold d-flex justify-content-around mt-2 responsTitle responsTitleH ">Triangle de securité</h3>
+<img alt ="triangle" class="imgTriangle d-flex justify-content-around mt-5 mx-auto" src="public/triangledesecurité.png">
  <BoxeText :text="textTriangle"/>
   <hr class="w-100"/>
   <TextClassique :text="textAvantage"/>
 </template>
 
 <style scoped>
-
+.imgTriangle{
+  width: 50%;
+}
+@media (max-width: 768px) {
+  .responsTitle{
+      font-size: 20px;
+      width: 85%;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  .responsTitleH{
+    font-size: 18px;
+  }
+  .imgTriangle{
+    width: 350px;
+  }
+}
 </style>
