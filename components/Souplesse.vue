@@ -88,5 +88,7 @@ const textFI = [
 </template>
 
 <style scoped>
-
+h1{
+  font-size: 30px;
+}
 </style>
