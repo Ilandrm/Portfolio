@@ -3,7 +3,7 @@ const props = defineProps(['text','blue_b','noHr','title']);
 </script>
 
 <template>
-  <h1 class="fw-bold mt-2 d-flex justify-content-center" v-if="props.title">{{ props.title }}</h1>
+  <h1 class="fw-bold d-flex justify-content-center" v-if="props.title">{{ props.title }}</h1>
   <div v-for="(line, index) in props.text" :key="index" class="text-block mx-auto " :class="{'blue-text-block':props.blue_b}">
     <h4 class="mx-auto fw-bold mb-3">{{ line.titre }}</h4>
     <p class="mx-auto">{{ line.paragraphe }}</p>

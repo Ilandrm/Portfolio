@@ -75,14 +75,14 @@ const textFI = [
 <TextClassique :text="textPluralite" :blue_b="true"/>
 <hr class="w-100 mb-5"/>
     <TextClassique :text="textGestionLibre" :noHr="true" title="La gestion libre"/>
-    <hr class="w-50 mx-auto mb-5"/>
+    <hr class="w-50 mx-auto mb-3"/>
     <h1 class="fw-bold d-flex justify-content-around">La gestion dédiée ou sous-mandat</h1>
 
     <TextClassique :text="textGestionMandat" :noHr="true"/>
-    <hr class="w-50 mx-auto mb-5"/>
+    <hr class="w-50 mx-auto mb-3"/>
     <h1 class="fw-bold d-flex justify-content-around">Les fonds d’investissement disponibles</h1>
     <TextClassique :text="textFI" :noHr="true"/>
-    <hr class="w-100 mb-5"/>
+    <hr class="w-100 mb-3"/>
 
   </div>
 </template>
