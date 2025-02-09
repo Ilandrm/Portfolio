@@ -35,7 +35,6 @@
         <img alt="company" class="company pb-5" src="public/AMF.png">
         <img alt="company" class="company" src="public/Orias.png">
         <img alt="company" class="company" src="public/CNCGP.png">
-
       </div>
     </div>
     </div>
