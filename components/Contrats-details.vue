@@ -33,7 +33,7 @@ const sendEmit = () => {
                 <i class="pi pi-star me-2" v-for="n in note.empty" style="font-size: 20px" />
               </div>
             </div>
-            <p>{{ note.text }}</p>
+            <p class="mb-3">{{ note.text }}</p>
           </div>
         </div>
       </div>
@@ -43,14 +43,14 @@ const sendEmit = () => {
           <div class="w-75 responsAvantage">
             <h3 class="fw-bold text-center">Présentation de la compagnie et notre avis</h3>
             <p class="text-center" v-for="p in props.avantage.text">{{ p }}</p>
-            <p class="fw-bold text-center">Il offre :</p>
+            <p class="fw-bold text-center" v-if="props.avantage.offre">Il offre :</p>
             <p class="text-center" v-for="p in props.avantage.offre">{{ p }}</p>
           </div>
         </div>
 
         <div class="d-flex justify-content-center avantage-boxes">
           <div class="col-3 d-flex justify-content-center w-50">
-            <div class="mt-2">
+            <div class="mt-2 w-75">
               <i class="pi pi-plus-circle mb-2" style="font-size: 30px; display: flex; justify-content: center" />
               <div class="mt-4">
                 <p class="d-flex justify-content-center" v-for="plus in props.avantage.avantages">{{ plus }}</p>
@@ -59,10 +59,12 @@ const sendEmit = () => {
           </div>
 
           <div class="d-flex col-3 d-flex justify-content-center">
-            <div class="w-50 mt-2">
+            <div class="w-100 mt-2">
               <i class="pi pi-minus-circle mb-2" style="font-size: 30px; display: flex; justify-content: center" />
-              <p class="d-flex justify-content-center" v-for="minus in props.avantage.inconvenient">{{ minus }}</p>
-            </div>
+              <div class="mt-4">
+              <p class="d-flex justify-content-around w-100" v-for="minus in props.avantage.inconvenient">{{ minus }}</p>
+              </div>
+              </div>
           </div>
         </div>
       </div>
@@ -81,6 +83,7 @@ const sendEmit = () => {
 
 .logo {
   width: 10%;
+  object-fit: contain;
 }
 
 p {
