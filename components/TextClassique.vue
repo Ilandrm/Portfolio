@@ -27,7 +27,7 @@ const props = defineProps(['text','blue_b','noHr','title']);
   font-size: 20px;
 }
 .text-block h1, .blue-text-block h1{
-  font-size: 30px;
+  font-size: 25px;
 }
 hr{
   border-top: 3px solid #000b31;

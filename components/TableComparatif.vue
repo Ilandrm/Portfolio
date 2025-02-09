@@ -73,4 +73,24 @@ tr,td,th{
 th{
   font-size: 35px;
 }
+@media (max-width:768px){
+  h1{
+    font-size:20px;
+    margin-right:auto;
+    margin-left:auto;
+    width:80%
+  }
+  p{
+    font-size:15px;
+  }
+  table{
+    font-size:12px;
+  }
+  th{
+    font-size:15px;
+  }
+  tr,td,th{
+
+}
+  }
 </style>
