@@ -6,7 +6,7 @@ const props = defineProps(['text', 'title']);
   <h1 class="fw-bold mt-5 d-flex justify-content-center" v-if="props.title">{{ props.title }}</h1>
   <div class="d-flex justify-content-around responsContent">
     <div class="d-flex justify-content-center responsBoxe">
-      <div v-for="(line, index) in props.text" :key="index" class="text-block mt-5 me-2">
+      <div v-for="(line, index) in props.text" :key="index" class="text-block mt-3 me-2">
         <div class="d-flex flex-column align-items-center">
           <img class="icone mb-4" alt="img" :src="line.src" />
           <h1 class="fw-bold text-center mb-4">{{ line.titre }}</h1>

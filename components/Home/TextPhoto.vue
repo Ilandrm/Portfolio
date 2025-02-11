@@ -17,7 +17,7 @@ const isMobile = useMediaQuery("(max-width: 768px)");
       Vous avez la liberté de retirer à tout moment tout ou partie du capital investi</p>
   </div>
   </div>
-  <img class="imgPf widthPreDef" alt="icone" src="public/pf-luxembourg.png">
+  <img class="imgPf widthPreDef" alt="icone" src="../../public/pf-luxembourg.png">
 </div>
   <div v-if="isMobile">
     <div class="paragraphe widthPreDef d-flex justify-content-around me-3 w-100">

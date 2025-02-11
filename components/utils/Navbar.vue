@@ -21,7 +21,9 @@ const menu = ref(false);
     <img src="/LOGO%20PALI%20KAO.png" class="logo" alt="logo" />
     </NuxtLink>
     <h3>Qui sommes-nous</h3>
+    <NuxtLink to="/non-resident">
     <h3>Non résident</h3>
+    </NuxtLink>
     <h3>Triangle de sécurité</h3>
     <h3>Comparatif des contrats</h3>
     <h3>Fiscalité</h3>

@@ -6,7 +6,7 @@
   <div class="footerP mt-5">
 <div class="row">
   <div class="col-3 mx-auto">
-    <img class="logo mt-auto ms-auto w-50" alt="logo" src="public/logo-pali-blanc.png">
+    <img class="logo mt-auto ms-auto w-50" alt="logo" src="../../public/logo-pali-blanc.png">
   </div>
   <div class="col-3 align-self-center">
     <ul>
@@ -32,9 +32,9 @@
         <button class="btnfoot w-50 mt-4"><label> Prendre rendez-vous</label></button>
       </div>
       <div class="col-7 d-flex justify-content-between align-items-center">
-        <img alt="company" class="company pb-5" src="public/AMF.png">
-        <img alt="company" class="company" src="public/Orias.png">
-        <img alt="company" class="company" src="public/CNCGP.png">
+        <img alt="company" class="company pb-5" src="../../public/AMF.png">
+        <img alt="company" class="company" src="../../public/Orias.png">
+        <img alt="company" class="company" src="../../public/CNCGP.png">
       </div>
     </div>
     </div>

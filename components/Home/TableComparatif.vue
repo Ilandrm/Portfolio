@@ -89,8 +89,5 @@ th{
   th{
     font-size:15px;
   }
-  tr,td,th{
-
-}
   }
 </style>

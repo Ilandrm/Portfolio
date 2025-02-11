@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import {TextClassique} from "#components";
+import TextClassique from "~/components/utils/TextClassique.vue";
+
 const textSouplesse = [
   {
     titre: 'La souplesse, les differents modes de gestion' ,

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import {ContratsDetails} from "#components";
 import {useMediaQuery} from "@vueuse/core";
+import ContratsDetails from "~/components/Home/Contrats-details.vue";
 
 const isMobile = useMediaQuery("(max-width: 768px)");
 const isContratActif =ref(false)
@@ -336,14 +336,14 @@ const reset = ()=>{
   <div class="contrats mx-auto mt-5 w-100" v-if="!isMobile">
     <div class="w-100 ">
     <div class="d-flex justify-content-around w-100 row">
-      <img class="logo-contrat col-3" alt="onelife" src="public/onelife.png" @click="changeContrat('onelife','onelife.png')">
-      <img class="logo-contrat col-6 w-25" alt="Lombard" src="public/Lombard.png" @click="changeContrat('lombard','Lombard.png')">
-      <img class="logo-contrat col-3" alt="generali" src="public/generali.png" @click="changeContrat('generali','generali.png')">
+      <img class="logo-contrat col-3" alt="onelife" src="../../public/onelife.png" @click="changeContrat('onelife','onelife.png')">
+      <img class="logo-contrat col-6 w-25" alt="Lombard" src="../../public/Lombard.png" @click="changeContrat('lombard','Lombard.png')">
+      <img class="logo-contrat col-3" alt="generali" src="../../public/generali.png" @click="changeContrat('generali','generali.png')">
     </div>
     <div class="d-flex justiLombardfy-content-around mt-5 w-100 row">
-      <img class="logo-contrat col-3" alt="wealins" src="public/wealins.png" @click="changeContrat('wealins','wealins.png')">
-      <img class="logo-contrat col-6 w-25" alt="cardif" src="public/cardif.png" @click="changeContrat('cardif','cardif.png')">
-      <img class="logo-contrat col-3" alt="baloise" src="public/baloise.png" @click="changeContrat('baloise','baloise.png')">
+      <img class="logo-contrat col-3" alt="wealins" src="../../public/wealins.png" @click="changeContrat('wealins','wealins.png')">
+      <img class="logo-contrat col-6 w-25" alt="cardif" src="../../public/cardif.png" @click="changeContrat('cardif','cardif.png')">
+      <img class="logo-contrat col-3" alt="baloise" src="../../public/baloise.png" @click="changeContrat('baloise','baloise.png')">
     </div>
   </div>
   </div>
@@ -352,15 +352,15 @@ const reset = ()=>{
       <div class="row justify-content-center">
         <!-- Première colonne -->
         <div class="col-6 d-flex flex-column justify-content-around">
-          <img class="logo-contrat" alt="onelife" src="public/onelife.png" @click="changeContrat('onelife','onelife.png')">
-          <img class="logo-contrat" alt="Lombard" src="public/Lombard.png" @click="changeContrat('lombard','Lombard.png')">
-          <img class="logo-contrat" alt="generali" src="public/generali.png" @click="changeContrat('generali','generali.png')">
+          <img class="logo-contrat" alt="onelife" src="../../public/onelife.png" @click="changeContrat('onelife','onelife.png')">
+          <img class="logo-contrat" alt="Lombard" src="../../public/Lombard.png" @click="changeContrat('lombard','Lombard.png')">
+          <img class="logo-contrat" alt="generali" src="../../public/generali.png" @click="changeContrat('generali','generali.png')">
         </div>
         <!-- Deuxième colonne -->
         <div class="col-6 d-flex flex-column justify-content-around">
-          <img class="logo-contrat" alt="wealins" src="public/wealins.png" @click="changeContrat('wealins','wealins.png')">
-          <img class="logo-contrat" alt="cardif" src="public/cardif.png" @click="changeContrat('cardif','cardif.png')">
-          <img class="logo-contrat" alt="baloise" src="public/baloise.png" @click="changeContrat('baloise','baloise.png')">
+          <img class="logo-contrat" alt="wealins" src="../../public/wealins.png" @click="changeContrat('wealins','wealins.png')">
+          <img class="logo-contrat" alt="cardif" src="../../public/cardif.png" @click="changeContrat('cardif','cardif.png')">
+          <img class="logo-contrat" alt="baloise" src="../../public/baloise.png" @click="changeContrat('baloise','baloise.png')">
         </div>
       </div>
     </div>
