@@ -52,8 +52,8 @@ const textInconvenients= [
 <template>
 
   <h1 class="fw-bold d-flex justify-content-around  mt-5">Avantages et inconvénients de souscrire à une assurance vie au Luxembourg en tant que non-résident</h1>
-  <h2 class="fw-bold mx-auto mb-5"> Avantages</h2>
-  <div class="container mb-3">
+  <h2 class="fw-bold mx-auto mb-4"> Avantages</h2>
+  <div class="container mb-5">
     <div class="card advantage">
       <img class="icon" src="public/iconeTriangleBleu.png" alt="icon">
       <h3>La sécurité du contrat</h3>
@@ -76,7 +76,7 @@ const textInconvenients= [
     </div>
   </div>
 
-  <h2 class="fw-bold mx-auto mb-5"> Inconvénients</h2>
+  <h2 class="fw-bold mx-auto mb-4"> Inconvénients</h2>
   <div class="container">
     <div class="card disadvantage">
       <img class="icon" src="public/cross.png" alt="icon">
@@ -103,6 +103,7 @@ const textInconvenients= [
 h1 {
   margin-bottom: 20px;
   font-size: 26px;
+
 }
 h2{
   display: flex;

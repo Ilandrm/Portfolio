@@ -36,6 +36,6 @@ const textregul = [{
 
 <style scoped>
 h1{
-  font-size: 35px;
+  font-size: 30px;
 }
 </style>

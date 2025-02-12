@@ -33,6 +33,9 @@ hr{
   border-top: 3px solid #000b31;
   opacity: 100%;
 }
+h1{
+  font-size: 30px;
+}
 @media (max-width: 768px) {
   h1{
     font-size: 20px;

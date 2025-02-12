@@ -180,7 +180,7 @@ td{
   width: 10%;
 }
 h1{
-  font-size: 35px;
+  font-size: 30px;
 }
 
 @media (max-width:768px){
