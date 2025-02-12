@@ -109,6 +109,9 @@ h2{
   justify-content: center;
   font-size: 25px;
 }
+h3{
+  font-weight: bold;
+}
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
