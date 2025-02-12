@@ -58,6 +58,7 @@ nav {
 
 h3 {
   align-self: center;
+  font-size: 22px;
   font-weight: bold;
 }
 

@@ -160,6 +160,8 @@ const textEvo = [{
   object-fit: contain;
   aspect-ratio: auto;
   flex-grow: 1;
+  margin-left: auto;
+  margin-right: auto;
 }
 table{
   font-size: 15px;
