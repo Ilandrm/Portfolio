@@ -4,7 +4,7 @@
 
 <template>
   <h1 class="fw-bold d-flex justify-content-around mt-5 responsTitle">Nos Valeurs</h1>
-  <div class="mx-auto">
+  <div class="mx-auto w-75">
   <div class="d-flex justify-content-around text-center divGLobal mt-5">
     <div class="text-center divIco">
       <img class="icone_neutre d-block mx-auto mb-3" alt="icone" src="public/transparence.png">
