@@ -28,7 +28,7 @@ const textEvo = [{
     <table class="mx-auto mt-3">
       <thead>
       <tr class="header-images">
-        <th></th>
+        <th ></th>
         <th><img class="contrat_icone" src="public/generali.png" alt="Generali"></th>
         <th><img class="contrat_icone" src="public/baloise.png" alt="Baloise"></th>
         <th><img class="contrat_icone" src="public/wealins.png" alt="Wealins"></th>
@@ -41,7 +41,7 @@ const textEvo = [{
       <tr>
         <td>Versement minimum à la souscription</td>
         <td>250 000 €</td>
-        <td>50 000 €</td>
+        <td>125 000 €</td>
         <td>125 000 €</td>
         <td>250 000 €</td>
         <td>250 000 €</td>
@@ -155,13 +155,21 @@ const textEvo = [{
 </template>
 
 <style scoped>
-.contrat_icone{
-  width: 100px;
-  object-fit: contain;
-  aspect-ratio: auto;
-  flex-grow: 1;
-  margin-left: auto;
-  margin-right: auto;
+.contrat_icone {
+  width: 100%; /* Remplit toute la largeur de la cellule */
+  height: auto; /* Garde le ratio d'aspect */
+  max-height: 100px; /* Ajuste selon tes besoins */
+  object-fit: contain; /* Garde l'image bien proportionnée */
+  display: block;
+  margin: auto;
+}
+th {
+  width: auto;
+  text-align: center;
+  background-color: #d1dfde;
+  padding: 2%;
+  border: 5px solid white;
+  align-content: center;
 }
 table{
   font-size: 15px;
@@ -169,7 +177,7 @@ table{
   font-weight: bold;
   width: 80%;
 }
-tr,td,th{
+tr,td{
   background-color: #000b31;
   padding: 2%;
   border: 5px solid white;

@@ -6,6 +6,7 @@ const props = defineProps(['text','blue_b','noHr','title']);
   <h1 class="fw-bold d-flex justify-content-center" v-if="props.title">{{ props.title }}</h1>
   <div v-for="(line, index) in props.text" :key="index" class="text-block mx-auto" :class="{'blue-text-block':props.blue_b}">
     <h4 class="mx-auto fw-bold mb-3">{{ line.titre }}</h4>
+    <p class="fw-bold mx-auto" v-if="line.sub">{{ line.sub }}</p>
     <p class="mx-auto">{{ line.paragraphe }}</p>
     <hr class="w-80 mx-auto mb-3" v-if="index !== props.text.length-1 && !props.noHr"/>
   </div>

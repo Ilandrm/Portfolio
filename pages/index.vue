@@ -23,12 +23,24 @@ const textFaq = [
     asnw: "Il est impossible de transférer un contrat d’assurance vie français vers un contrat luxembourgeois. La seule solution est de clôturer son contrat français et d’en ouvrir un autre au Luxembourg."
   }
 ];
+const pageContent = {
+  title: "Pourquoi choisir Pali Kao Capital",
+  text: [
+    "Qu'est-ce que l'assurance-vie luxembourgeoise ?",
+    "L’assurance-vie luxembourgeoise est un contrat d’assurance vie souscrit auprès d’une compagnie d’assurance luxembourgeoise. Ce contrat permet à l’assuré de placer son épargne dans des fonds d’investissement (OPC, SICAV, FCP, etc.) gérés par la compagnie d’assurance. L’assuré peut choisir les fonds dans lesquels il souhaite investir, en fonction de ses objectifs d’épargne et de ses préférences d’investissement.",
+    "Le contrat d’assurance vie luxembourgeois est un contrat d’épargne qui répond aux mêmes engagements que le contrat d’assurance vie français.",
+    "C’est un outil patrimonial, permettant d’épargner, de valoriser son capital et de le transmettre aux bénéficiaires désignés. Vous avez la liberté de retirer à tout moment tout ou partie du capital investi."
+  ],
+  src:'pf-luxembourg.png'
+};
+
 </script>
 
 <template>
 <Navbar/>
 <HeadHome class="mt-5" :home="true"/>
-<TextPhoto class="mt-5"/>
+  <h1 class="d-flex justify-content-around fw-bold mt-5 responsTitle">Pourquoi choisir Pali Kao Capital</h1>
+  <TextPhoto class="mt-5" :paragraphe="pageContent"/>
   <contrat/>
   <Avantages/>
   <TableComparatif/>

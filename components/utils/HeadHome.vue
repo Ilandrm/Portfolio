@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {useMediaQuery} from "@vueuse/core";
 
-const props = defineProps(['contact', 'home','resident'])
+const props = defineProps(['contact', 'home','resident','who'])
 const isMobile = useMediaQuery("(max-width: 768px)");
 
 </script>
@@ -90,6 +90,28 @@ const isMobile = useMediaQuery("(max-width: 768px)");
       <i class="pi pi-globe" style="font-size: 40px;"></i>
       </div>
     </div>
+
+    <div v-else-if="props.who" class="who-container">
+      <h1 class="who-title">Pali Kao en quelques chiffres</h1>
+      <div class="who-stats">
+        <div class="stat-box">
+          <h2 class="stat-number">20</h2>
+          <p class="stat-text">Années d'expérience</p>
+        </div>
+        <div class="stat-box">
+          <h2 class="stat-number">2018</h2>
+          <p class="stat-text">Date de création</p>
+        </div>
+        <div class="stat-box">
+          <h2 class="stat-number">35</h2>
+          <p class="stat-text">Millions d'euros conseillés</p>
+        </div>
+        <div class="stat-box">
+          <h2 class="stat-number">100</h2>
+          <p class="stat-text">Nombre de clients</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -102,7 +124,6 @@ const isMobile = useMediaQuery("(max-width: 768px)");
   text-align: center;
   padding-bottom: 50px;
 }
-
 .iconeContainer {
   flex-grow: 1;
   align-items: center;
@@ -146,6 +167,58 @@ h1{
   font-weight: bold;
   font-size: 20px;
 }
+.who-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.who-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.who-stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-top: 30px;
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  min-width: 150px;
+  transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  font-size: 40px;
+  font-weight: bold;
+  color: #d1dfde;
+}
+
+.stat-text {
+  font-size: 18px;
+  color: #d1dfde;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+  .who-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .title {
     width: 80%;

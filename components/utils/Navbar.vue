@@ -15,12 +15,19 @@ const menu = ref(false);
 </script>
 
 <template>
+  <div class="w-100 tel d-flex justify-content-center align-items-center">
+    <p class="mt-1 ms-4 p-0 m-0 text-center d-flex align-items-center">
+      Prendre rendez-vous au 06 19 81 34 72
+    </p>
+  </div>
   <!-- Version Desktop -->
   <nav class="d-flex justify-content-around desktop-menu" v-if="!isMobile">
     <NuxtLink to="/">
     <img src="/LOGO%20PALI%20KAO.png" class="logo" alt="logo" />
     </NuxtLink>
+    <NuxtLink to="/qui-sommes-nous">
     <h3>Qui sommes-nous</h3>
+    </NuxtLink>
     <NuxtLink to="/non-resident">
     <h3>Non résident</h3>
     </NuxtLink>
@@ -52,6 +59,15 @@ const menu = ref(false);
 
 <style scoped>
 /* ✅ Styles généraux */
+.tel{
+  background-color: #000b31;
+  color: #d1dfde;
+  padding: 0;
+}
+.tel p{
+  font-size: 15px;
+ line-height: 1.5;
+}
 nav {
   color: #000b31;
 }
