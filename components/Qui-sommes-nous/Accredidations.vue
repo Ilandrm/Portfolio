@@ -8,7 +8,7 @@ const textAcreditation = [
         '\n' +
         '\n' +
         'Pour bien exercer son métier, le CGP doit cumuler plusieurs compétences et exercer plusieurs métiers :\n' +
-        '- Conseil en investissement financier (CIF)\n' +
+        'Conseil en investissement financier (CIF)\n' +
         '- Intermédiaire en opération d’assurance (IOA)\n' +
         '- Intermédiaire en transaction immobilière\n' +
         '- Conseil patrimonial à titre accessoire avec la compétence juridique appropriée (CJA)'
