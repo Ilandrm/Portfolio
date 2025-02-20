@@ -25,7 +25,7 @@ const textSuiteFonctionnement = [
   <div class="mt-5">
 <TextClassique :text="textFonctionnement"/>
 
-  <div class="d-flex justify-content-around  divGLobal mt-5 mx-auto">
+  <div class="d-flex justify-content-around  divGLobal mt-3 mx-auto mb-3">
     <div class=" text-center divIco">
       <img class="icone_neutre d-block mx-auto mb-3" alt="icone" src="public/user.png">
       <h4 class="fw-bold">Entreprise d’assurance</h4>

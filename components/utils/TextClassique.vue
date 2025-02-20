@@ -27,9 +27,6 @@ const props = defineProps(['text','blue_b','noHr','title']);
   -webkit-backdrop-filter: blur( 0.5px );
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
-.gold{
-  color: #c9a646;
-}
 .blue-text-block{
   background-color: #000b31;
   color: white;

@@ -1,13 +1,13 @@
 @font-face {
     font-family: 'GillSans';
-    src: url('public/police/Gill Sans.otf') format('opentype');
+    src: url('../public/police/Gill Sans.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'GillSans';
-    src: url('public/police/Gill Sans Bold.otf') format('opentype');
+    src: url('../public/police/Gill Sans Bold.otf') format('opentype');
     font-weight: bold;
     font-style: normal;
 }
@@ -50,7 +50,9 @@ hr{
 .advantage {
     border-top: 5px solid #c9a646;
 }
+.advantage {
 
+}
 .disadvantage {
     border-top: 5px solid #c9a646;
 }

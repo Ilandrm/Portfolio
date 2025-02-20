@@ -99,7 +99,10 @@ const textInconvenients= [
 </template>
 
 <style scoped>
+.icon{
+  filter: brightness(0) saturate(100%) invert(65%) sepia(63%) saturate(406%) hue-rotate(8deg) brightness(94%) contrast(84%);
 
+}
 h1 {
   margin-bottom: 20px;
   font-size: 26px;

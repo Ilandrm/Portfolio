@@ -1,25 +1,7 @@
 <script setup lang="ts">
 import TextClassique from "~/components/utils/TextClassique.vue";
 
-const textEvo = [{
-  titre:'Évaluation des frais de gestion et des frais d\'entrée :',
-  paragraphe: "Les frais d’entrée et les frais de gestion sont totalement transparents lors de la souscription de votre contrat.\n" +
-      "Ils doivent être stipulés sur le contrat.\n" +
-      "\n" +
-      "Pali Kao Capital ne prend aucun frais d’entrée ou sur versements (commission prélevée à chaque nouvelle prime versée par le souscripteur).\n" +
-      "\n" +
-      "Pali Kao Capital appliquent des frais de gestion dégressifs Les frais de gestion servent à rémunérer les sociétés de gestion, les assureurs et les distributeurs de contrats. Ils sont calculés à partir d’un pourcentage annuel appliqué sur la valorisation du contrat. Les contrats d’assurance vie hébergés au Luxembourg\n" +
-      "nous permettent d’avoir une certaine flexibilité sur les frais de gestion, ainsi nous appliquons un taux dégressif de frais en fonction du montant du contrat ."
-},
-  {
-    titre:'Comparaison des performances passées de chaque compagnie',
-    paragraphe: 'Les performances de chaque contrat dépendent de l’allocation d’actifs de chaque contrat.\n' +
-        '\n' +
-        'Les unités de compte composant l’allocations d’actifs (à part le fonds euro et quelques produits structurés qui proposent une garantie en capital) ne sont pas\n' +
-        'capital garanti et varient en fonction de leur sous-jacents (actions, obligations, indices boursiers, immobilier etc..).\n' +
-        '\n' +
-        'Ainsi, la seule cohérence pour la comparaison des performances passées est fonction du fonds euro de la compagnie d’assurance Luxembourgeoise quand celle-ci le propose.'
-  }]
+
 </script>
 
 <template>
@@ -147,11 +129,7 @@ const textEvo = [{
       </tbody>
     </table>
   </div>
-  <div class="mt-5">
-  <TextClassique :text="textEvo"/>
-    <hr class="w-100 mb-3"/>
 
-  </div>
 </template>
 
 <style scoped>
