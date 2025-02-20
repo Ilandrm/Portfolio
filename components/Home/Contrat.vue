@@ -374,6 +374,7 @@ const reset = ()=>{
 <style scoped>
 .logo-contrat {
   border: 5px solid #000b31;
+  border-radius: 7px;
   flex-grow: 1;
   width: 200px;
   object-fit: contain;
@@ -383,7 +384,7 @@ const reset = ()=>{
   margin-right:2% ;
 }
 .logo-contrat:hover{
-  background-color: rgba(209, 223, 222, 0.4);
+  background-color: rgba(201, 166, 70, 0.1);
   cursor: pointer;
 }
 

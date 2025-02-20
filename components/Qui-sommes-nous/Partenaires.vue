@@ -51,7 +51,7 @@ const textPartenaire = [{
       </div>
 
   </div>
-  <div class="mx-auto" v-if="selectedBloc === 'financier'">
+  <div class="mx-auto containerPic" v-if="selectedBloc === 'financier'">
     <transition name="fade">
       <div class="d-flex justify-content-center flex-wrap mt-5 parteners">
         <div class="partner">
@@ -133,7 +133,7 @@ const textPartenaire = [{
       </div>
     </transition>
   </div>
-  <div class="mx-auto" v-if="selectedBloc === 'immobillier'">
+  <div class="mx-auto containerPic" v-if="selectedBloc === 'immobillier'">
     <transition name="fade">
       <div class="d-flex justify-content-center flex-wrap mt-5 parteners">
       <div class="partner">
@@ -184,7 +184,7 @@ const textPartenaire = [{
       </div>
     </transition>
   </div>
-  <div class="mx-auto" v-if="selectedBloc === 'assurances'">
+  <div class="mx-auto containerPic" v-if="selectedBloc === 'assurances'">
     <transition name="fade">
       <div class="d-flex justify-content-center flex-wrap mt-5 parteners">
         <div class="partner">
@@ -222,7 +222,7 @@ const textPartenaire = [{
     </transition>
   </div>
 
-  <div class="mx-auto" v-if="selectedBloc === 'banquaire'">
+  <div class="mx-auto containerPic" v-if="selectedBloc === 'banquaire'">
     <transition name="fade">
       <div class="d-flex justify-content-center flex-wrap mt-5 parteners">
         <div class="partner">

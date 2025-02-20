@@ -29,7 +29,9 @@ const props = defineProps(['text', 'title']);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   width: 25%;
 }
-
+.gold{
+  background-color: rgba(201, 166, 70, 0.9);
+}
 .text-block p,
 .blue-text-block p {
   font-size: 20px;

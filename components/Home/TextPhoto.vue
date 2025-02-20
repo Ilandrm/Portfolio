@@ -7,11 +7,11 @@ const props = defineProps(["paragraphe"]);
 
 <template>
   <div class="d-flex justify-content-around responsContent">
-    <div class="text-photo d-flex justify-content-between mt-2" v-if="!isMobile">
+    <div class="text-photo d-flex justify-content-between mt-2 flex-shrink-2" v-if="!isMobile">
       <div class="paragraphe widthPreDef me-3">
         <div>
           <h1 class="fw-bold">{{ props.paragraphe.title }}</h1>
-          <h5 class="fw-bold mb-3" v-if="props.paragraphe.sub">{{ props.paragraphe.sub }}</h5>
+          <h5 class="fw-bold mb-3 gold" v-if="props.paragraphe.sub">{{ props.paragraphe.sub }}</h5>
           <p v-for="(p, index) in props.paragraphe.text" :key="index">{{ p }}</p>
         </div>
       </div>
@@ -41,15 +41,20 @@ const props = defineProps(["paragraphe"]);
 }
 
 .paragraphe {
-  background-color: #000b31;
+  border: solid 3px #000b31;
   padding: 3%;
-  color: white;
+  color: #000b31;
   display: flex;
   flex-direction: column; /* Pour que le contenu s'étire */
   justify-content: center;
   flex: 1; /* Remplit l’espace disponible */
 }
-
+.gold{
+  background-color: rgba(201, 166, 70, 0.2);
+  padding: 1%;
+  border-radius: 5px;
+  width: fit-content;
+}
 .imgPf {
   object-fit: cover; /* Remplit son conteneur sans se déformer */
   height: 100%; /* Adopte la hauteur du parent */

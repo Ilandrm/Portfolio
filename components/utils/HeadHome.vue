@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {useMediaQuery} from "@vueuse/core";
 
-const props = defineProps(['contact', 'home','resident','who'])
+const props = defineProps(['contact', 'home','resident','who','triangle'])
 const isMobile = useMediaQuery("(max-width: 768px)");
 
 </script>
@@ -112,6 +112,13 @@ const isMobile = useMediaQuery("(max-width: 768px)");
         </div>
       </div>
     </div>
+
+    <div v-else-if="props.triangle" class="d-flex justify-content-center align-self-center mt-5">
+      <div class="align-self-center">
+        <h1 class="fw-bold ms-3 mb-0">Triangle de sécurité pour les assurances-vie au Luxembourg</h1>
+        <img class="imgSubject" src="public/Icontriangle.png" alt="logo">
+      </div>
+    </div>
   </div>
 </template>
 
@@ -202,7 +209,7 @@ h1{
 .stat-number {
   font-size: 40px;
   font-weight: bold;
-  color: #d1dfde;
+  color: #c9a646;
 }
 
 .stat-text {

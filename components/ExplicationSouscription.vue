@@ -9,7 +9,8 @@ const textComment = [
   },
   {
     titre:"Choix de la compagnie d'assurance et du type de contrat\n",
-    paragraphe:"Critères essentiels à prendre en compte :"
+    paragraphe:"Critères essentiels à prendre en compte :",
+    list:["Solvabilité financière de la compagnie","Réactivité du back office","Présence ou non du fonds euro","Diversité et qualité des supports d’investissement","Éligibilité de la compagnie selon la fiscalité du pays de résidence"]
   }
 ]
 const textProfil = [
@@ -24,18 +25,8 @@ const textProfil = [
 <template>
   <div class="mt-5">
 <TextClassique title="Comment souscrire à une assurance vie au Luxembourg en tant que non-résident ?" :text="textComment"/>
-    <div class="d-flex  justify-content-center  divGLobal mt-3 ">
-      <ul class="list-unstyled text-center">
-        <li class="mt-3"><h5>Solvabilité financière de la compagnie</h5></li>
-        <li class="mt-3"><h5>Réactivité du back office</h5></li>
-        <li class="mt-3"><h5>Présence ou non du fonds euro</h5></li>
-        <li class="mt-3"><h5>Diversité et qualité des supports d’investissement</h5></li>
-        <li class="mt-3"><h5>Éligibilité de la compagnie selon la fiscalité du pays de résidence</h5></li>
-      </ul>
-    </div>
 
 
-    <hr class="w-50 mx-auto mt-3">
     <TextClassique :text="textProfil"/>
   </div>
 </template>
@@ -54,5 +45,8 @@ hr{
   width: fit-content;
   margin: 0;
 }
+.divGLobal{
+  width: 85%;
 
+}
 </style>

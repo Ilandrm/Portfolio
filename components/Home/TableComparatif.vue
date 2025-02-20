@@ -65,14 +65,17 @@ table{
   color: white;
   font-weight: bold;
 }
-tr,td,th{
+tr,td{
   background-color: #000b31;
   padding: 2%;
   border: 5px solid white;
 }
 th{
   font-size: 35px;
+  padding: 2%;
+  border: 5px solid white;
 }
+
 @media (max-width:768px){
   h1{
     font-size:20px;
