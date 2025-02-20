@@ -89,7 +89,7 @@ const toggleTitle = (type: string) => {
 }
 
 .displayBloc:hover, .displayBloc.active {
-  background-color: #000b31;
+  background-color: #c9a646;
   color: white;
 }
 

@@ -209,7 +209,6 @@ h1{
 .stat-number {
   font-size: 40px;
   font-weight: bold;
-  color: #c9a646;
 }
 
 .stat-text {

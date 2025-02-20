@@ -48,7 +48,8 @@ const props = defineProps(['text', 'title']);
   width: 100%;
   justify-content: center; /* Correction pour l'alignement */
 }
-
+.icone{
+  filter: brightness(0) saturate(100%) invert(65%) sepia(63%) saturate(406%) hue-rotate(8deg) brightness(94%) contrast(84%);}
 @media (max-width: 768px) {
   .responsBoxe {
     flex-direction: column;

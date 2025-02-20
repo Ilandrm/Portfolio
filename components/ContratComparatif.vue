@@ -166,10 +166,10 @@ const textEvo = [{
 th {
   width: auto;
   text-align: center;
-  background-color: #d1dfde;
   padding: 2%;
   border: 5px solid white;
   align-content: center;
+  background-color: #c9a646;
 }
 table{
   font-size: 15px;

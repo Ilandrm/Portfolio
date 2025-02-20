@@ -74,6 +74,7 @@ th{
   font-size: 35px;
   padding: 2%;
   border: 5px solid white;
+  background-color: #c9a646;
 }
 
 @media (max-width:768px){

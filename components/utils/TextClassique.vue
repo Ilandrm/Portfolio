@@ -3,7 +3,7 @@ const props = defineProps(['text','blue_b','noHr','title']);
 </script>
 
 <template>
-  <h1 class="fw-bold d-flex justify-content-center" v-if="props.title">{{ props.title }}</h1>
+  <h1 class="fw-bold d-flex justify-content-around text-start mb-3" v-if="props.title">{{ props.title}}</h1>
   <div v-for="(line, index) in props.text" :key="index" class="text-block mx-auto" :class="{'blue-text-block':props.blue_b}">
     <h4 class="fw-bold mb-3" v-if="line.titre">{{ line.titre.toUpperCase() }}</h4>
     <p class="fw-bold mx-auto" v-if="line.sub">{{ line.sub }}</p>
@@ -22,12 +22,13 @@ const props = defineProps(['text','blue_b','noHr','title']);
   margin-bottom: 20px;
   font-family: 'GillSans', sans-serif;
   width: 50%;
-  background-color: rgba(201, 166, 70, 0.08);
-  padding: 1%;
   border-radius: 7px;
   backdrop-filter: blur( 0.5px );
   -webkit-backdrop-filter: blur( 0.5px );
   border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.gold{
+  color: #c9a646;
 }
 .blue-text-block{
   background-color: #000b31;

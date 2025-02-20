@@ -58,7 +58,7 @@ const textSuiteFonctionnement = [
   width: 60%;
   flex-wrap: wrap;
   text-align: center;
-
+  border-radius: 7px;
 }
 
 </style>
