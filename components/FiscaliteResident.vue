@@ -15,7 +15,7 @@ const textInvesstissement = [{
 }];
 
 const textGarantis = [{
-  titre: 'Garantie de remboursement pour protéger votre capital',
+  titre: '',
   paragraphe: 'Il est possible de souscrire une garantie décès afin de garantir son capital en cas de décès. ' +
       'Le coût de cette garantie dépend de l’âge du souscripteur et du montant investi.'
 }];
@@ -73,7 +73,7 @@ const toggleTitle = (type: string) => {
   </div>
 
   <div class="mt-3">
-    <TextClassique :text="textGarantis"/>
+    <TextClassique :text="textGarantis" title="Garantie de remboursement pour protéger votre capital"/>
     <hr class="w-100 mb-3"/>
   </div>
 </template>
