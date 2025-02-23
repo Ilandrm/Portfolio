@@ -33,13 +33,15 @@ import TableComparatif from "~/components/Home/TableComparatif.vue";
       <h3>Choix de la devise</h3>
       <p>Le souscripteur a le choix de la devise permettant d’alimenter son contrat. C’est un avantage non négligeable pour les expatriés ou futurs expatriés.</p>
     </div>
-    <div class="card advantage">
+    <div class="card advantage w-100">
       <img class="icon" src="public/testament.png" alt="icon">
       <h3>Neutralité fiscale en cas de décès </h3>
       <p>Le Luxembourg ne taxe pas les capitaux décès versés aux bénéficiaires dès lors que l’assuré est non-résident fiscal luxembourgeois. La succession supportera les droits de succession soit de son lieu de résidence, ou de celle des bénéficiaires.</p>
     </div>
   </div>
   <ContratComparatif/>
+  <hr class="w-100 mb-3"/>
+
 </template>
 
 <style scoped>
@@ -60,4 +62,23 @@ h3{
   filter: brightness(0) saturate(100%) invert(65%) sepia(63%) saturate(406%) hue-rotate(8deg) brightness(94%) contrast(84%);
 
 }
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin: auto;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* Centre les cartes sur la ligne */
+}
+
+.card {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
 </style>

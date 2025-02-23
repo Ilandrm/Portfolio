@@ -49,16 +49,15 @@ const textregul = [{
     <hr class="w-100 mb-3"/>
 
   </div>
-  <div class="mt-5">
+  <div class="mt-2 mb-3">
   <h1 class="fw-bold d-flex justify-content-around d-flex justify-content-around">Réglementation fiscale pour les non-résidents souscrivant à une assurance vie au Luxembourg</h1>
   </div>
     <TextClassique :text="textregul"></TextClassique>
-  <hr class="w-100 mb-3"/>
 
 </template>
 
 <style scoped>
 h1{
-  font-size: 30px;
+  font-size: 25px;
 }
 </style>

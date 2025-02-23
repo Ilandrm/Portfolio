@@ -6,7 +6,7 @@ const textFonctionnement = [
     titre:'Comment fonctionne le triangle de sécurité pour les assurances-vie au\n' +
         'Luxembourg?',
     paragraphe:'Les compagnies d’assurance au Luxembourg offrent un régime de protection unique en Europe pour les souscripteurs d’un contrat d\'assurance vie au Luxembourg.\n' +
-        'Il est appelé le triangle de sécurité : il repose sur trois parties prenantes :'
+        'Il est appelé le triangle de sécurité : il repose sur trois parties prenantes :',
   }
 ]
 const textSuiteFonctionnement = [
@@ -24,24 +24,11 @@ const textSuiteFonctionnement = [
 <template>
   <div class="mt-5">
 <TextClassique :text="textFonctionnement"/>
-
-  <div class="d-flex justify-content-around  divGLobal mt-3 mx-auto mb-3">
-    <div class=" text-center divIco">
-      <img class="icone_neutre d-block mx-auto mb-3" alt="icone" src="public/user.png">
-      <h4 class="fw-bold">Entreprise d’assurance</h4>
-    </div>
-    <div class=" text-center divIco">
-      <img class="icone_neutre d-block mx-auto mb-3" alt="icone" src="public/file.png">
-      <h4 class="fw-bold"> Commissariat aux assurances</h4>
-    </div>
-    <div class=" text-center divIco">
-      <img class="icone_neutre d-block mx-auto mb-3" alt="icone" src="public/banque.png">
-      <h4 class="fw-bold">Banque dépositaire</h4>
-    </div>
-
   </div>
-<TextClassique :text="textSuiteFonctionnement"/>
-  </div>
+  <img alt ="triangle" class="imgTriangle d-flex justify-content-around mt-3 mb-3 mx-auto" src="../../public/triangledesecurité.png">
+
+  <TextClassique :text="textSuiteFonctionnement"/>
+
 </template>
 
 <style scoped>
@@ -49,7 +36,9 @@ const textSuiteFonctionnement = [
   width: 50px;
   display: block;
 }
-
+.imgTriangle{
+  width: 50%;
+}
 .divIco {
   margin: 0;
 }
