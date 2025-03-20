@@ -24,9 +24,9 @@ const textFaq = [
   }
 ];
 const pageContent = {
-  title: "Pourquoi choisir Pali Kao Capital",
+  title: "Qu'est-ce que l'assurance-vie luxembourgeoise ?",
   text: [
-    "Qu'est-ce que l'assurance-vie luxembourgeoise ?",
+
     "L’assurance-vie luxembourgeoise est un contrat d’assurance vie souscrit auprès d’une compagnie d’assurance luxembourgeoise. Ce contrat permet à l’assuré de placer son épargne dans des fonds d’investissement (OPC, SICAV, FCP, etc.) gérés par la compagnie d’assurance. L’assuré peut choisir les fonds dans lesquels il souhaite investir, en fonction de ses objectifs d’épargne et de ses préférences d’investissement.",
     "Le contrat d’assurance vie luxembourgeois est un contrat d’épargne qui répond aux mêmes engagements que le contrat d’assurance vie français.",
     "C’est un outil patrimonial, permettant d’épargner, de valoriser son capital et de le transmettre aux bénéficiaires désignés. Vous avez la liberté de retirer à tout moment tout ou partie du capital investi."
@@ -39,7 +39,19 @@ const pageContent = {
 <template>
 <Navbar/>
 <HeadHome class="mt-5" :home="true"/>
-  <h1 class="d-flex justify-content-around fw-bold mt-5 responsTitle">Pourquoi choisir Pali Kao Capital</h1>
+  <div class="d-flex justify-content-center align-items-center">
+  <div class="card advantage mt-5">
+
+    <h1 class="d-flex justify-content-around fw-bold mt-2 responsTitle">Pourquoi choisir Pali Kao Capital</h1>
+    <p class="text-lg-start w-75">
+      1. Nous avons sélectionné les contrats d’assurance vie Luxembourgeois les plus performants.<br>
+      2. Nous bénéficions d’une forte expertise dans le domaine des marchés financiers (plus de vingt-cinq ans d’expérience dans le conseil en investissement financier).<br>
+      3. Nous accompagnons nos clients dans la durée, leur offrant réactivité, expertise et indépendance.<br>
+      4. Nous ne sommes liés à aucune compagnie financière, ou de private equity, ainsi, nous conseillons nos clients, en totale indépendance, au mieux de leurs intérêts.<br>
+      5. Nous avons accès à une pluralité de fonds, nous sélectionnons ceux alliant performance et régularité, en adéquation avec le profil de risque de nos clients.
+    </p>
+  </div>
+  </div>
   <TextPhoto class="mt-5" :paragraphe="pageContent"/>
   <contrat/>
   <Avantages/>
@@ -52,4 +64,10 @@ const pageContent = {
 <style scoped>
 
 
+.advantage p{
+  font-size: 20px;
+  white-space: pre-line;
+  color: #000b31;
+}
 </style>
+

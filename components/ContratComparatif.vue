@@ -40,11 +40,11 @@ import TextClassique from "~/components/utils/TextClassique.vue";
       </tr>
       <tr>
         <td>Versement minimum FAS</td>
-        <td>300 000 €</td>
-        <td>50 000 €</td>
         <td>125 000 €</td>
-        <td>250 000 €</td>
-        <td>250 000 €</td>
+        <td>125 000 €</td>
+        <td>125 000 €</td>
+        <td>125 000 €</td>
+        <td>125 000 €</td>
         <td>125 000 €</td>
       </tr>
       <tr>
@@ -108,7 +108,7 @@ import TextClassique from "~/components/utils/TextClassique.vue";
           Présence du fonds Euros sur son contrat (taux 2022 : 1,8% brut sans compter les bonifications possibles).
         </td>
         <td>
-          Une des compagnies les plus accessibles du marché avec un ticket d’entrée de 50 000 Euros.
+          Une des compagnies les plus accessibles du marché avec un ticket d’entrée de 125 000 Euros.
         </td>
         <td>
           30 ans d’expérience, un des contrats les plus accessibles en FAS et solvabilité de la maison mère (le groupe Foyer).

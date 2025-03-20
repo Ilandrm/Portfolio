@@ -3,6 +3,11 @@ import Navbar from "~/components/utils/Navbar.vue";
 import HeadHome from "~/components/utils/HeadHome.vue";
 import FAQ from "~/components/utils/FAQ.vue";
 import Footer from "~/components/utils/Footer.vue";
+import Souscription from "~/components/non-resident/Souscription.vue";
+import FiscaliteResident from "~/components/non-resident/FiscaliteResident.vue";
+import ExplicationSouscription from "~/components/non-resident/ExplicationSouscription.vue";
+import Reglementation from "~/components/non-resident/Reglementation.vue";
+import AvantageSouscription from "~/components/non-resident/AvantageSouscription.vue";
 
 const textFaq = [
   {

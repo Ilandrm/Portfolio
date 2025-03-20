@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {useMediaQuery} from "@vueuse/core";
 
-const props = defineProps(['contact', 'home','resident','who','triangle'])
+const props = defineProps(['contact', 'home','resident','who','triangle','comparatif','fiscalite']);
 const isMobile = useMediaQuery("(max-width: 768px)");
 
 </script>
@@ -10,7 +10,7 @@ const isMobile = useMediaQuery("(max-width: 768px)");
   <div class="content d-flex justify-content-around w-100 mt-5">
     <div class="sub-content w-100 mt-5" v-if="props.home ">
       <div class="title">
-        <h1 class="fw-bold">L'assurance vie au Luxembourg sur mesure titre en haut</h1>
+        <h1 class="fw-bold">L'assurance vie au Luxembourg sur mesure</h1>
         <h4 class="d-flex justify-content-around">0 frais d'entrée et aucune penalité de sortie</h4>
       </div>
       <div class="container-icone-line d-flex" v-if="!isMobile">
@@ -103,7 +103,7 @@ const isMobile = useMediaQuery("(max-width: 768px)");
           <p class="stat-text">Date de création</p>
         </div>
         <div class="stat-box">
-          <h2 class="stat-number">35</h2>
+          <h2 class="stat-number">40</h2>
           <p class="stat-text">Millions d'euros conseillés</p>
         </div>
         <div class="stat-box">
@@ -119,9 +119,20 @@ const isMobile = useMediaQuery("(max-width: 768px)");
         <img class="imgSubject" src="public/Icontriangle.png" alt="logo">
       </div>
     </div>
+  <div v-else-if="props.comparatif" class="d-flex justify-content-center align-self-center mt-5">
+    <div class="align-self-center">
+      <h1 class="fw-bold ms-3 mb-0">Assurance vie Luxembourg : Comparatif des meilleures offres en 2025</h1>
+      <img class="imgSubject" src="public/comparatif.png" alt="logo">
+    </div>
+  </div>
+  <div v-else-if="props.fiscalite" class="d-flex justify-content-center align-self-center mt-5">
+    <div class="align-self-center">
+      <h1 class="fw-bold ms-3 mb-0">Fiscalité de l’assurance vie au Luxembourg</h1>
+      <img class="imgSubject" src="public/fiscalite.png" alt="logo">
+    </div>
+  </div>
   </div>
 </template>
-
 <style scoped>
 .content {
   width: 100%;
@@ -138,6 +149,8 @@ const isMobile = useMediaQuery("(max-width: 768px)");
 }
 h1{
   margin-top: auto;
+  text-align: center; /* Centrer le titre */
+  letter-spacing: 2px; /* Espacement des lettres */
 }
 .icone {
   align-items: center;

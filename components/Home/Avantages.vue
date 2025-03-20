@@ -20,12 +20,14 @@ const textTriangle = [
     titre: 'Le super-privilège des souscripteurs' ,
     paragraphe: 'En cas de défaillance de l’assureur, l’autorité de contrôle peut bloquer les comptes pour protéger les droits des souscripteurs. Ainsi, les avoirs des clients déposés sur leur contrat d’assurance vie Luxembourgeois sont totalement indépendants des fonds propres de la compagnie d’assurance. En cas de faillite de la compagnie d’assurance, les créanciers ordinaires ne pourront exercer leur droit de recouvrement sur les actifs des contrats d’assurance vie Luxembourgeois, ainsi votre capital est protégé.',
     src:'icone_privilege.png'
-  }
+  },
+  {
+    titre: 'Non application de la Loi Sapin 2' ,
+    paragraphe: 'Instituée en France en 2016, peut limiter les retraits sur les contrats d’assurance vie français en cas de grave crise économique pour une période de 3 mois, renouvelable 3 mois supplémentaires (dans la limite de 6 mois consécutifs) Cette loi ne s’applique pas sur les contrats Luxembourgeois investis en unités de compte et sur certains contrats Luxembourgeois investis en fonds euro, qui ont choisi d’assurer leur fonds Euro en dehors de la France. Ainsi, les titulaires d’un contrat d’assurance vie ou de capitalisation luxembourgeois, ne risquent pas de voir leurs retraits bloqués.',
+    src:'contrat.png'
+  },
 ]
-const textAvantage = [{
-    titre: 'Loi Sapin 2' ,
-    paragraphe: 'Non application de la Loi Sapin 2, instituée en France en 2016, peut limiter les retraits sur les contrats d’assurance vie français en cas de grave crise économique pour une période de 3 mois, renouvelable 3 mois supplémentaires (dans la limite de 6 mois consécutifs) Cette loi ne s’applique pas sur les contrats Luxembourgeois investis en unités de compte et sur certains contrats Luxembourgeois investis en fonds euro, qui ont choisi d’assurer leur fonds Euro en dehors de la France. Ainsi, les titulaires d’un contrat d’assurance vie ou de capitalisation luxembourgeois dont tout ou partie du capital est investi sur le fonds Euro, ne risquent pas de voir leurs retraits bloqués.'
-},
+const textAvantage = [
   {
     titre: 'Le super privilège' ,
     paragraphe: 'Les souscripteurs disposent de la qualité de créanciers privilégiés de 1er rang de la compagnie d’assurances sur la masse des actifs.\n' +
@@ -68,6 +70,7 @@ const textAvantage = [{
 .imgTriangle{
   width: 50%;
 }
+
 @media (max-width: 768px) {
   .responsTitle{
       font-size: 20px;

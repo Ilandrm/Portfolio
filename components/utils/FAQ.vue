@@ -44,5 +44,7 @@ p {
   max-width: 800px;
   font-size: 20px;
   word-break: break-word;
+  white-space: pre-line;
+
 }
 </style>

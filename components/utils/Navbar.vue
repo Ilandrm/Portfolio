@@ -34,8 +34,12 @@ const menu = ref(false);
     <NuxtLink to="/triangle-de-securite">
     <h3>Triangle de sécurité</h3>
     </NuxtLink>
+    <NuxtLink to="/comparatif-des-contrats">
     <h3>Comparatif des contrats</h3>
+    </NuxtLink>
+    <NuxtLink to="/fiscalite">
     <h3>Fiscalité</h3>
+    </NuxtLink>
     <NuxtLink to="/contact"><h3>Contact</h3></NuxtLink>
   </nav>
 

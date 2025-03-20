@@ -23,7 +23,7 @@ export default defineComponent({
       <img class="icon" src="public/Atout.jpg" alt="icon">
       <h3>Nos atouts</h3>
       <p>📌 Notre expertise en tant qu’investisseur et conseiller financier depuis 1998 nous a permis de faire face aux crises financières de 2001, 2007 ou 2020, ou à la bulle spéculative des marchés en 2000 et 2007.</p>
-      <p>Nous disposons également de plus de 20 ans d’expérience sur les marchés de l’investissement immobilier direct et indirect. Celle-ci a permis à Rémi de réaliser plus de 750 millions d’euros d’acquisitions pour le compte de grands groupes dans ses anciennes fonctions.</p>
+      <p>Nous disposons également de plus de 20 ans d’expérience sur les marchés de l’investissement immobilier direct et indirect.</p>
     </div>
     <div class="card advantage">
       <img class="icon" src="public/Notre-independance.png" alt="icon">

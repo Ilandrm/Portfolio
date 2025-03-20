@@ -4,13 +4,13 @@
 
 <template>
   <div class="mt-5">
-<h1 class="fw-bold d-flex justify-content-around d-flex justify-content-around">Comparatif : Contrat d’assurance vie Luxembourgeois vs Assurance vie</h1>
+<h1 class="fw-bold d-flex justify-content-around d-flex justify-content-around">Comparatif : Contrat d’assurance vie Luxembourgeois vs Assurance vie Française</h1>
     <table class="w-75 mx-auto mt-5">
       <thead>
       <tr>
         <th>Caractéristiques</th>
-        <th>Assurance vie française</th>
         <th>Assurance vie Luxembourgeoise</th>
+        <th>Assurance vie française</th>
       </tr>
       </thead>
       <tbody>

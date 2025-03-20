@@ -4,7 +4,7 @@ const props = defineProps(['text', 'title']);
 
 <template>
   <h1 class="fw-bold mt-5 d-flex justify-content-center" v-if="props.title">{{ props.title }}</h1>
-  <div class="d-flex justify-content-around responsContent">
+  <div class="d-flex justify-content-around responsContent mx-auto">
     <div class="d-flex justify-content-center responsBoxe">
       <div v-for="(line, index) in props.text" :key="index" class="text-block mt-3 me-2">
         <div class="d-flex flex-column align-items-center">
@@ -34,19 +34,22 @@ const props = defineProps(['text', 'title']);
 }
 .text-block p,
 .blue-text-block p {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .text-block h1,
 .blue-text-block h1 {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .responsContent {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  width: 85%;
   justify-content: center; /* Correction pour l'alignement */
+}
+h1{
+  font-size: 30px;
 }
 .icone{
   filter: brightness(0) saturate(100%) invert(65%) sepia(63%) saturate(406%) hue-rotate(8deg) brightness(94%) contrast(84%);}

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-const props = defineProps(['text','blue_b','noHr','title']);
+const props = defineProps(['text','blue_b','noHr','title','border']);
 </script>
 
 <template>
   <h1 class="fw-bold d-flex justify-content-around text-start mb-3" v-if="props.title">{{ props.title}}</h1>
-  <div v-for="(line, index) in props.text" :key="index" class="text-block mx-auto" :class="{'blue-text-block':props.blue_b}">
+  <div v-for="(line, index) in props.text" :key="index" class="text-block mx-auto" :class="{'blue-text-block':props.blue_b, 'borderText': props.border}">
     <h4 class="fw-bold mb-3" v-if="line.titre">{{ line.titre.toUpperCase() }}</h4>
     <p class="fw-bold mx-auto" v-if="line.sub">{{ line.sub }}</p>
     <p class="mx-auto">{{ line.paragraphe }}</p>
@@ -26,6 +26,15 @@ const props = defineProps(['text','blue_b','noHr','title']);
   backdrop-filter: blur( 0.5px );
   -webkit-backdrop-filter: blur( 0.5px );
   border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+p{
+  white-space: pre-line;
+}
+.borderText{
+  border: solid 2px #000b31;
+  padding: 1%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
 }
 .blue-text-block{
   background-color: #000b31;
