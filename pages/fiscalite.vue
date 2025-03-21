@@ -5,7 +5,7 @@ import HeadHome from "~/components/utils/HeadHome.vue";
 import Neutralite from "~/components/fiscalite/neutralite.vue";
 import OptionSortie from "~/components/fiscalite/OptionSortie.vue";
 import VersementTable from "~/components/fiscalite/VersementTable.vue";
-import FiscaliteDeces from "~/components/fiscalite/FisaliteDeçés.vue"
+import FisaliteDeces from "~/components/fiscalite/FisaliteDeces.vue"
 import Footer from "~/components/utils/Footer.vue";
 </script>
 
@@ -15,7 +15,7 @@ import Footer from "~/components/utils/Footer.vue";
   <neutralite/>
   <OptionSortie/>
   <VersementTable/>
-  <FiscaliteDeces/>
+  <FisaliteDeces/>
   <Footer/>
 </template>
 
