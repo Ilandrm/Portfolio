@@ -40,7 +40,7 @@ const pageContent = {
 <Navbar/>
 <HeadHome class="mt-5" :home="true"/>
   <div class="d-flex justify-content-center align-items-center">
-  <div class="card advantage mt-5">
+  <div class="card advantage mt-5 w-75">
 
     <h1 class="d-flex justify-content-around fw-bold mt-2 responsTitle">Pourquoi choisir Pali Kao Capital</h1>
     <p class="text-lg-start w-75">
