@@ -151,6 +151,7 @@ h1{
   margin-top: auto;
   text-align: center; /* Centrer le titre */
   letter-spacing: 2px; /* Espacement des lettres */
+color: #c9a646;
 }
 .icone {
   align-items: center;
