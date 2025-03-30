@@ -11,13 +11,14 @@ const textNext = [
 ]
 const textSouscripteur = [
   {
-    titre:"",
-    paragraphe:"En cas de décès du souscripteur.\n" +
-        "Le souscripteur du contrat rédige (par l’aide de son conseiller) une clause bénéficiaire au moment de la souscription de son contrat (elle peut être modifiée jusqu’au décès du souscripteur) .\n" +
-        "\n" +
-        "Cette clause bénéficiaire permettra d’identifier les bénéficiaires du contrat en cas de décès du souscripteur.\n" +
-        "Ainsi, les capitaux investis sur le contrat seront versés aux bénéficiaires du contrat.\n" +
-        "Si le souscripteur du contrat est français et le bénéficiaire français, La fiscalité sera la suivante.",
+    titre: "",
+    paragraphe: "En cas de rachat partiel :\n\n" +
+        "Si le souscripteur décide d’effectuer un rachat partiel (racheter une partie du contrat), seule la quote-part des plus-values réalisée et des intérêts produits sont imposables.\n\n" +
+        "L’administration fiscale considère que le retrait est composé d’une partie en capital et d’une partie de plus-value (si le contrat est bénéficiaire). Seule la partie en plus-value est fiscalisée.\n\n" +
+        "Exemple : le souscripteur a versé 10 000 Euros sur son contrat, au bout de 2 ans celui-ci est à 11 000 euros. Soit un gain de 1000 Euros. Si le souscripteur décide de retirer 1000 Euros, soit plus ou moins 10% de la totalité de son contrat. L’administration fiscale considère qu’il a retiré 90% de capital et 10% de plus-values (1000 euros de retrait/ 9 000 euros versés, soit 10%). Ainsi il ne sera fiscalisé que sur 10% de 1000 Euros, soit 100 euros. Les 100 Euros seront fiscalisés à hauteur de 30% si le contrat a été souscrit après le 27/09/2017, soit une fiscalité de 300 €.\n\n" +
+        "Fiscalité en cas de décès du souscripteur pour les bénéficiaires du contrat\n\n" +
+        "Le souscripteur du contrat rédige (par l’aide de son conseiller) une clause bénéficiaire au moment de la souscription de son contrat (elle peut être modifiée jusqu’au décès du souscripteur).\n\n" +
+        "Cette clause bénéficiaire permettra d’identifier les bénéficiaires du contrat en cas de décès du souscripteur. Ainsi, les capitaux investis sur le contrat seront versés aux bénéficiaires du contrat. Si le souscripteur du contrat est français et le bénéficiaire français, la fiscalité sera la suivante."
   }
 ]
 </script>
@@ -30,7 +31,7 @@ const textSouscripteur = [
     <thead>
     <tr>
       <th class="small-col">Durée</th>
-      <th class="large-col">PFL (ou barème progressif de l'IR) + PS</th>
+      <th class="large-col">PFU (ou barème progressif de l'IR) + PS</th>
     </tr>
     </thead>
     <tbody>
@@ -95,17 +96,20 @@ h1 {
 
 
 @media (max-width:768px) {
+
   h1 {
     font-size: 20px;
     margin-right: auto;
     margin-left: auto;
     width: 80%;
   }
-  p {
+  p,td {
     font-size: 15px;
   }
   table {
     font-size: 12px;
+    width: 95%;
+    margin: auto;
   }
   th {
     font-size: 15px;

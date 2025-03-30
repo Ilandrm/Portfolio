@@ -62,7 +62,6 @@ const textAvantage = [
   <h3 class="fw-bold d-flex justify-content-around mt-2 responsTitle responsTitleH ">Triangle de securité</h3>
 <img alt ="triangle" class="imgTriangle d-flex justify-content-around mt-5 mx-auto" src="../../public/triangledesecurité.png">
  <BoxeText :text="textTriangle"/>
-  <hr class="w-100"/>
   <TextClassique :text="textAvantage"/>
 </template>
 

@@ -8,7 +8,7 @@ const message = ref("")
 </script>
 
 <template>
-  <div class="d-flex justify-content-center row">
+  <div class=" row divContact">
   <div class="form-container mt-5 col-4">
     <h2 class="form-title">Vous souhaitez prendre rendez-vous ?</h2>
     <form class="formulaire" @submit.prevent>
@@ -114,6 +114,10 @@ const message = ref("")
   background-color: #000b31;
   border-radius: 8px;
   color: white;
+}
+.divContact{
+  display: flex;
+  justify-content: center;
 }
 p{
   font-size: 20px;
@@ -231,5 +235,25 @@ p{
 /* Effet au survol du bouton */
 .submit-btn:hover {
   background-color: rgba(0, 11, 49, 0.74);
+}
+@media (max-width: 768px) {
+  .divContact {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-container, .paliPres {
+    width: 80%;
+    margin: auto;
+  }
+
+  .paliPres {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .paliPres img {
+    width: 50%;
+  }
 }
 </style>

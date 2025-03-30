@@ -15,9 +15,9 @@ const textPartenaire = [{
 <template>
   <h1 class="fw-bold d-flex justify-content-around mt-5 responsTitle">Nos Partenaires</h1>
   <TextClassique :text="textPartenaire"/>
-  <div class="d-flex justify-content-around w-75 mx-auto">
+  <div class="divPartenaires w-75 mx-auto">
     <div
-        class="displayBloc me-5"
+        class="displayBloc"
         :class="{ active: selectedBloc === 'financier' }"
         @click="toggleTitle('financier')"
     >
@@ -46,7 +46,7 @@ const textPartenaire = [{
           :class="{ active: selectedBloc === 'banquaire' }"
           @click="toggleTitle('banquaire')"
       >
-        <h5 class="fw-bold">Partenaires banquaire</h5>
+        <h5 class="fw-bold">Partenaires bancaires</h5>
 
       </div>
 
@@ -239,7 +239,6 @@ const textPartenaire = [{
       </div>
     </transition>
   </div>
-  <hr class="w-100"/>
 
 </template>
 
@@ -262,7 +261,6 @@ img{
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
-  max-width: 25%;
 }
 
 .displayBloc:hover, .displayBloc.active {
@@ -280,5 +278,28 @@ img{
 .fade-enter-from, .fade-leave-to {
   opacity: 0;
   max-height: 0;
+}
+.divPartenaires{
+  display: flex;
+  justify-content: space-around;
+}
+@media (min-width: 768px) {
+  .displayBloc {
+    max-width: 25%;
+  }
+}
+@media (max-width: 768px) {
+  .divPartenaires{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .displayBloc {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  h1{
+    font-size: 25px;
+  }
 }
 </style>

@@ -42,9 +42,9 @@ const toggleTitle = (type: string) => {
     <TextClassique :text="textInvesstissement" title="Investissement personnalisé et diversifié"/>
   </div>
 
-  <div class="d-flex justify-content-center">
+  <div class="divFiscalite">
     <div
-        class="displayBloc me-5"
+        class="displayBloc "
         :class="{ active: selectedBloc === 'FID' }"
         @click="toggleTitle('FID')"
     >
@@ -74,7 +74,6 @@ const toggleTitle = (type: string) => {
 
   <div class="mt-3">
     <TextClassique :text="textGarantis" title="Garantie de remboursement pour protéger votre capital"/>
-    <hr class="w-100 mb-3"/>
   </div>
 </template>
 
@@ -85,14 +84,16 @@ const toggleTitle = (type: string) => {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
-  max-width: 25%;
 }
 
 .displayBloc:hover, .displayBloc.active {
   background-color: #c9a646;
   color: white;
 }
-
+.divFiscalite{
+  display: flex;
+  justify-content: center;
+}
 /* Animation fade-in pour le texte */
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.5s ease, max-height 0.5s ease-in-out;
@@ -104,4 +105,26 @@ const toggleTitle = (type: string) => {
   opacity: 0;
   max-height: 0;
 }
+@media (min-width: 768px) {
+  .displayBloc {
+    max-width: 25%;
+    margin-right: 20px;
+  }
+}
+@media (max-width: 768px ){
+  .divFiscalite{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .displayBloc {
+    max-width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+  }
+}
+
+
+
 </style>

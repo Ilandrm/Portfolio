@@ -16,8 +16,8 @@
       <tbody>
       <tr>
         <td>Loi Sapin 2 applicable (gel des actifs)</td>
-        <td>OUI</td>
         <td>NON</td>
+        <td>OUI</td>
       </tr>
       <tr>
         <td>Ségrégation des comptes (Assureur et assuré)</td>
@@ -26,8 +26,8 @@
       </tr>
       <tr>
         <td>Super privilège (statut de créancier de 1er rang)</td>
-        <td>NON</td>
         <td>OUI</td>
+        <td>NON</td>
       </tr>
       <tr>
         <td>Notation du pays par Standard & Poor's</td>

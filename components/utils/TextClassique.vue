@@ -60,6 +60,8 @@ h4{
 @media (max-width: 768px) {
   h1{
     font-size: 20px;
+    width: 95%;
+    margin: auto;
   }
   h4{
     font-size: 17px;

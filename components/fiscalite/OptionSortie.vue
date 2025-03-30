@@ -3,23 +3,22 @@ import TextClassique from "~/components/utils/TextClassique.vue";
 
 const textOption = [
   {
-    titre:'Les options de sortie et de rachat',
-    paragraphe:'Les options de sortie et de rachat varient en fonction de deux critères\n' +
-        'En cas de vie Le capital investi sur un contrat d’assurance vie Luxembourgeois est totalement liquide.\n' +
-        '\n' +
-        'Le souscripteur peut retirer tout ou partie des montants investis sur son contrat à n’importe quel moment.\n' +
-        '\n' +
-        'Le retrait se fait en capital et est fiscalisé qu’en cas de rachat (retrait).\n' +
-        'La fiscalité dépendra de la résidence fiscale du souscripteur.\n' +
-        '\n' +
-        'Si la résidence fiscale du souscripteur est en France :\n' +
-        'Le souscripteur décide de racheter la totalité des montants investis, la fiscalité sera la suivante :',
+    titre:'',
+    paragraphe:'Il est nécessaire de différencier La fiscalité du rachat en cas de vie du souscripteur du contrat et en cas de décès du souscripteur pour les bénéficiaires du contrat'
+
+    +'\nLa fiscalité en cas de vie du souscripteur du contrat'
+
+    +'\nLe capital investi sur un contrat d’assurance vie Luxembourgeois est totalement liquide. Le souscripteur peut retirer tout ou partie des montants investis sur son contrat à n’importe quel moment. Le retrait se fait en capital et, il n’est fiscalisé qu’en cas de rachat (retrait). La fiscalité dépendra de la résidence fiscale du souscripteur.'
+
+    +'\nSi la résidence fiscale du souscripteur est en France : Le souscripteur décide de racheter la totalité des montants investis, la fiscalité sera la suivante :'
+
   }
 ]
 const textPrev = [
   {
     titre:"",
-    paragraphe:"L'assuré peut faire le choix d'être imposé sur les plus-values soit à partir d'un prélèvement Forfaitaire Libératoire ou bien à partir du barème progressif de l'Impôt sur le revenu."
+    paragraphe:"L'assuré peut faire le choix d'être imposé sur les plus-values soit à partir d'un prélèvement Forfaitaire Libératoire ou bien à partir du barème progressif de l'Impôt sur le revenu.\n" +
+        "\n"
   }
 ]
 const textSouscripteur = [
@@ -120,11 +119,13 @@ h1 {
     margin-left: auto;
     width: 80%;
   }
-  p {
+  p ,td{
     font-size: 15px;
   }
   table {
     font-size: 12px;
+    width: 95%;
+    margin: auto;
   }
   th {
     font-size: 15px;

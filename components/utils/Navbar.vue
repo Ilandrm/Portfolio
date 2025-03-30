@@ -4,11 +4,12 @@ import { ref } from "vue";
 
 const isMobile = useMediaQuery("(max-width: 768px)");
 const items = [
-  { label: "Qui sommes-nous" },
-  { label: "Non résident" },
-  { label: "Triangle de sécurité" },
-  { label: "Comparatif des contrats" },
-  { label: "Fiscalité" }
+  { label: "Qui sommes-nous",link:"qui-sommes-nous" },
+  { label: "Non résident",link:"non-resident" },
+  { label: "Triangle de sécurité",link:"triangle-de-securite" },
+  { label: "Comparatif des contrats",link:"comparatif-des-contrats" },
+  { label: "Fiscalité",link:"fiscalite" },
+  { label: "Contact",link:"contact" }
 ];
 
 const menu = ref(false);
@@ -45,7 +46,9 @@ const menu = ref(false);
 
   <!-- Version Mobile -->
   <nav class="d-flex justify-content-between mobile-menu" v-if="isMobile">
+    <NuxtLink to="/">
     <img src="/LOGO%20PALI%20KAO.png" class="logo" alt="logo" />
+    </NuxtLink>
     <div class="menu-container">
       <Button class="btnBurger mt-5 me-3" icon="pi pi-bars" @click="menu = !menu">
 
@@ -54,7 +57,9 @@ const menu = ref(false);
         <div v-if="menu" class="menu-container-list mt-5">
           <ul>
             <li v-for="item in items" :key="item.label">
+              <NuxtLink :to="item.link">
               <p class="fw-bold">{{ item.label }}</p>
+              </NuxtLink>
             </li>
           </ul>
         </div>
@@ -71,7 +76,7 @@ const menu = ref(false);
   padding: 0;
 }
 .tel p{
-  font-size: 15px;
+  font-size: 18px;
  line-height: 1.5;
 }
 nav {
@@ -153,5 +158,10 @@ a {
 
 .fade-enter-from, .fade-leave-to {
   opacity: 0;
+}
+@media (max-width: 768px) {
+a{
+  color: #fff;
+}
 }
 </style>

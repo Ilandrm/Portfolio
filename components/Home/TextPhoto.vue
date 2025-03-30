@@ -2,7 +2,7 @@
 import { useMediaQuery } from "@vueuse/core";
 
 const isMobile = useMediaQuery("(max-width: 768px)");
-const props = defineProps(["paragraphe"]);
+const props = defineProps(["paragraphe","photo_mobile"]);
 </script>
 
 <template>
@@ -21,13 +21,15 @@ const props = defineProps(["paragraphe"]);
     <div v-if="isMobile">
       <div class="paragraphe widthPreDef me-3 w-100">
         <div>
-          <h1 class="fw-bold d-flex justify-content-center ms-5 w-100">
+          <h1 class="fw-bold d-flex justify-content-center  w-100">
             {{ props.paragraphe.title }}
           </h1>
           <div class="w-100">
             <p v-for="(p, index) in props.paragraphe.text" :key="index">{{ p }}</p>
           </div>
         </div>
+        <img v-if="props.photo_mobile" class="imgPf widthPreDef mx-auto" alt="icone" :src="props.paragraphe.src" />
+
       </div>
     </div>
   </div>
@@ -83,5 +85,9 @@ const props = defineProps(["paragraphe"]);
   .paragraphe p {
     font-size: 15px;
   }
+  .widthPreDef {
+    width: 330px;
+  }
+
 }
 </style>

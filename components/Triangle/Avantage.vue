@@ -40,7 +40,6 @@ import TableComparatif from "~/components/Home/TableComparatif.vue";
     </div>
   </div>
   <ContratComparatif/>
-  <hr class="w-100 mb-3"/>
 
 </template>
 
@@ -80,5 +79,15 @@ h3{
   flex: 1 1 300px;
   max-width: 400px;
 }
+@media (max-width: 768px) {
+  h1 {
+    font-size: 20px;
+    width: 95%;
+    margin: auto;
+  }
+  h2{
+    font-size: 19px;
+  }
 
+  }
 </style>

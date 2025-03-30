@@ -186,10 +186,6 @@ const cardif_avantage = {
     "Possibilité d’investir 100% Fonds Euro. Nom réassuré et ainsi non éligible à la loi Sapin 2.",
     "Large gamme de fonds disponible."
   ],
-  inconvenient: [
-    "ETF non disponibles en gestion libre.",
-    "Face non disponible."
-  ]
 };
 const wealins_note = [
   {
@@ -233,7 +229,6 @@ const wealins_avantage = {
   ],
   inconvenient: [
     "Absence de fonds en euros.",
-    "Absence d'ETF en gestion libre."
   ]
 }
 
@@ -282,7 +277,7 @@ const generali_avantage = {
     "Digitalisation (offrant un accès permanent à votre épargne)."
   ],
   inconvenient: [
-    "Accès au private equity limité aux clients de Catégorie D."
+    "Produits structurés de campagne peu nombreux"
   ]
 };
 

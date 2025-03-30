@@ -115,13 +115,17 @@ const isMobile = useMediaQuery("(max-width: 768px)");
 
     <div v-else-if="props.triangle" class="d-flex justify-content-center align-self-center mt-5">
       <div class="align-self-center">
-        <h1 class="fw-bold ms-3 mb-0">Triangle de sécurité pour les assurances-vie au Luxembourg</h1>
+        <h1 class="fw-bold ms-3 mb-0">Triangle de sécurité</h1>
+        <h1 class="fw-bold ms-3 mb-0">pour les assurances-vie au Luxembourg</h1>
+
         <img class="imgSubject" src="public/Icontriangle.png" alt="logo">
       </div>
     </div>
   <div v-else-if="props.comparatif" class="d-flex justify-content-center align-self-center mt-5">
     <div class="align-self-center">
-      <h1 class="fw-bold ms-3 mb-0">Assurance vie Luxembourg : Comparatif des meilleures offres en 2025</h1>
+      <h1 class="fw-bold ms-3 mb-0">Assurance vie Luxembourg</h1>
+      <h1 class="fw-bold ms-3 mb-0">Comparatif des meilleures offres</h1>
+
       <img class="imgSubject" src="public/comparatif.png" alt="logo">
     </div>
   </div>

@@ -85,16 +85,10 @@ const textInconvenients= [
     </div>
     <div class="card disadvantage">
       <img class="icon" src="../../public/fid.png" alt="icon">
-      <h3>Absence de fonds euro</h3>
+      <h3>Absence de fonds euro dans certains contrats</h3>
       <p>Le fonds euro n’est proposé que par une partie des compagnies d’assurance luxembourgeoises. En fonction de l’aversion aux risques de chaque souscripteur, il est important de s’assurer de sa présence ou non sur le contrat.</p>
     </div>
-    <div class="card disadvantage">
-      <img class="icon" src="../../public/contrat.png" alt="icon">
-      <h3>Investissement long terme</h3>
-      <p>Un contrat d’assurance vie n’est pas un compte-titres où des arbitrages peuvent être réalisés de manière régulière. Il est important d’avoir une allocation d’actifs qui a du sens sur le long terme.</p>
-    </div>
   </div>
-  <hr class="w-100 mb-3"/>
 
 </template>
 

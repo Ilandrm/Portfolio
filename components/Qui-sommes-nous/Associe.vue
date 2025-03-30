@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import TextPhoto from "~/components/Home/TextPhoto.vue";
-
 const textDavid = {
   title:'David Sitbon',
   sub:'President Fondateur',
@@ -28,8 +27,8 @@ const textRemi = {
 
 <template>
   <h1 class="d-flex justify-content-around fw-bold mt-5 responsTitle">Nos associés et nos partenaires</h1>
-  <TextPhoto :paragraphe="textDavid" />
-  <TextPhoto :paragraphe="textRemi" />
+  <TextPhoto :paragraphe="textDavid" :photo_mobile="true"/>
+  <TextPhoto :paragraphe="textRemi" :photo_mobile="true"/>
 </template>
 
 <style scoped>
@@ -37,5 +36,9 @@ const textRemi = {
 h1{
   font-size: 30px;
 }
-
+@media (max-width: 768px) {
+  h1 {
+    font-size: 25px;
+  }
+}
 </style>

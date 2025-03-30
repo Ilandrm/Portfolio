@@ -3,19 +3,25 @@ import TextClassique from "~/components/utils/TextClassique.vue";
 
 const textDonation = [
   {
-    titre:'Fiscalité sur les successions et les donations',
-    paragraphe:'Une des caractéristiques du contrat d’assurance vie est sa clause bénéficiaire.\n' +
-        '\n' +
-        'Ainsi en cas de décès du souscripteur, le(s) bénéficiaire(s) du contrat (explicitement notifié dans la clause) recevra les sommes investies sur le contrat d’assurance vie du souscripteur.\n' +
-        '\n' +
-        'La somme reçue par le bénéficiaire bénéficie d’une exonération en France pour un montant allant jusqu’à 152 500 euros, si les versements du souscripteur ont lieu avant 70 ans. La particularité du contrat d’assurance vie Luxembourgeois est la neutralité fiscale en cas de décès.\n' +
-        '\n' +
-        'Ainsi, Le droit civil luxembourgeois ne taxe pas les capitaux décès versés aux bénéficiaires dès lors que l’assuré n’est pas résident fiscal luxembourgeois. La succession du défunt ne supportera que les droits de succession de son lieu de résidence, ou celle du ou des bénéficiaire(s).'
-  },
+    titre:'Précisions sur la fiscalité en cas de décès :',
+    paragraphe:"Une des caractéristiques du contrat d’assurance vie est sa clause bénéficiaire. Ainsi, en cas de décès du souscripteur, le(s) bénéficiaire(s) du contrat (explicitement notifié dans la clause) recevra les sommes investies sur le contrat d’assurance vie du souscripteur.\n\n" +
+"La somme reçue par le bénéficiaire bénéficie d’une exonération en France pour un montant allant jusqu’à 152 500 euros, si les versements du souscripteur ont lieu avant 70 ans.\n\n" +
+"La particularité du contrat d’assurance vie luxembourgeois est la neutralité fiscale en cas de décès. Ainsi, le droit civil luxembourgeois ne taxe pas les capitaux décès versés aux bénéficiaires dès lors que l’assuré n’est pas résident fiscal luxembourgeois.\n\n" +
+"La succession du défunt ne supportera que les droits de succession de son lieu de résidence, ou celle du ou des bénéficiaire(s)."
+},
 ]
+const textSouscripteur = [
+  {
+    titre: "Fiscalité en cas de décès du souscripteur pour les bénéficiaires du contrat",
+    paragraphe:
+        "Le souscripteur du contrat rédige (par l’aide de son conseiller) une clause bénéficiaire au moment de la souscription de son contrat (elle peut être modifiée jusqu’au décès du souscripteur). Cette clause bénéficiaire permettra d’identifier les bénéficiaires du contrat en cas de décès du souscripteur.\n\n" +
+        "Ainsi, les capitaux investis sur le contrat seront versés aux bénéficiaires du contrat. Si le souscripteur du contrat est français et le bénéficiaire français, la fiscalité sera la suivante."
+  }
+];
 </script>
 
 <template>
+  <TextClassique :text="textSouscripteur"/>
   <h1 class="fw-bold d-flex justify-content-around">La fiscalité en cas de décès </h1>
   <table class="mx-auto mt-3 mb-3">
     <thead>
@@ -27,29 +33,43 @@ const textDonation = [
     </thead>
     <tbody>
     <tr>
-      <td rowspan="2">Contrats souscrits avant le 20 novembre 1991</td>
-      <td>Avant le 13 octobre 1998</td>
-      <td>Pas de taxation</td>
+      <td rowspan="2">Contrats souscrits avant le 20 novembre 1991
+      </td>
+      <td class="gold">Avant le 13 octobre 1998</td>
+      <td class="gold">A compter du 13 octobre 1998</td>
     </tr>
     <tr>
-      <td>A compter du 13 octobre 1998</td>
+      <td>Pas de taxation</td>
       <td>Prélèvement de 20% au-delà de 152 500 euros, article 990I</td>
     </tr>
     <tr>
-      <td rowspan="3">Contrats souscrits à compter du 20 novembre 1991</td>
-      <td>Primes versées avant 70 ans</td>
-      <td>
-        <p>Pas de taxation</p>
+      <td rowspan="1" class="noPad">Contrats souscrits à compter du 20 novembre 1991
+      </td>
+      <td class="noPad"></td>
+      <td rowspan="3">
         <p>Prélèvement de 20% au-delà de 152 500 euros, Article 990I</p>
+
         <p>Prélèvement de 31,25% au-delà de 852 500 euros</p>
       </td>
     </tr>
     <tr>
-      <td>Primes versées après 70 ans</td>
-      <td>Droit de mutation par décès sur la fraction des primes qui excède 30 500 euros, Article 757B (exonération des plus-values)</td>
+      <td class="noPad">
+        Primes versées avant 70 ans
+      </td>
+      <td class="noPad">
+        <p>Pas de taxation</p>
+      </td>
+
+    </tr>
+    <tr>
+      <td class="noPad">Primes versées après 70 ans</td>
+      <td >     Droit de mutation par décès sur la fraction des primes qui excède 30 500 euros, Article 757B (exonération des plus-values)
+      </td>
+
     </tr>
     </tbody>
   </table>
+
   <TextClassique :text="textDonation"/>
 </template>
 
@@ -77,17 +97,28 @@ table {
   width: 50%;
 }
 
-tr, td {
+
+td:not(.noPad){
   background-color: #000b31;
   padding: 15px;
   border: 3px solid white;
 }
-
 h1 {
   font-size: 30px;
 }
 
+.gold{
+  color: #c9a646;
+}
+.noPad{
+  background-color: #000b31;
+  padding: 15px;
+  border-bottom: none !important;
+  border-right: 3px solid white;
+  border-left: 3px solid white;
 
+
+}
 @media (max-width:768px) {
   h1 {
     font-size: 20px;
@@ -96,10 +127,15 @@ h1 {
     width: 80%;
   }
   p {
-    font-size: 15px;
+    font-size: 12px;
+  }
+  td{
+    font-size: 12px;
   }
   table {
     font-size: 12px;
+    width: 95%;
+    margin: auto;
   }
   th {
     font-size: 15px;

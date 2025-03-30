@@ -70,7 +70,7 @@ const textDevises = [
 </script>
 
 <template>
-<TextClassique :text="textPourquoi" title="Pourquoi comparer les offres d'assurance vie au Luxembourg en 2025"/>
+<TextClassique :text="textPourquoi" title="Pourquoi comparer les offres d'assurance vie au Luxembourg"/>
   <TextClassique :text="textCritere" title="Les critères à prendre en compte pour choisir une assurance vie au Luxembourg"/>
   <TextClassique :text="textFrais" title="Les frais liés à l'assurance vie"></TextClassique>
   <div class="container mb-5">
@@ -82,7 +82,7 @@ const textDevises = [
         <li>Ces derniers sont fixes et ne sont à régler qu'une fois, au moment de la souscription</li>
         <li>Les frais d'entrée ne sont pas obligatoires et leur montant varie selon les intermédiaires ou compagnies d'assurance</li>
       </ul>
-      <p class="fw-bold">Pali Kao Capital ne prend aucun frais d'entrée sur l'ouverture de contrat d'assurance vie.</p>
+      <p class="fw-bold text-black">Pali Kao Capital ne prend aucun frais d'entrée sur l'ouverture de contrat d'assurance vie.</p>
     </div>
 
     <div class="card advantage">
@@ -92,7 +92,7 @@ const textDevises = [
       <ul>
         <li>Ces versements varient de 0 à 4% selon les intermédiaires</li>
       </ul>
-      <p class="fw-bold">Pali Kao Capital ne prend aucun frais sur versement, à l'exception des frais minimum requis par l'assureur pour les versements programmés.</p>
+      <p class="fw-bold text-black">Pali Kao Capital ne prend aucun frais sur versement, à l'exception des frais minimum requis par l'assureur pour les versements programmés.</p>
     </div>
 
     <div class="card advantage">
@@ -103,7 +103,7 @@ const textDevises = [
         <li>Chaque contrat d'assurance vie a des frais de gestion</li>
         <li>Contrairement à son cousin français, les frais de gestion peuvent être négociés dans un contrat d'assurance vie Luxembourgeois et sont proportionnels au montant investi</li>
       </ul>
-      <p class="fw-bold">Les frais de gestion servent à rémunérer les compagnies d'assurance, les back office, le gestionnaire du fonds euros etc..</p>
+      <p class="fw-bold text-black">Les frais de gestion servent à rémunérer les compagnies d'assurance, les back office, le gestionnaire du fonds euros etc..</p>
     </div>
 
     <div class="card advantage">
@@ -115,7 +115,7 @@ const textDevises = [
         <li>Ils sont variables d'une compagnie à l'autre, proportionnels au montant de l'épargne arbitrée (entre 0 et 1%)</li>
         <li>Certains contrats d'assurance vie appliquent un nombre d'arbitrages gratuits par an</li>
       </ul>
-      <p class="fw-bold">Pali Kao Capital ne prend aucun frais d'arbitrage sur les contrats d'assurance vie, autres que le minimum requis par la compagnie d'assurance.</p>
+      <p class="fw-bold text-black">Pali Kao Capital ne prend aucun frais d'arbitrage sur les contrats d'assurance vie, autres que le minimum requis par la compagnie d'assurance.</p>
     </div>
   </div>
   <TextClassique :text="textSupport"/>

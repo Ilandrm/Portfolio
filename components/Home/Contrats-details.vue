@@ -58,7 +58,7 @@ const sendEmit = () => {
             </div>
           </div>
 
-          <div class="d-flex col-3 d-flex justify-content-center">
+          <div class="d-flex col-3 d-flex justify-content-center" v-if="props.avantage.inconvenient">
             <div class="w-100 mt-2">
               <i class="pi pi-minus-circle mb-2" style="font-size: 30px; display: flex; justify-content: center" />
               <div class="mt-4">

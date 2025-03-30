@@ -28,8 +28,8 @@
 
       Cette protection du souscripteur a été renforcée en août 2018 par un cloisonnement individuel des avoirs du souscripteur auprès de la banque dépositaire.</p>
   </div>
-  <div class="cardPrivilege mx-auto w-50">
-    <div class="text-start">
+  <div class="cardPrivilege mx-auto">
+    <div class="text-start divPrivilege">
       <div class="d-flex justify-content-center mb-3">
         <img class="icone me-3" alt="icone" src="public/icone_privilege.png">
     <h1 class="fw-bold align-self-center text-start">Qu’est-ce que le « super-privilège » ? </h1>
@@ -66,6 +66,7 @@
   padding: 1%;
   border-radius: 7px;
   background-color: rgba(201, 166, 70, 0.1);
+  width: 50%;
 }
 .text-block p , .blue-text-block p{
   font-size: 20px;
@@ -86,6 +87,8 @@ h4{
 @media (max-width: 768px) {
   h1{
     font-size: 20px;
+    width: 95%;
+    margin: auto;
   }
   h4{
     font-size: 17px;
@@ -96,5 +99,12 @@ h4{
   .text-block,.blue-text-block {
     width: 80%;
   }
+  .icone{
+    object-fit: contain;
+  }
+  .cardPrivilege{
+    width: 90%;
+  }
+
 }
 </style>

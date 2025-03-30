@@ -10,7 +10,7 @@ const textNeutre = [
 <template>
   <div class="mt-5">
     <TextClassique :text="textNeutre" title="Pourquoi souscrire à une assurance vie au Luxembourg en tant que non-résident ?"/>
-    <div class="d-flex justify-content-around text-center divGLobal mt-5">
+    <div class="divIcoSouscription text-center divGLobal mt-5">
       <div class=" text-center divIco">
         <img class="icone_neutre d-block mx-auto mb-3" alt="icone" src="../../public/life_neutrality.png">
         <h4 class="fw-bold">Neutralité fiscale en cas de vie</h4>
@@ -40,7 +40,10 @@ const textNeutre = [
   filter: brightness(0) saturate(100%) invert(65%) sepia(63%) saturate(406%) hue-rotate(8deg) brightness(94%) contrast(84%);
 
 }
-
+.divIcoSouscription{
+  display: flex;
+  justify-content: space-around;
+}
 
 .divIco {
   width: fit-content;
@@ -48,7 +51,14 @@ const textNeutre = [
 }
 .divGLobal{
   width: 90%;
-
+}
+@media (max-width: 768px) {
+  .divIcoSouscription{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: auto;
+  }
 }
 </style>
 

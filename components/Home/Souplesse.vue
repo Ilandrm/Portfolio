@@ -74,12 +74,10 @@ const textFI = [
   <div class="mt-5">
 <TextClassique :text="textSouplesse" :bigger="true"/>
 <TextClassique :text="textPluralite" :blue_b="true"/>
-<hr class="w-100 mb-5"/>
     <TextClassique :text="textGestionLibre" :noHr="true" title="La gestion libre"/>
 
     <TextClassique :text="textGestionMandat" :noHr="true" title="La gestion dédiée ou sous-mandat"/>
     <TextClassique :text="textFI" :noHr="true" title="Les fonds d’investissement disponibles"/>
-    <hr class="w-100 mb-3"/>
 
   </div>
 </template>

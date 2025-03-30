@@ -7,6 +7,7 @@ import TextClassique from "~/components/utils/TextClassique.vue";
 <template>
   <div class="mt-5">
     <h1 class="fw-bold d-flex justify-content-around d-flex justify-content-around">Comparaison des compagnies d'assurance offrant l'assurance vie au Luxembourg pour non-résident</h1>
+<div class="w-100 divTable">
     <table class="mx-auto mt-3">
       <thead>
       <tr class="header-images">
@@ -40,12 +41,12 @@ import TextClassique from "~/components/utils/TextClassique.vue";
       </tr>
       <tr>
         <td>Versement minimum FAS</td>
-        <td>125 000 €</td>
-        <td>125 000 €</td>
-        <td>125 000 €</td>
-        <td>125 000 €</td>
-        <td>125 000 €</td>
-        <td>125 000 €</td>
+        <td>250 000 €</td>
+        <td>250 000 €</td>
+        <td>250 000 €</td>
+        <td>250 000 €</td>
+        <td>250 000 €</td>
+        <td>250 000 €</td>
       </tr>
       <tr>
         <td>Capitaux administrés</td>
@@ -129,7 +130,7 @@ import TextClassique from "~/components/utils/TextClassique.vue";
       </tbody>
     </table>
   </div>
-
+  </div>
 </template>
 
 <style scoped>
@@ -169,21 +170,30 @@ h1{
   font-size: 30px;
 }
 
-@media (max-width:768px){
-  h1{
-    font-size:20px;
-    margin-right:auto;
-    margin-left:auto;
-    width:80%
+@media (max-width:768px) {
+  h1 {
+    font-size: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%
   }
-  p{
-    font-size:15px;
+
+  td {
+    font-size: 12px;
   }
-  table{
-    font-size:12px;
+
+  table {
+    font-size: 12px;
+    max-width: 100%;
   }
-  th{
-    font-size:15px;
+
+  th {
+    font-size: 15px;
   }
+  .divTable{
+    overflow-x: auto;
+
+  }
+
 }
 </style>

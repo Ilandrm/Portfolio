@@ -38,7 +38,7 @@ const textFaq = [
         'Ces derniers orienteront le souscripteur vers le contrat répondant au mieux à ses objectifs.'
   },
   {
-    quest:'Quels sont les avantages de souscrire une assurance vie au Luxembourg en 2023 ?',
+    quest:'Quels sont les avantages de souscrire une assurance vie au Luxembourg ?',
     asnw:'L’assurance vie au Luxembourg se définit par\n' +
         'La sécurité du contrat, \n' +
         'Sa souplesse de sa gestion et de sa fiscalité'

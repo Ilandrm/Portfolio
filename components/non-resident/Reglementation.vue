@@ -46,7 +46,6 @@ const textregul = [{
 <template>
   <div class="mt-5">
     <TextClassique :text="textEvo"/>
-    <hr class="w-100 mb-3"/>
 
   </div>
   <div class="mt-2 mb-3">
@@ -59,5 +58,12 @@ const textregul = [{
 <style scoped>
 h1{
   font-size: 25px;
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 20px;
+    width: 90%;
+    margin:auto;
+  }
 }
 </style>
