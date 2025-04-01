@@ -3,7 +3,10 @@ import {Formulaire} from "#components";
 import Navbar from "~/components/utils/Navbar.vue";
 import HeadHome from "~/components/utils/HeadHome.vue";
 import Footer from "~/components/utils/Footer.vue";
-
+useSeoMeta({
+  title: 'Pali Kao Capital - Formulaire de contact',
+  description: 'Vous voulez prendre rendez-vous ? Contactez-nous.',
+});
 </script>
 
 <template>

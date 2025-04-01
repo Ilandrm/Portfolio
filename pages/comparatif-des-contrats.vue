@@ -1,5 +1,8 @@
 <script setup lang="ts">
-
+useSeoMeta({
+  title: 'Pali Kao Capital - Comparatif des contrats',
+  description: 'L’assurance vie au Luxembourg est une enveloppe fiscale qui, comme son voisin français, permet au souscripteur de se constituer, de valoriser un capital, et de le transmettre. Cependant, il comporte certaines particularités qui lui confère plus de sécurité et de flexibilité.'
+});
 import Navbar from "~/components/utils/Navbar.vue";
 import HeadHome from "~/components/utils/HeadHome.vue";
 import TextClassique from "~/components/utils/TextClassique.vue";

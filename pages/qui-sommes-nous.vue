@@ -1,5 +1,8 @@
 <script setup lang="ts">
-
+useSeoMeta({
+  title: 'Pali Kao Capital - Qui sommes nous ?',
+  description: 'Pour bien exercer son métier, le CGP doit cumuler plusieurs compétences et exercer plusieurs métiers.'
+});
 import Navbar from "~/components/utils/Navbar.vue";
 import HeadHome from "~/components/utils/HeadHome.vue";
 import Associe from "~/components/Qui-sommes-nous/Associe.vue";

@@ -3,15 +3,16 @@ import TextClassique from "~/components/utils/TextClassique.vue";
 
 const textOption = [
   {
-    titre:'',
-    paragraphe:'Il est nécessaire de différencier La fiscalité du rachat en cas de vie du souscripteur du contrat et en cas de décès du souscripteur pour les bénéficiaires du contrat'
-
-    +'\nLa fiscalité en cas de vie du souscripteur du contrat'
-
-    +'\nLe capital investi sur un contrat d’assurance vie Luxembourgeois est totalement liquide. Le souscripteur peut retirer tout ou partie des montants investis sur son contrat à n’importe quel moment. Le retrait se fait en capital et, il n’est fiscalisé qu’en cas de rachat (retrait). La fiscalité dépendra de la résidence fiscale du souscripteur.'
-
-    +'\nSi la résidence fiscale du souscripteur est en France : Le souscripteur décide de racheter la totalité des montants investis, la fiscalité sera la suivante :'
-
+    titre:'Fiscalité des rachats total ou partiel',
+    paragraphe:'Il est nécessaire de différencier La fiscalité du rachat en cas de vie du souscripteur du contrat\n et en'+
+    ' cas de décès du souscripteur pour les bénéficiaires du contrat.\n'+
+    '\n<p class="fw-bold" style="font-size: 24px">1/La fiscalité des rachats en cas de vie du souscripteur du contrat</p>'+
+ ' Le capital investi sur un contrat d’assurance vie Luxembourgeois est totalement liquide. Le'+
+'souscripteur peut retirer tout ou partie des montants investis sur son contrat à n’importe quel'+
+'moment. Le retrait se fait en capital et, il n’est fiscalisé qu’en cas de rachat (retrait).'+
+    'La fiscalité dépendra de la résidence fiscale du souscripteur.'+
+    '\nSi la résidence fiscale du souscripteur est en France et si le souscripteur décide de ' +
+        'racheter la totalité des montants investis, la fiscalité sera la suivante :'
   }
 ]
 const textPrev = [
@@ -24,15 +25,7 @@ const textPrev = [
 const textSouscripteur = [
   {
     titre:"",
-    paragraphe:"Si le souscripteur décide d’effectuer un rachat partiel, seule la quote-part des plus-values réalisée et des intérêts produits sont imposables.\n" +
-        "L’administration fiscale considère que le retrait est composé d’une partie en capital et d’une partie de plus-value (si le contrat est bénéficiaire). Seule la partie en plus-value est fiscalisée.\n" +
-        "\n" +
-        "Exemple : le souscripteur a versé 10 000 Euros sur son contrat, au bout de 2 ans celui-ci est à 11 000 euros. Soit un gain de 1000 Euros.\n" +
-        "\n" +
-        "Si le souscripteur décide de retirer 1000 Euros, soit plus ou moins 10% de la totalité de son contrat.\n" +
-        "L’administration fiscale considère qu’il a retiré 90% de capital et 10% de plus-values (1000 euros de retrait/ 10 000 euros versés, soit 10%). Ainsi il ne sera fiscalisé que\n" +
-        "sur 10% de 1000 Euros, soit 100 euros.\n" +
-        "Les 100 Euros seront fiscalisé de la manière suivante :"
+    paragraphe:""
   }
 ]
 </script>

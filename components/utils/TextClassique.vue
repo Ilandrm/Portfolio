@@ -7,7 +7,7 @@ const props = defineProps(['text','blue_b','noHr','title','border']);
   <div v-for="(line, index) in props.text" :key="index" class="text-block mx-auto" :class="{'blue-text-block':props.blue_b, 'borderText': props.border}">
     <h4 class="fw-bold mb-3" v-if="line.titre">{{ line.titre.toUpperCase() }}</h4>
     <p class="fw-bold mx-auto" v-if="line.sub">{{ line.sub }}</p>
-    <p class="mx-auto">{{ line.paragraphe }}</p>
+    <p class="mx-auto" v-html="line.paragraphe"></p>
     <div class="mt-3" v-if="line.list" >
       <ul class="list-unstyled align-self-baseline text-start ">
         <li class="mt-3" v-for="li in line.list"><h5>- {{ li }}</h5></li>

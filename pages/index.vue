@@ -1,5 +1,8 @@
 <script setup lang="ts">
-
+useSeoMeta({
+  title: 'Pali Kao Capital - Assurance vie luxembourg',
+  description: 'L’assurance-vie luxembourgeoise est un contrat d’assurance vie souscrit auprès d’une compagnie d’assurance luxembourgeoise. Ce contrat permet à l’assuré de placer son épargne dans des fonds d’investissement (OPC, SICAV, FCP, etc.) gérés par la compagnie d’assurance.',
+});
 import Navbar from "~/components/utils/Navbar.vue";
 import HeadHome from "~/components/utils/HeadHome.vue";
 import TextPhoto from "~/components/Home/TextPhoto.vue";

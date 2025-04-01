@@ -1,5 +1,8 @@
 <script setup lang="ts">
-
+useSeoMeta({
+  title: 'Pali Kao Capital - Triangle de securité',
+  description: 'Le triangle de sécurité assure la séparation entre les avoirs du souscripteur du contrat, et les actifs des actionnaires et autres créanciers de la compagnie d’assurances.'
+});
 import Navbar from "~/components/utils/Navbar.vue";
 import HeadHome from "~/components/utils/HeadHome.vue";
 import Fonctionnement from "~/components/Triangle/Fonctionnement.vue";

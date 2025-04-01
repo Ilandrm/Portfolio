@@ -23,53 +23,33 @@ const textSouscripteur = [
 <template>
   <TextClassique :text="textSouscripteur"/>
   <h1 class="fw-bold d-flex justify-content-around">La fiscalité en cas de décès </h1>
-  <table class="mx-auto mt-3 mb-3">
-    <thead>
+  <table class="w-50 mx-auto">
     <tr>
-      <th class="medium-col">Date de souscription du contrat</th>
-      <th class="small-col">Primes versées</th>
-      <th class="large-col">Fiscalité</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td rowspan="2">Contrats souscrits avant le 20 novembre 1991
-      </td>
-      <td class="gold">Avant le 13 octobre 1998</td>
-      <td class="gold">A compter du 13 octobre 1998</td>
+      <th>Date</th>
+      <th>Contrats souscrits avant le 20/11/91</th>
+      <th colspan="2">Contrats souscrits depuis le 20/11/91</th>
     </tr>
     <tr>
-      <td>Pas de taxation</td>
-      <td>Prélèvement de 20% au-delà de 152 500 euros, article 990I</td>
+      <td>Age de l'assuré lors du versement des primes</td>
+      <td>Quel que soit l’âge de l’assuré</td>
+      <td>les primes ont été versées avant les 70 ans de l’assuré</td>
+      <td>les primes ont été versées après les 70 ans de l’assuré</td>
     </tr>
     <tr>
-      <td rowspan="1" class="noPad">Contrats souscrits à compter du 20 novembre 1991
-      </td>
-      <td class="noPad"></td>
-      <td rowspan="3">
-        <p>Prélèvement de 20% au-delà de 152 500 euros, Article 990I</p>
 
-        <p>Prélèvement de 31,25% au-delà de 852 500 euros</p>
-      </td>
+      <td>Primes versées jusqu’au 12/10/98</td>
+      <td>Aucune taxation</td>
+      <td>Aucune taxation</td>
+      <td>Droits de succession sur le montant des primes dépassant 30 500 € (tous contrats et bénéficiaires confondus)</td>
     </tr>
     <tr>
-      <td class="noPad">
-        Primes versées avant 70 ans
-      </td>
-      <td class="noPad">
-        <p>Pas de taxation</p>
-      </td>
-
+      <td>Primes versées depuis le 13/10/98</td>
+      <td>Prélèvement de 20 % ou 31,25 % sur les capitaux reçus dépassant 152 500 € par bénéficiaire</td>
+      <td>Prélèvement de 20 % ou 31,25 % sur les capitaux reçus dépassant 152 500 € par bénéficiaire</td>
+      <td>Droits de succession sur le montant des primes dépassant 30 500 € (tous contrats et bénéficiaires confondus)</td>
     </tr>
-    <tr>
-      <td class="noPad">Primes versées après 70 ans</td>
-      <td >     Droit de mutation par décès sur la fraction des primes qui excède 30 500 euros, Article 757B (exonération des plus-values)
-      </td>
-
-    </tr>
-    </tbody>
   </table>
-
+<br/>
   <TextClassique :text="textDonation"/>
 </template>
 

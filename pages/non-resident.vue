@@ -8,7 +8,10 @@ import FiscaliteResident from "~/components/non-resident/FiscaliteResident.vue";
 import ExplicationSouscription from "~/components/non-resident/ExplicationSouscription.vue";
 import Reglementation from "~/components/non-resident/Reglementation.vue";
 import AvantageSouscription from "~/components/non-resident/AvantageSouscription.vue";
-
+useSeoMeta({
+  title: 'Pali Kao Capital - Non resident',
+  description: 'Toute personne physique peu importe son domicile fiscal peut souscrire un contrat d’assurance vie au Luxembourg.'
+});
 const textFaq = [
   {
     quest:'Qui peut souscrire à une assurance vie au Luxembourg en tant que non-résident ?',
