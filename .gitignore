@@ -5,7 +5,7 @@
 .nitro
 .cache
 dist
-
+serveur/.env
 # Node dependencies
 node_modules
 
@@ -19,7 +19,7 @@ logs
 .idea
 
 # Local env files
-.env
+serveur/.env
 .env.*
 !.env.example
 # Logs
@@ -97,7 +97,7 @@ web_modules/
 .yarn-integrity
 
 # dotenv environment variable files
-.env
+serveur/.env
 .env.development.local
 .env.test.local
 .env.production.local

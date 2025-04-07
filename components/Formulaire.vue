@@ -1,17 +1,35 @@
 <script setup>
 import { ref } from 'vue'
+import axios from "axios";
 
 const nom = ref("")
 const prenom = ref("")
 const email = ref("")
 const message = ref("")
+
+const envoyerMessage = async () => {
+  try {
+    await axios.post('http://localhost:3001/send-email', {
+      nom: nom.value,
+      prenom: prenom.value,
+      email: email.value,
+      message: message.value
+    })
+    nom.value = ""
+    prenom.value = ""
+    email.value = ""
+    message.value = ""
+  } catch (error) {
+    console.error(error)
+  }
+}
 </script>
 
 <template>
   <div class=" row divContact">
   <div class="form-container mt-5 col-4">
     <h2 class="form-title">Vous souhaitez prendre rendez-vous ?</h2>
-    <form class="formulaire" @submit.prevent>
+    <form class="formulaire"  @submit.prevent="envoyerMessage">
       <!-- Ligne 1 : Prénom et Nom -->
       <div class="row">
         <!-- Champ Prénom -->
