@@ -19,7 +19,7 @@ const copyToClip = () =>{
       <button class="emailbtn">{{ email }}</button>
       <button class="copyEmailBtn" @click="copyToClip">{{ textCopy }}</button>
       </div>
-      <button class="copyEmailBtn ms-2">CV</button>
+      <button class="copyEmailBtn ms-2"><a href="CV Ilan Darmon.pdf">CV</a></button>
     </div>
     <div class="linkSection d-flex me-5">
       <a href="https://www.linkedin.com/in/ilan-darmon-0889ab1a0/" class="me-2">Linkedin </a>
@@ -43,8 +43,16 @@ const copyToClip = () =>{
   border-radius: 30px;
 
 }
-nav{
-  background-color: #EEEDEC;
+a{
+  color: black;
+  text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+  }
+  &:visited{
+    color: black;
+
+  }
 }
 .linkSection {
   align-items: center;

@@ -1,105 +1,92 @@
 <script setup lang="ts">
-import { onMounted, ref, nextTick } from "vue";
+import { onMounted, ref } from "vue";
 
 const images = ref<string[]>([]);
-const carouselRef = ref<HTMLElement | null>(null);
-const isAnimating = ref(false);
-onMounted(async () => {
+
+onMounted(() => {
   images.value = [
-    "icon/Angular.png",
-    "icon/cpp.png",
-    "icon/Java.png",
-    "icon/laravel-icon.png",
-    "icon/mongodb-logo.png",
-    "icon/Vue.png",
-    "icon/nodejs-logo.png",
-    "icon/symfony-icon.png",
+    'projects/concorde.png',
+    'projects/icon_petitbach.png',
+    'projects/LOGO PALI KAO.png',
+    'projects/lookup.png',
+    'projects/suki4.png',
+    'projects/mask8.png',
+    'projects/saveTheExam.png',
   ];
-
-  await nextTick();
-
-  startCarousel();
 });
-
-function startCarousel() {
-  const carousel = carouselRef.value;
-
-  if (!carousel) return;
-
-  isAnimating.value = true;
-
-  const scrollStep = 1;
-  const interval = 16;
-  const totalScrollWidth = carousel.scrollWidth / 2;
-
-  let currentScroll = 0;
-
-  const scrollInterval = setInterval(() => {
-    if (!isAnimating.value) {
-      clearInterval(scrollInterval);
-      return;
-    }
-
-    currentScroll += scrollStep;
-
-    if (currentScroll >= totalScrollWidth) {
-      currentScroll = 0;
-      carousel.scrollLeft = 0;
-    } else {
-      carousel.scrollLeft = currentScroll;
-    }
-  }, interval);
-}
-
-function stopCarousel() {
-  isAnimating.value = false;
-}
 </script>
 
 <template>
   <div class="d-flex justify-content-center container-head">
     <div>
-    <div class=" d-flex justify-content-center image-container mb-2">
-      <img src="../assets/image.png" alt="Image" class="pdp">
-      <div class="bubble">
-        😁 Ilan Darmon
+      <div class="d-flex justify-content-center image-container mb-2">
+        <img src="../assets/image.png" alt="Image" class="pdp">
+        <div class="bubble">😁 Ilan Darmon</div>
       </div>
-    </div>
-    <div class="d-flex justify-content-center mb-3 ">
-    <h1 class="brandTitle ">"Ne jamais s'arreter d'apprendre"</h1>
-    </div>
+
+      <div class="d-flex justify-content-center mb-3">
+        <h1 class="brandTitle">"Développeur web fullstack"</h1>
+      </div>
+
       <div class="d-flex justify-content-center">
-      <button class="lastProject">
-        Projets
-      </button>
+        <button class="lastProject">Dernier projet</button>
       </div>
     </div>
   </div>
-  <div class="carousel-container" @mouseenter="stopCarousel" @mouseleave="startCarousel">
-    <div class="carousel" ref="carouselRef">
-      <img
-          class="iconDev"
-          v-for="(image, index) in [...images, ...images]"
-          :key="index"
-          :src="image"
-          alt="Image"
-      />
+
+  <div class="carousel-wrapper mx-auto">
+    <div class="carousel-container">
+      <div class="carousel">
+        <img
+            class="iconDev"
+            v-for="(image, index) in [...images, ...images]"
+            :key="index"
+            :src="image"
+            alt="Image"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="paragraphe w-100 mt-5">
+    <h2 class="fw-bold d-flex justify-content-center">A propos de moi...</h2>
+    <div class="d-flex justify-content-center mt-4">
+      <div>
+    <p>Salut , je suis Ilan Darmon, un passionné d'informatique et étudiant dans ce domaine fascinant.</p>
+    <p>Ce portfolio vous offre un aperçu détaillé de mes compétences, </p>
+    <p>de mon parcours académique ainsi que des projets informatiques auxquels j'ai participé.</p>
+    <p>Si vous cherchez à collaborer sur un projet ou à discuter de nouvelles opportunités, </p>
+    <p>n'hésitez pas à me contacter. Vous trouverez ici une sélection de mes réalisations,</p>
+        <p>ainsi qu'un détail de mes compétences techniques et de mon expérience professionnelle.</p>
+    <p id="lastline">Je vous souhaite une agréable visite et j'espère que mes réalisations sauront captiver votre intérêt !</p>
+    </div>
     </div>
   </div>
 </template>
 
-
 <style scoped lang="scss">
+.carousel-wrapper {
+  background-color: #ffffff;
+  border-radius: 60px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px 0;
+  margin-top: 50px;
+  width: 80%;
+  z-index: 2;
+  position: relative;
+}
+p{
+  text-align: center;
+  font-size: 1.2rem;
+
+}
 .container-head {
   height: 70vh;
-  background-color: #EEEDEC;
-  border-radius: 0 0 50px 50px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 24px;
-
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
   align-items: center;
 }
 
-.lastProject{
+.lastProject {
   border-radius: 30px;
   background-color: black;
   color: white;
@@ -107,6 +94,7 @@ function stopCarousel() {
   font-size: 20px;
   padding: 10px;
 }
+
 .image-container {
   position: relative;
 }
@@ -116,13 +104,14 @@ function stopCarousel() {
   border: 2px solid white;
   border-radius: 100%;
 }
-.brandTitle{
-    font-weight: bold;
-    width: 70%;
-    text-align: center;
-    margin: 0 auto;
 
+.brandTitle {
+  font-weight: bold;
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
 }
+
 .bubble {
   position: absolute;
   top: -20px;
@@ -148,37 +137,36 @@ function stopCarousel() {
   border-style: solid;
   border-color: #ffffff transparent transparent transparent;
 }
+
 .carousel-container {
   overflow: hidden;
   height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
   margin-top: 20px;
 }
 
 .carousel {
   display: flex;
-  animation: scroll 50s linear infinite;
-  white-space: nowrap;
+  width: max-content;
+  animation: scroll 40s linear infinite;
 }
 
 .carousel img {
   align-self: center;
-  width: 120px;
-  height: fit-content;
+  width: 200px;
+  height: auto;
   margin-right: 200px;
   flex-shrink: 0;
 }
 
 @keyframes scroll {
   from {
-    transform: translateX(50%);
+    transform: translateX(0);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
-
 </style>
