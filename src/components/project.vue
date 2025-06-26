@@ -60,10 +60,9 @@ onMounted(() => {
 
     <div class="section-header">
       <h2 class="projects-title">
-        <span class="title-icon">🎨</span>
         <span class="gradient-text">Mes Créations</span>
       </h2>
-      <p class="projects-subtitle">Une symphonie de projets développés avec passion</p>
+      <p class="projects-subtitle">Une liste de projets développés avec passion</p>
     </div>
 
     <!-- Filter buttons with musical styling -->

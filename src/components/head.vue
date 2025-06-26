@@ -26,7 +26,7 @@ onMounted(() => {
       <div class="note note-4">♫</div>
     </div>
     
-    <div class="hero-content">
+    <div class="hero-content mt-4">
       <div class="profile-section">
         <div class="profile-container">
           <div class="profile-image-wrapper">
@@ -55,7 +55,7 @@ onMounted(() => {
         </div>
 
         <button class="cta-button btn-musical sound-wave">
-          <span>🎵 Découvrir mes projets</span>
+          <span> Découvrir mes projets</span>
         </button>
       </div>
     </div>
@@ -87,7 +87,6 @@ onMounted(() => {
     <!-- About section with musical styling -->
     <div class="about-section">
       <h2 class="about-title">
-        <span class="musical-symbol">🎼</span>
         À propos de moi
       </h2>
       
@@ -95,13 +94,13 @@ onMounted(() => {
         <div class="about-text">
           <p class="intro-text">
             Salut ! Je suis <strong class="gradient-text">Ilan Darmon</strong>, 
-            un passionné d'informatique qui compose du code comme on compose de la musique.
+            un passionné d'informatique curieux qui passe son temps à chercher de nouvelles choses à apprendre.
           </p>
           
           <div class="description-grid">
             <div class="desc-item">
               <span class="desc-icon">🎯</span>
-              <p>Ce portfolio vous offre un aperçu détaillé de mes compétences et de mon parcours académique.</p>
+              <p>Ce portfolio vous offre un aperçu détaillé de mes compétences ainsi que de mon parcours académique et professionnel.</p>
             </div>
             
             <div class="desc-item">

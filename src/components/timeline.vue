@@ -15,11 +15,9 @@
     
     <div class="section-header">
       <h2 class="skills-title">
-        <span class="musical-note">🎹</span>
         <span class="gradient-text">Compétences Techniques</span>
-        <span class="musical-note">🎹</span>
       </h2>
-      <p class="skills-subtitle">Mes instruments de développement</p>
+      <p class="skills-subtitle">Ma boite à outils</p>
     </div>
 
     <section class="skills-container">

@@ -12,10 +12,9 @@
     
     <div class="section-header">
       <h2 class="experience-title">
-        <span class="title-icon">🎼</span>
         <span class="gradient-text">Expériences & Formations</span>
       </h2>
-      <p class="experience-subtitle">Mon parcours professionnel en harmonie</p>
+      <p class="experience-subtitle">Mon parcours professionnel et academique</p>
     </div>
 
     <div class="timeline-container">
