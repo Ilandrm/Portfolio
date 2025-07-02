@@ -11,16 +11,95 @@ const toggleType = (type: string) => {
 };
 
 const projects = ref([
-  { name: "Game Jam 2023", src: "saveTheExam.png", type: "scolaire", years: 2023, description: "Jeu éducatif développé lors d'une Game Jam pour aider les étudiants à réviser leurs examens." },
-  { name: "Petit Bach", src: "icon_petitbach.png", type: "scolaire", years: 2023, description: "Application musicale interactive pour l'apprentissage du solfège et de la composition." },
-  { name: "Game Jam 2024", src: "concorde.png", type: "scolaire", years: 2024, description: "Jeu d'aventure spatial développé en équipe lors de la Game Jam 2024." },
-  { name: "Pali Kao Capital", src: "LOGO PALI KAO.png", type: "professionnel", years: 2025, description: "Plateforme de gestion financière pour investissements et trading." },
-  { name: "Tower of Heroes", src: "mask8.png", type: "scolaire", years: 2025, description: "Jeu de stratégie en tour par tour avec des éléments RPG." },
-  { name: "MMAPI", type: "scolaire", years: 2025, description: "API de gestion multimédia pour applications web modernes." },
-  { name: "Lookup", src: "lookup.png", type: "scolaire", years: 2024, description: "Moteur de recherche intelligent avec interface utilisateur moderne." },
-  { name: "App-Stage", src: "stage.jpg", type: "scolaire", years: 2024, description: "Application de gestion des stages étudiants et suivi des entreprises." },
-  { name: "Suki", src: "suki4.png", type: "scolaire", years: 2023, description: "Assistant virtuel intelligent avec reconnaissance vocale." },
-  { name: "Kosmos", src: "earth.jpg", type: "professionnel", years: 2025, description: "Plateforme de visualisation de données géospatiales en temps réel." }
+  {
+    name: "Game Jam 2023",
+    src: "saveTheExam.png",
+    type: "scolaire",
+    years: 2023,
+    description: "Jeu développé lors d'une Game Jam qui avait comme contrainte imposé les thèmes horreur et musique.",
+    technologies: ["Python", "Pygame"],
+    link: "https://github.com/votre-username/game-jam-2023" // Remplacez par le vrai lien
+  },
+  {
+    name: "Petit Bach",
+    src: "icon_petitbach.png",
+    type: "scolaire",
+    years: 2023,
+    description: "Application musicale interactive pour l'apprentissage du solfège et de la composition.",
+    technologies: ["Symfony", "JavaScript", "PostgreSQL"],
+    link: "https://github.com/votre-username/petit-bach"
+  },
+  {
+    name: "Game Jam 2024",
+    src: "concorde.png",
+    type: "scolaire",
+    years: 2024,
+    description: "Jeu développé lors d'une Game Jam qui avait comme contrainte imposé les thèmes paix et competition entre les nations.",
+    technologies: ["Python", "Pygame"],
+    link: "https://github.com/votre-username/game-jam-2024"
+  },
+  {
+    name: "Pali Kao Capital",
+    src: "LOGO PALI KAO.png",
+    type: "professionnel",
+    years: 2025,
+    description: "Site vitrine pour l'entreprise Pali kao capital",
+    technologies: ["Nuxt.js", "Vite"],
+    link: "https://palikao-capital.com"
+  },
+  {
+    name: "Tower of Heroes",
+    src: "mask8.png",
+    type: "scolaire",
+    years: 2025,
+    description: "Jeu de création de heros et d'armes",
+    technologies: ["Angular", "Firebase"],
+    link: "https://github.com/votre-username/tower-of-heroes"
+  },
+  {
+    name: "MMAPI",
+    type: "scolaire",
+    years: 2025,
+    description: "API dedié au monde du MMA",
+    technologies: ["Node.js", "Express", "PostgreSQL", "Docker"],
+    link: "https://github.com/votre-username/mmapi"
+  },
+  {
+    name: "Lookup",
+    src: "lookup.png",
+    type: "scolaire",
+    years: 2024,
+    description: "Moteur de recherche detaillé de pokemon.",
+    technologies: ["JavaScript"],
+    link: "https://github.com/votre-username/lookup"
+  },
+  {
+    name: "App-Stage",
+    src: "stage.jpg",
+    type: "scolaire",
+    years: 2024,
+    description: "Application de gestion des stages étudiants et suivi des entreprises.",
+    technologies: ["Symfony","Java","PostgreSQL"],
+    link: "https://github.com/votre-username/app-stage"
+  },
+  {
+    name: "Suki",
+    src: "suki4.png",
+    type: "scolaire",
+    years: 2023,
+    description: "Application de gestion de sortie de ski.",
+    technologies: ["Java"],
+    link: "https://github.com/votre-username/suki"
+  },
+  {
+    name: "Kosmos",
+    src: "earth.jpg",
+    type: "professionnel",
+    years: 2025,
+    description: "Jeu developpé dans le cadre d'une missions que j'ai eu en entreprise, entierment réalisé en vibe coding.",
+    technologies: ["Vue.js", "Three.js"],
+    link: "https://github.com/votre-username/kosmos"
+  }
 ]);
 
 const filteredProjects = computed(() =>
@@ -137,23 +216,72 @@ onMounted(() => {
     
     <div class="modal-content">
       <div class="project-image-section" v-if="activeProject?.src">
-        <img 
-          :src="'projects/' + activeProject.src" 
+        <a
+          v-if="activeProject?.link"
+          :href="activeProject.link"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="project-link"
+        >
+          <img
+            :src="'projects/' + activeProject.src"
+            :alt="activeProject.name"
+            class="modal-project-image clickable"
+          >
+          <div class="link-overlay">
+            <span class="link-icon">🔗</span>
+            <span class="link-text">Voir le projet</span>
+          </div>
+        </a>
+        <img
+          v-else
+          :src="'projects/' + activeProject.src"
           :alt="activeProject.name"
           class="modal-project-image"
         >
       </div>
-      
+
       <div class="project-details">
         <div class="project-type-badge" :class="activeProject?.type">
           <span v-if="activeProject?.type === 'scolaire'">🎓 Académique</span>
           <span v-else-if="activeProject?.type === 'professionnel'">💼 Professionnel</span>
           <span v-else>🌱 Personnel</span>
         </div>
-        
+
         <p class="project-description">
           {{ activeProject?.description || 'Description du projet à venir...' }}
         </p>
+
+        <!-- Technologies section -->
+        <div class="technologies-section" v-if="activeProject?.technologies && activeProject.technologies.length > 0">
+          <h4 class="technologies-title">
+            <span class="tech-icon">⚡</span>
+            Technologies utilisées
+          </h4>
+          <div class="technologies-grid">
+            <span
+              v-for="tech in activeProject.technologies"
+              :key="tech"
+              class="technology-tag"
+            >
+              {{ tech }}
+            </span>
+          </div>
+        </div>
+
+        <!-- Project link button -->
+        <div class="project-actions" v-if="activeProject?.link">
+          <a
+            :href="activeProject.link"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-link-btn"
+          >
+            <span class="btn-icon">🚀</span>
+            <span>Voir le projet</span>
+            <div class="btn-glow"></div>
+          </a>
+        </div>
       </div>
     </div>
     
@@ -562,8 +690,156 @@ onMounted(() => {
 .project-description {
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
-  margin: 0;
+  margin: 0 0 1.5rem 0;
   font-size: 1rem;
+}
+
+/* Clickable project link styles */
+.project-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.project-link:hover {
+  transform: scale(1.02);
+}
+
+.modal-project-image.clickable {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-project-image.clickable:hover {
+  filter: brightness(1.1);
+}
+
+.link-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 15px;
+}
+
+.project-link:hover .link-overlay {
+  opacity: 1;
+}
+
+.link-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.link-text {
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Technologies section styles */
+.technologies-section {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(120, 119, 198, 0.2);
+}
+
+.technologies-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #7877c6;
+}
+
+.tech-icon {
+  font-size: 1.2rem;
+}
+
+.technologies-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.technology-tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, rgba(120, 119, 198, 0.2), rgba(255, 119, 198, 0.2));
+  border: 1px solid rgba(120, 119, 198, 0.3);
+  border-radius: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.technology-tag:hover {
+  background: linear-gradient(135deg, rgba(120, 119, 198, 0.3), rgba(255, 119, 198, 0.3));
+  border-color: rgba(120, 119, 198, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Project actions styles */
+.project-actions {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.project-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #7877c6, #ff77c6);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-link-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(120, 119, 198, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+.project-link-btn .btn-icon {
+  font-size: 1.2rem;
+}
+
+.btn-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.project-link-btn:hover .btn-glow {
+  left: 100%;
 }
 
 .modal-waves {

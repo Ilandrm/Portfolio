@@ -33,15 +33,15 @@
           </div>
           <div class="skill-icons">
             <div class="icon-wrapper">
-              <img src="/icon/Java.png" alt="Java" />
+              <img src="icon/Java.png" alt="Java" />
               <span class="icon-label">Java</span>
             </div>
             <div class="icon-wrapper">
-              <img src="/icon/cpp.png" alt="C++" />
+              <img src="icon/cpp.png" alt="C++" />
               <span class="icon-label">C++</span>
             </div>
             <div class="icon-wrapper">
-              <img src="/icon/Python.png" alt="Python" />
+              <img src="icon/Python.png" alt="Python" />
               <span class="icon-label">Python</span>
             </div>
           </div>
@@ -58,19 +58,19 @@
           </div>
           <div class="skill-icons">
             <div class="icon-wrapper">
-              <img src="/icon/Vue.png" alt="Vue.js" />
+              <img src="icon/Vue.png" alt="Vue.js" />
               <span class="icon-label">Vue.js</span>
             </div>
             <div class="icon-wrapper">
-              <img src="/icon/Angular.png" alt="Angular" />
+              <img src="icon/Angular.png" alt="Angular" />
               <span class="icon-label">Angular</span>
             </div>
             <div class="icon-wrapper">
-              <img src="/icon/laravel-icon.png" alt="Laravel" />
+              <img src="icon/laravel-icon.png" alt="Laravel" />
               <span class="icon-label">Laravel</span>
             </div>
             <div class="icon-wrapper">
-              <img src="/icon/nodejs-logo.png" alt="Node.js" />
+              <img src="icon/nodejs-logo.png" alt="Node.js" />
               <span class="icon-label">Node.js</span>
             </div>
           </div>
@@ -87,15 +87,15 @@
           </div>
           <div class="skill-icons">
             <div class="icon-wrapper">
-              <img src="/icon/Postgresql.png" alt="PostgreSQL" />
+              <img src="icon/Postgresql.png" alt="PostgreSQL" />
               <span class="icon-label">PostgreSQL</span>
             </div>
             <div class="icon-wrapper">
-              <img src="/icon/mongodb-logo.png" alt="MongoDB" />
+              <img src="icon/mongodb-logo.png" alt="MongoDB" />
               <span class="icon-label">MongoDB</span>
             </div>
             <div class="icon-wrapper">
-              <img src="/icon/elasticsearch-logo.png" alt="Elasticsearch" />
+              <img src="icon/elasticsearch-logo.png" alt="Elasticsearch" />
               <span class="icon-label">Elasticsearch</span>
             </div>
           </div>
@@ -112,11 +112,11 @@
           </div>
           <div class="skill-icons">
             <div class="icon-wrapper">
-              <img src="/icon/Git_Logo_full.png" alt="Git" />
+              <img src="icon/Git_Logo_full.png" alt="Git" />
               <span class="icon-label">Git</span>
             </div>
             <div class="icon-wrapper">
-              <img src="/icon/docker.png" alt="Docker" />
+              <img src="icon/docker.png" alt="Docker" />
               <span class="icon-label">Docker</span>
             </div>
           </div>

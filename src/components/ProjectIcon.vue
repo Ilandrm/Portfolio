@@ -7,6 +7,9 @@ const props = defineProps<{
     name: string;
     type: 'scolaire' | 'professionnel' | 'personnel';
     years: number;
+    description?: string;
+    technologies?: string[];
+    link?: string;
   };
 }>();
 
