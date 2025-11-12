@@ -13,14 +13,14 @@ const copyToClip = () => {
 </script>
 
 <template>
-<nav class="navbar-musical">
+<nav class="navbar-dev">
   <div class="nav-container">
     <div class="nav-left">
-      <div class="email-section glass">
+      <div class="email-section terminal-glass">
         <button class="email-btn">{{ email }}</button>
-        <button class="copy-btn btn-musical" @click="copyToClip">{{ textCopy }}</button>
+        <button class="copy-btn btn-dev" @click="copyToClip">{{ textCopy }}</button>
       </div>
-      <button class="cv-btn btn-musical">
+      <button class="cv-btn btn-dev">
         <a href="CV Ilan Darmon.pdf">📄 CV</a>
       </button>
     </div>
@@ -43,13 +43,13 @@ const copyToClip = () => {
     </div>
   </div>
   
-  <!-- Musical wave decoration -->
-  <div class="nav-wave"></div>
+  <!-- Code flow decoration -->
+  <div class="nav-code-flow"></div>
 </nav>
 </template>
 
 <style scoped lang="scss">
-.navbar-musical {
+.navbar-dev {
   position: relative;
   padding: 20px 0;
   z-index: 100;
@@ -74,7 +74,7 @@ const copyToClip = () => {
   display: flex;
   align-items: center;
   padding: 8px;
-  border-radius: 25px;
+  border-radius: 8px;
   gap: 8px;
 }
 
@@ -83,7 +83,7 @@ const copyToClip = () => {
   border: none;
   color: rgba(255, 255, 255, 0.8);
   padding: 8px 16px;
-  border-radius: 20px;
+  border-radius: 6px;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.9rem;
 }
@@ -97,9 +97,9 @@ const copyToClip = () => {
 
 .cv-btn {
   a {
-    color: white;
+    color: #0d1117;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
   }
 }
 
@@ -122,11 +122,13 @@ const copyToClip = () => {
   font-weight: 500;
   transition: all 0.3s ease;
   padding: 8px 12px;
-  border-radius: 15px;
+  border-radius: 8px;
+  border: 1px solid transparent;
   
   &:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.1);
+    color: #40e0d0;
+    background: rgba(64, 224, 208, 0.1);
+    border-color: rgba(64, 224, 208, 0.3);
     transform: translateY(-2px);
   }
 }
@@ -141,7 +143,7 @@ const copyToClip = () => {
   filter: grayscale(0);
 }
 
-.nav-wave {
+.nav-code-flow {
   position: absolute;
   bottom: -1px;
   left: 0;
@@ -149,21 +151,21 @@ const copyToClip = () => {
   height: 3px;
   background: linear-gradient(90deg, 
     transparent 0%, 
-    #7877c6 25%, 
-    #ff77c6 50%, 
-    #78dbff 75%, 
+    #40e0d0 25%, 
+    #00ff7f 50%, 
+    #1e90ff 75%, 
     transparent 100%);
-  animation: waveFlow 4s ease-in-out infinite;
+  animation: codeFlowNav 5s ease-in-out infinite;
 }
 
-@keyframes waveFlow {
+@keyframes codeFlowNav {
   0%, 100% {
-    opacity: 0.5;
-    transform: scaleX(0.8);
+    opacity: 0.4;
+    transform: scaleX(0.7);
   }
   50% {
-    opacity: 1;
-    transform: scaleX(1.2);
+    opacity: 0.8;
+    transform: scaleX(1.1);
   }
 }
 

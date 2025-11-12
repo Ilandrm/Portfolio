@@ -24,15 +24,15 @@ const isHovered = ref(false);
 
 <template>
   <div 
-    class="project-card glass sound-wave" 
+    class="project-card terminal-glass code-flow" 
     @click="$emit('active', props.project)"
     @mouseenter="isHovered = true"
     @mouseleave="isHovered = false"
   >
-    <!-- Musical note decoration -->
-    <div class="musical-decoration">
-      <div class="note-float">♪</div>
-      <div class="note-float">♫</div>
+    <!-- Code decoration -->
+    <div class="code-decoration">
+      <div class="code-symbol">&lt;/&gt;</div>
+      <div class="code-symbol">{}</div>
     </div>
     
     <!-- Project type badge -->
@@ -63,18 +63,18 @@ const isHovered = ref(false);
         <div class="image-overlay" :class="{ active: isHovered }">
           <div class="overlay-content">
             <span class="view-text">Voir le projet</span>
-            <div class="overlay-waves">
-              <div class="overlay-wave"></div>
-              <div class="overlay-wave"></div>
-              <div class="overlay-wave"></div>
+            <div class="overlay-code-lines">
+              <div class="code-line"></div>
+              <div class="code-line"></div>
+              <div class="code-line"></div>
             </div>
           </div>
         </div>
       </div>
       
-      <!-- Sound visualizer -->
-      <div class="sound-visualizer" :class="{ active: isHovered }">
-        <div class="sound-bar" v-for="i in 5" :key="i"></div>
+      <!-- Code visualizer -->
+      <div class="code-visualizer" :class="{ active: isHovered }">
+        <div class="code-bar" v-for="i in 5" :key="i"></div>
       </div>
     </div>
     
@@ -84,11 +84,11 @@ const isHovered = ref(false);
       <div class="project-year">{{ props.project.years }}</div>
     </div>
     
-    <!-- Interactive wave at bottom -->
-    <div class="card-wave">
-      <div class="wave-line"></div>
-      <div class="wave-line"></div>
-      <div class="wave-line"></div>
+    <!-- Interactive code flow at bottom -->
+    <div class="card-code-flow">
+      <div class="flow-line"></div>
+      <div class="flow-line"></div>
+      <div class="flow-line"></div>
     </div>
     
     <!-- Glow effect -->
@@ -99,126 +99,100 @@ const isHovered = ref(false);
 <style scoped lang="scss">
 .project-card {
   width: 280px;
-  height: 380px; /* Increased height for better proportions */
-  border-radius: 20px;
-  padding: 1.5rem;
+  height: 320px;
   position: relative;
   cursor: pointer;
-  transition: all 0.4s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  border: 1px solid rgba(64, 224, 208, 0.2);
+  
+  &:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(64, 224, 208, 0.5);
+    box-shadow: 0 15px 35px rgba(64, 224, 208, 0.2);
+  }
 }
 
-.project-card:hover {
-  transform: translateY(-15px) scale(1.02);
-  box-shadow: 0 25px 50px rgba(120, 119, 198, 0.3);
-}
-
-.project-card.scolaire:hover {
-  box-shadow: 0 25px 50px rgba(120, 119, 198, 0.4);
-}
-
-.project-card.professionnel:hover {
-  box-shadow: 0 25px 50px rgba(255, 119, 198, 0.4);
-}
-
-.musical-decoration {
+.code-decoration {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  opacity: 0.3;
 }
 
-.note-float {
-  position: absolute;
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.1);
-  animation: noteFloat 4s ease-in-out infinite;
+.code-symbol {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: #40e0d0;
+  margin-bottom: 2px;
+  animation: codeFloat 4s ease-in-out infinite;
 }
 
-.note-float:nth-child(1) {
-  top: 20%;
-  right: 15%;
-  animation-delay: 0s;
-}
-
-.note-float:nth-child(2) {
-  bottom: 30%;
-  left: 10%;
+.code-symbol:nth-child(2) {
   animation-delay: 2s;
 }
 
-@keyframes noteFloat {
+@keyframes codeFloat {
   0%, 100% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 0.1;
+    opacity: 0.3;
+    transform: translateX(0);
   }
   50% {
-    transform: translateY(-10px) rotate(15deg);
-    opacity: 0.3;
+    opacity: 0.6;
+    transform: translateX(3px);
   }
 }
 
 .project-badge {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 15px;
+  left: 15px;
   display: flex;
   align-items: center;
   gap: 0.3rem;
   padding: 6px 12px;
-  border-radius: 15px;
+  border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 500;
   z-index: 3;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.project-badge.scolaire {
-  background: rgba(120, 119, 198, 0.3);
-  color: #7877c6;
-}
-
-.project-badge.professionnel {
-  background: rgba(255, 119, 198, 0.3);
-  color: #ff77c6;
-}
-
-.project-badge.personnel {
-  background: rgba(120, 219, 255, 0.3);
-  color: #78dbff;
+  
+  &.scolaire {
+    background: rgba(64, 224, 208, 0.2);
+    color: #40e0d0;
+    border: 1px solid rgba(64, 224, 208, 0.3);
+  }
+  
+  &.professionnel {
+    background: rgba(0, 255, 127, 0.2);
+    color: #00ff7f;
+    border: 1px solid rgba(0, 255, 127, 0.3);
+  }
+  
+  &.personnel {
+    background: rgba(30, 144, 255, 0.2);
+    color: #1e90ff;
+    border: 1px solid rgba(30, 144, 255, 0.3);
+  }
 }
 
 .badge-icon {
   font-size: 1rem;
 }
 
-.badge-text {
-  text-transform: capitalize;
-}
-
 .image-section {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  min-height: 0; /* Important for flex child */
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: rgba(13, 17, 23, 0.5);
+  border-radius: 8px 8px 0 0;
 }
 
 .image-container {
   position: relative;
-  flex: 1;
-  border-radius: 15px;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.02);
-  min-height: 180px; /* Fixed minimum height */
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -227,10 +201,11 @@ const isHovered = ref(false);
 .image-wrapper {
   width: 100%;
   height: 100%;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .project-image {
@@ -238,13 +213,13 @@ const isHovered = ref(false);
   max-height: 100%;
   width: auto;
   height: auto;
-  object-fit: contain; /* Changed from cover to contain for better centering */
-  transition: transform 0.4s ease;
-  border-radius: 8px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  border-radius: 4px;
 }
 
 .project-card:hover .project-image {
-  transform: scale(1.05); /* Reduced scale to prevent overflow */
+  transform: scale(1.1);
 }
 
 .image-overlay {
@@ -253,110 +228,93 @@ const isHovered = ref(false);
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(120, 119, 198, 0.8), rgba(255, 119, 198, 0.8));
-  backdrop-filter: blur(10px);
+  background: rgba(13, 17, 23, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: all 0.4s ease;
-  border-radius: 15px;
-}
-
-.image-overlay.active {
-  opacity: 1;
-}
-
-.overlay-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  color: white;
-  text-align: center;
-  transform: translateY(10px);
-  transition: transform 0.4s ease;
-}
-
-.image-overlay.active .overlay-content {
-  transform: translateY(0);
-}
-
-.view-text {
-  font-size: 1rem;
-  font-weight: 600;
-  font-family: 'Inter', sans-serif;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  letter-spacing: 0.5px;
-}
-
-.overlay-waves {
-  display: flex;
-  gap: 4px;
-  align-items: end;
-  height: 20px;
-}
-
-.overlay-wave {
-  width: 3px;
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 1));
-  border-radius: 2px;
-  height: 6px;
-  animation: overlayWave 1.5s ease-in-out infinite;
-}
-
-.overlay-wave:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.overlay-wave:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.overlay-wave:nth-child(3) {
-  animation-delay: 0.4s;
-}
-
-@keyframes overlayWave {
-  0%, 100% {
-    height: 6px;
-    opacity: 0.6;
-  }
-  50% {
-    height: 18px;
+  transition: opacity 0.3s ease;
+  
+  &.active {
     opacity: 1;
   }
 }
 
-.sound-visualizer {
+.overlay-content {
+  text-align: center;
+  color: #40e0d0;
+}
+
+.view-text {
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.overlay-code-lines {
   display: flex;
-  justify-content: center;
-  align-items: end;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+
+.code-line {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #40e0d0, transparent);
+  animation: codePulse 1.5s ease-in-out infinite;
+}
+
+.code-line:nth-child(2) {
+  animation-delay: 0.3s;
+  width: 80px;
+}
+
+.code-line:nth-child(3) {
+  animation-delay: 0.6s;
+  width: 50px;
+}
+
+@keyframes codePulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.code-visualizer {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
   gap: 3px;
-  height: 30px;
-  padding: 0 1rem;
-  flex-shrink: 0; /* Prevent shrinking */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  
+  &.active {
+    opacity: 1;
+  }
 }
 
-.sound-bar {
+.code-bar {
   width: 3px;
-  background: linear-gradient(to top, #7877c6, #ff77c6);
+  height: 20px;
+  background: linear-gradient(to top, #40e0d0, #00ff7f);
   border-radius: 2px;
-  transition: height 0.3s ease;
-  height: 8px;
+  animation: codeVisualize 1.2s ease-in-out infinite;
 }
 
-.sound-visualizer.active .sound-bar {
-  animation: soundBars 1s ease-in-out infinite;
-}
+.code-bar:nth-child(1) { animation-delay: 0s; }
+.code-bar:nth-child(2) { animation-delay: 0.2s; }
+.code-bar:nth-child(3) { animation-delay: 0.4s; }
+.code-bar:nth-child(4) { animation-delay: 0.6s; }
+.code-bar:nth-child(5) { animation-delay: 0.8s; }
 
-.sound-bar:nth-child(1) { animation-delay: 0s; }
-.sound-bar:nth-child(2) { animation-delay: 0.1s; }
-.sound-bar:nth-child(3) { animation-delay: 0.2s; }
-.sound-bar:nth-child(4) { animation-delay: 0.3s; }
-.sound-bar:nth-child(5) { animation-delay: 0.4s; }
-
-@keyframes soundBars {
+@keyframes codeVisualize {
   0%, 100% {
     height: 8px;
   }
@@ -366,82 +324,65 @@ const isHovered = ref(false);
 }
 
 .project-info {
-  z-index: 2;
-  position: relative;
-  flex-shrink: 0; /* Prevent shrinking */
-  height: 80px; /* Fixed height for uniformity */
+  padding: 20px;
+  height: 120px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
+  justify-content: space-between;
 }
 
 .project-title {
-  font-size: 1.1rem; /* Standardized font size */
+  font-size: 1.2rem;
   font-weight: 600;
-  color: #ffffff;
   margin: 0;
+  color: #ffffff;
   line-height: 1.3;
-  text-align: center;
-  font-family: 'Inter', sans-serif; /* Consistent font family */
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
-  width: 100%;
-  min-height: 2.6rem; /* Reserve space for 2 lines */
 }
 
 .project-year {
-  font-size: 0.85rem; /* Standardized font size */
-  color: rgba(255, 255, 255, 0.7);
-  text-align: center;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 4px 12px;
-  border-radius: 12px;
+  font-size: 0.9rem;
+  color: #40e0d0;
   font-weight: 500;
-  font-family: 'Inter', sans-serif; /* Consistent font family */
-  white-space: nowrap;
+  font-family: 'JetBrains Mono', monospace;
 }
 
-.card-wave {
+.card-code-flow {
   position: absolute;
   bottom: 0;
   left: 0;
-  right: 0;
-  height: 4px;
+  width: 100%;
+  height: 3px;
   overflow: hidden;
-  border-radius: 0 0 20px 20px;
 }
 
-.wave-line {
+.flow-line {
   position: absolute;
-  bottom: 0;
-  left: -100%;
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #7877c6, #ff77c6, transparent);
-  animation: cardWave 3s linear infinite;
+  background: linear-gradient(90deg, transparent, #40e0d0, transparent);
+  animation: flowMove 3s linear infinite;
 }
 
-.wave-line:nth-child(2) {
+.flow-line:nth-child(2) {
   animation-delay: 1s;
-  background: linear-gradient(90deg, transparent, #ff77c6, #78dbff, transparent);
+  background: linear-gradient(90deg, transparent, #00ff7f, transparent);
 }
 
-.wave-line:nth-child(3) {
+.flow-line:nth-child(3) {
   animation-delay: 2s;
-  background: linear-gradient(90deg, transparent, #78dbff, #7877c6, transparent);
+  background: linear-gradient(90deg, transparent, #1e90ff, transparent);
 }
 
-@keyframes cardWave {
+@keyframes flowMove {
   0% {
-    left: -100%;
+    transform: translateX(-100%);
   }
   100% {
-    left: 100%;
+    transform: translateX(100%);
   }
 }
 
@@ -451,86 +392,34 @@ const isHovered = ref(false);
   left: -2px;
   right: -2px;
   bottom: -2px;
-  border-radius: 22px;
+  border-radius: 12px;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
   z-index: -1;
+  
+  &.scolaire {
+    background: linear-gradient(45deg, rgba(64, 224, 208, 0.3), rgba(64, 224, 208, 0.1));
+  }
+  
+  &.professionnel {
+    background: linear-gradient(45deg, rgba(0, 255, 127, 0.3), rgba(0, 255, 127, 0.1));
+  }
+  
+  &.personnel {
+    background: linear-gradient(45deg, rgba(30, 144, 255, 0.3), rgba(30, 144, 255, 0.1));
+  }
 }
 
 .project-card:hover .card-glow {
   opacity: 1;
 }
 
-.card-glow.scolaire {
-  background: linear-gradient(135deg, #7877c6, #9896d4);
-  filter: blur(10px);
-}
-
-.card-glow.professionnel {
-  background: linear-gradient(135deg, #ff77c6, #ff99d4);
-  filter: blur(10px);
-}
-
-.card-glow.personnel {
-  background: linear-gradient(135deg, #78dbff, #99e5ff);
-  filter: blur(10px);
-}
-
 @media (max-width: 768px) {
   .project-card {
-    width: 250px;
-    height: 350px;
-    padding: 1.2rem;
-  }
-  
-  .image-container {
-    min-height: 160px;
-  }
-  
-  .project-info {
-    height: 70px;
-  }
-  
-  .project-title {
-    font-size: 1rem;
-    min-height: 2.4rem;
-  }
-  
-  .sound-visualizer {
-    height: 25px;
-  }
-}
-
-@media (max-width: 480px) {
-  .project-card {
     width: 100%;
-    max-width: 280px;
-    height: 320px;
-    padding: 1rem;
-  }
-  
-  .image-container {
-    min-height: 140px;
-  }
-  
-  .project-info {
-    height: 60px;
-  }
-  
-  .project-title {
-    font-size: 0.95rem;
-    min-height: 2.2rem;
-  }
-  
-  .project-badge {
-    top: 0.8rem;
-    right: 0.8rem;
-    padding: 4px 8px;
-    font-size: 0.7rem;
-  }
-  
-  .badge-text {
-    display: none;
+    max-width: 300px;
+    margin: 0 auto;
   }
 }
 </style>

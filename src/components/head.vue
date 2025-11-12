@@ -18,12 +18,14 @@ onMounted(() => {
 
 <template>
   <div class="hero-section">
-    <!-- Floating musical notes -->
-    <div class="musical-notes">
-      <div class="note note-1">♪</div>
-      <div class="note note-2">♫</div>
-      <div class="note note-3">♪</div>
-      <div class="note note-4">♫</div>
+    <!-- Floating code symbols -->
+    <div class="code-symbols">
+      <div class="symbol symbol-1">&lt;/&gt;</div>
+      <div class="symbol symbol-2">{}</div>
+      <div class="symbol symbol-3">[]</div>
+      <div class="symbol symbol-4">()</div>
+      <div class="symbol symbol-5">;</div>
+      <div class="symbol symbol-6">#</div>
     </div>
     
     <div class="hero-content mt-4">
@@ -34,40 +36,40 @@ onMounted(() => {
             <div class="profile-ring"></div>
             <div class="profile-ring-2"></div>
           </div>
-          <div class="greeting-bubble glass">
+          <div class="greeting-bubble terminal-glass">
             <span class="wave-emoji">👋</span>
-            <span class="name gradient-text">Ilan Darmon</span>
+            <span class="name code-gradient">Ilan Darmon</span>
           </div>
         </div>
 
         <div class="title-section">
           <h1 class="main-title">
             <span class="title-line">Développeur Web</span>
-            <span class="title-line gradient-text">Fullstack</span>
+            <span class="title-line code-gradient">Fullstack</span>
           </h1>
-          <div class="sound-visualizer">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+          <div class="code-visualizer">
+            <div class="code-bar"></div>
+            <div class="code-bar"></div>
+            <div class="code-bar"></div>
+            <div class="code-bar"></div>
+            <div class="code-bar"></div>
           </div>
         </div>
 
-        <button class="cta-button btn-musical sound-wave">
-          <span> Découvrir mes projets</span>
+        <button class="cta-button btn-dev code-flow">
+          <span>Découvrir mes projets</span>
         </button>
       </div>
     </div>
 
-    <!-- Projects carousel with musical theme -->
-    <div class="projects-showcase glass">
+    <!-- Projects showcase with development theme -->
+    <div class="projects-showcase terminal-glass">
       <div class="showcase-header">
-        <h3 class="showcase-title gradient-text">Mes Créations</h3>
-        <div class="frequency-bars">
-          <div class="freq-bar"></div>
-          <div class="freq-bar"></div>
-          <div class="freq-bar"></div>
+        <h3 class="showcase-title code-gradient">Mes Créations</h3>
+        <div class="terminal-indicators">
+          <div class="indicator red"></div>
+          <div class="indicator yellow"></div>
+          <div class="indicator green"></div>
         </div>
       </div>
       
@@ -84,16 +86,16 @@ onMounted(() => {
       </div>
     </div>
 
-    <!-- About section with musical styling -->
+    <!-- About section with development styling -->
     <div class="about-section">
       <h2 class="about-title">
         À propos de moi
       </h2>
       
-      <div class="about-content glass">
+      <div class="about-content terminal-glass">
         <div class="about-text">
           <p class="intro-text">
-            Salut ! Je suis <strong class="gradient-text">Ilan Darmon</strong>, 
+            Salut ! Je suis <strong class="code-gradient">Ilan Darmon</strong>, 
             un passionné d'informatique curieux qui passe son temps à chercher de nouvelles choses à apprendre.
           </p>
           
@@ -114,7 +116,7 @@ onMounted(() => {
             </div>
           </div>
           
-          <p class="closing-text gradient-text">
+          <p class="closing-text code-gradient">
             Je vous souhaite une agréable visite et j'espère que mes réalisations sauront captiver votre intérêt !
           </p>
         </div>
@@ -134,7 +136,7 @@ onMounted(() => {
   overflow: hidden;
 }
 
-.musical-notes {
+.code-symbols {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -142,45 +144,58 @@ onMounted(() => {
   z-index: 1;
 }
 
-.note {
+.symbol {
   position: absolute;
-  font-size: 2rem;
-  color: rgba(120, 119, 198, 0.3);
-  animation: floatNote 6s ease-in-out infinite;
+  font-size: 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: rgba(64, 224, 208, 0.2);
+  animation: floatSymbol 8s ease-in-out infinite;
 }
 
-.note-1 {
-  top: 20%;
-  left: 10%;
+.symbol-1 {
+  top: 15%;
+  left: 8%;
   animation-delay: 0s;
 }
 
-.note-2 {
-  top: 60%;
-  right: 15%;
+.symbol-2 {
+  top: 25%;
+  right: 12%;
+  animation-delay: 1.5s;
+}
+
+.symbol-3 {
+  top: 45%;
+  left: 15%;
+  animation-delay: 3s;
+}
+
+.symbol-4 {
+  top: 65%;
+  right: 20%;
+  animation-delay: 4.5s;
+}
+
+.symbol-5 {
+  top: 80%;
+  left: 25%;
+  animation-delay: 6s;
+}
+
+.symbol-6 {
+  top: 35%;
+  right: 35%;
   animation-delay: 2s;
 }
 
-.note-3 {
-  top: 80%;
-  left: 20%;
-  animation-delay: 4s;
-}
-
-.note-4 {
-  top: 40%;
-  right: 30%;
-  animation-delay: 1s;
-}
-
-@keyframes floatNote {
+@keyframes floatSymbol {
   0%, 100% {
     transform: translateY(0) rotate(0deg);
-    opacity: 0.3;
+    opacity: 0.2;
   }
   50% {
-    transform: translateY(-20px) rotate(10deg);
-    opacity: 0.6;
+    transform: translateY(-15px) rotate(5deg);
+    opacity: 0.4;
   }
 }
 
@@ -216,7 +231,7 @@ onMounted(() => {
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  border: 4px solid rgba(255, 255, 255, 0.2);
+  border: 4px solid rgba(64, 224, 208, 0.3);
   object-fit: cover;
   z-index: 3;
   transition: transform 0.3s ease;
@@ -230,22 +245,22 @@ onMounted(() => {
   position: absolute;
   border-radius: 50%;
   border: 2px solid;
-  animation: rotate 10s linear infinite;
+  animation: rotate 12s linear infinite;
 }
 
 .profile-ring {
   width: 220px;
   height: 220px;
-  border-color: rgba(120, 119, 198, 0.4);
+  border-color: rgba(64, 224, 208, 0.3);
   animation-direction: normal;
 }
 
 .profile-ring-2 {
   width: 260px;
   height: 260px;
-  border-color: rgba(255, 119, 198, 0.3);
+  border-color: rgba(0, 255, 127, 0.2);
   animation-direction: reverse;
-  animation-duration: 15s;
+  animation-duration: 18s;
 }
 
 @keyframes rotate {
@@ -262,7 +277,7 @@ onMounted(() => {
   align-items: center;
   gap: 0.5rem;
   padding: 12px 20px;
-  border-radius: 25px;
+  border-radius: 8px;
   font-weight: 600;
   font-size: 1.1rem;
 }
@@ -297,38 +312,39 @@ onMounted(() => {
   line-height: 1.1;
   text-align: center;
   margin: 0;
+  font-family: 'Inter', sans-serif;
 }
 
 .title-line {
   display: block;
 }
 
-.sound-visualizer {
+.code-visualizer {
   display: flex;
   gap: 4px;
   align-items: end;
   height: 40px;
 }
 
-.bar {
+.code-bar {
   width: 4px;
-  background: linear-gradient(to top, #7877c6, #ff77c6);
+  background: linear-gradient(to top, #40e0d0, #00ff7f);
   border-radius: 2px;
-  animation: soundBars 1.5s ease-in-out infinite;
+  animation: codeBars 2s ease-in-out infinite;
 }
 
-.bar:nth-child(1) { animation-delay: 0s; }
-.bar:nth-child(2) { animation-delay: 0.2s; }
-.bar:nth-child(3) { animation-delay: 0.4s; }
-.bar:nth-child(4) { animation-delay: 0.6s; }
-.bar:nth-child(5) { animation-delay: 0.8s; }
+.code-bar:nth-child(1) { animation-delay: 0s; }
+.code-bar:nth-child(2) { animation-delay: 0.3s; }
+.code-bar:nth-child(3) { animation-delay: 0.6s; }
+.code-bar:nth-child(4) { animation-delay: 0.9s; }
+.code-bar:nth-child(5) { animation-delay: 1.2s; }
 
-@keyframes soundBars {
+@keyframes codeBars {
   0%, 100% {
-    height: 10px;
+    height: 8px;
   }
   50% {
-    height: 35px;
+    height: 32px;
   }
 }
 
@@ -348,7 +364,7 @@ onMounted(() => {
   width: 90%;
   max-width: 1000px;
   padding: 2rem;
-  border-radius: 30px;
+  border-radius: 12px;
   margin-bottom: 4rem;
 }
 
@@ -360,87 +376,65 @@ onMounted(() => {
 }
 
 .showcase-title {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 600;
   margin: 0;
 }
 
-.frequency-bars {
+.terminal-indicators {
   display: flex;
-  gap: 2px;
-  align-items: end;
+  gap: 8px;
 }
 
-.freq-bar {
-  width: 3px;
-  background: linear-gradient(to top, #7877c6, #78dbff);
-  border-radius: 1px;
-  animation: freqBars 2s ease-in-out infinite;
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
 }
 
-.freq-bar:nth-child(1) { height: 15px; animation-delay: 0s; }
-.freq-bar:nth-child(2) { height: 25px; animation-delay: 0.3s; }
-.freq-bar:nth-child(3) { height: 20px; animation-delay: 0.6s; }
+.indicator.red {
+  background-color: #ff5f56;
+}
 
-@keyframes freqBars {
-  0%, 100% {
-    opacity: 0.5;
-    transform: scaleY(0.7);
-  }
-  50% {
-    opacity: 1;
-    transform: scaleY(1.3);
-  }
+.indicator.yellow {
+  background-color: #ffbd2e;
+}
+
+.indicator.green {
+  background-color: #27ca3f;
 }
 
 .carousel-container {
   overflow: hidden;
-  height: 100px; /* Reduced height to match new icon size */
-  display: flex;
-  align-items: center;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.02);
-  padding: 10px 0; /* Add vertical padding */
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
 }
 
 .carousel {
   display: flex;
-  width: max-content;
-  animation: scroll 30s linear infinite;
-  align-items: center; /* Ensure vertical alignment */
-  height: 100%; /* Take full container height */
+  animation: scroll 20s linear infinite;
+  gap: 1rem;
 }
 
 .project-icon {
   width: 80px;
   height: 80px;
-  margin-right: 2rem;
-  border-radius: 15px;
-  object-fit: contain; /* Changed from cover to contain */
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid rgba(64, 224, 208, 0.2);
   transition: transform 0.3s ease;
-  filter: grayscale(0.3);
-  background: rgba(255, 255, 255, 0.05);
-  padding: 8px; /* Add padding for better spacing */
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0; /* Prevent shrinking */
 }
 
 .project-icon:hover {
-  transform: scale(1.05); /* Reduced scale to prevent overflow */
-  filter: grayscale(0);
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+  border-color: rgba(64, 224, 208, 0.5);
 }
 
 @keyframes scroll {
-  from {
+  0% {
     transform: translateX(0);
   }
-  to {
+  100% {
     transform: translateX(-50%);
   }
 }
@@ -455,31 +449,28 @@ onMounted(() => {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.musical-symbol {
-  font-size: 2rem;
+  color: #ffffff;
 }
 
 .about-content {
   padding: 2.5rem;
-  border-radius: 25px;
+  border-radius: 12px;
+}
+
+.about-text {
   text-align: left;
 }
 
 .intro-text {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 2rem;
-  text-align: center;
+  color: #e6edf3;
 }
 
 .description-grid {
   display: grid;
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
@@ -489,13 +480,9 @@ onMounted(() => {
   align-items: flex-start;
   gap: 1rem;
   padding: 1rem;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.03);
-  transition: transform 0.3s ease;
-}
-
-.desc-item:hover {
-  transform: translateX(10px);
+  background: rgba(64, 224, 208, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid #40e0d0;
 }
 
 .desc-icon {
@@ -506,6 +493,7 @@ onMounted(() => {
 .desc-item p {
   margin: 0;
   line-height: 1.5;
+  color: #c9d1d9;
 }
 
 .closing-text {
@@ -515,14 +503,20 @@ onMounted(() => {
   margin: 0;
 }
 
+@media (min-width: 768px) {
+  .description-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-section {
     padding: 1rem;
   }
   
   .profile-image {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
   }
   
   .profile-ring {
@@ -531,21 +525,13 @@ onMounted(() => {
   }
   
   .profile-ring-2 {
-    width: 220px;
-    height: 220px;
-  }
-  
-  .main-title {
-    font-size: 2.5rem;
+    width: 210px;
+    height: 210px;
   }
   
   .projects-showcase,
   .about-content {
     padding: 1.5rem;
-  }
-  
-  .about-title {
-    font-size: 2rem;
   }
 }
 </style>

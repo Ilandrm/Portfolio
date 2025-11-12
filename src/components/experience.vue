@@ -1,18 +1,18 @@
 <template>
   <div class="experience-section">
-    <!-- Musical timeline decoration -->
+    <!-- Code timeline decoration -->
     <div class="timeline-decoration">
-      <div class="music-line"></div>
-      <div class="floating-notes">
-        <span class="note-symbol">♪</span>
-        <span class="note-symbol">♫</span>
-        <span class="note-symbol">♪</span>
+      <div class="code-line"></div>
+      <div class="floating-symbols">
+        <span class="code-symbol">&lt;/&gt;</span>
+        <span class="code-symbol">{}</span>
+        <span class="code-symbol">[]</span>
       </div>
     </div>
     
     <div class="section-header">
       <h2 class="experience-title">
-        <span class="gradient-text">Expériences & Formations</span>
+        <span class="code-gradient">Expériences & Formations</span>
       </h2>
       <p class="experience-subtitle">Mon parcours professionnel et academique</p>
     </div>
@@ -27,18 +27,18 @@
           class="timeline-item"
           :class="{ 'timeline-item-reverse': index % 2 === 1 }"
         >
-          <!-- Timeline marker with musical note -->
+          <!-- Timeline marker with code symbol -->
           <div class="timeline-marker">
             <div class="marker-outer">
               <div class="marker-inner">
-                <span class="marker-note">♪</span>
+                <span class="marker-symbol">&lt;/&gt;</span>
               </div>
             </div>
             <div class="marker-pulse"></div>
           </div>
 
           <!-- Experience card -->
-          <div class="experience-card glass sound-wave">
+          <div class="experience-card terminal-glass code-flow">
             <div class="card-header">
               <div class="company-info">
                 <img class="company-logo" :src="'xp/' + event.src" :alt="event.title">
@@ -48,10 +48,10 @@
                 </div>
               </div>
               
-              <!-- Tech stack with musical styling -->
+              <!-- Tech stack with development styling -->
               <div class="tech-stack">
                 <div class="tech-label">
-                  <span class="tech-icon">🎹</span>
+                  <span class="tech-icon">⚡</span>
                   <span>Stack</span>
                 </div>
                 <div class="tech-icons">
@@ -70,11 +70,11 @@
               <p class="experience-description">{{ event.description }}</p>
             </div>
 
-            <!-- Musical wave decoration -->
-            <div class="card-wave">
-              <div class="wave-line"></div>
-              <div class="wave-line"></div>
-              <div class="wave-line"></div>
+            <!-- Code flow decoration -->
+            <div class="card-code-flow">
+              <div class="flow-line"></div>
+              <div class="flow-line"></div>
+              <div class="flow-line"></div>
             </div>
           </div>
         </div>
@@ -109,74 +109,71 @@ const props = defineProps({
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
 }
 
-.music-line {
+.code-line {
   position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    rgba(120, 119, 198, 0.2) 25%, 
-    rgba(255, 119, 198, 0.2) 50%, 
-    rgba(120, 219, 255, 0.2) 75%, 
-    transparent 100%);
-  animation: musicFlow 8s ease-in-out infinite;
+  top: 20%;
+  left: 10%;
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #40e0d0, transparent);
+  opacity: 0.3;
+  animation: codePulse 4s ease-in-out infinite;
 }
 
-@keyframes musicFlow {
+@keyframes codePulse {
   0%, 100% {
-    opacity: 0.3;
+    opacity: 0.2;
     transform: scaleX(0.8);
   }
   50% {
-    opacity: 0.8;
+    opacity: 0.5;
     transform: scaleX(1.2);
   }
 }
 
-.floating-notes {
+.floating-symbols {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-.note-symbol {
+.code-symbol {
   position: absolute;
-  font-size: 1.5rem;
-  color: rgba(120, 119, 198, 0.2);
-  animation: floatNote 6s ease-in-out infinite;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.2rem;
+  color: rgba(64, 224, 208, 0.2);
+  animation: symbolFloat 8s ease-in-out infinite;
 }
 
-.note-symbol:nth-child(1) {
-  top: 20%;
-  left: 15%;
+.code-symbol:nth-child(1) {
+  top: 15%;
+  right: 10%;
   animation-delay: 0s;
 }
 
-.note-symbol:nth-child(2) {
-  top: 70%;
-  right: 20%;
-  animation-delay: 2s;
+.code-symbol:nth-child(2) {
+  top: 50%;
+  left: 5%;
+  animation-delay: 3s;
 }
 
-.note-symbol:nth-child(3) {
-  top: 40%;
-  left: 80%;
-  animation-delay: 4s;
+.code-symbol:nth-child(3) {
+  top: 80%;
+  right: 15%;
+  animation-delay: 6s;
 }
 
-@keyframes floatNote {
+@keyframes symbolFloat {
   0%, 100% {
     transform: translateY(0) rotate(0deg);
     opacity: 0.2;
   }
   50% {
-    transform: translateY(-15px) rotate(10deg);
-    opacity: 0.5;
+    transform: translateY(-15px) rotate(5deg);
+    opacity: 0.4;
   }
 }
 
@@ -190,32 +187,13 @@ const props = defineProps({
 .experience-title {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.title-icon {
-  font-size: 2.5rem;
-  animation: iconPulse 3s ease-in-out infinite;
-}
-
-@keyframes iconPulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
+  margin-bottom: 1rem;
 }
 
 .experience-subtitle {
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.7);
   margin: 0;
-  font-style: italic;
 }
 
 .timeline-container {
@@ -228,14 +206,10 @@ const props = defineProps({
   left: 50%;
   top: 0;
   bottom: 0;
-  width: 4px;
-  background: linear-gradient(to bottom, 
-    #7877c6 0%, 
-    #ff77c6 50%, 
-    #78dbff 100%);
-  border-radius: 2px;
+  width: 3px;
+  background: linear-gradient(to bottom, #40e0d0, #00ff7f, #1e90ff);
   transform: translateX(-50%);
-  box-shadow: 0 0 20px rgba(120, 119, 198, 0.3);
+  border-radius: 2px;
 }
 
 .timeline-items {
@@ -244,24 +218,21 @@ const props = defineProps({
 
 .timeline-item {
   position: relative;
-  margin-bottom: 4rem;
   display: flex;
   align-items: center;
-}
-
-.timeline-item:nth-child(odd) {
-  justify-content: flex-end;
+  margin-bottom: 4rem;
   
-  .experience-card {
-    margin-right: 3rem;
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 
-.timeline-item:nth-child(even) {
-  justify-content: flex-start;
+.timeline-item-reverse {
+  flex-direction: row-reverse;
   
   .experience-card {
-    margin-left: 3rem;
+    margin-right: 0;
+    margin-left: 2rem;
   }
 }
 
@@ -269,55 +240,48 @@ const props = defineProps({
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 10;
+  z-index: 3;
 }
 
 .marker-outer {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #7877c6, #ff77c6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 30px rgba(120, 119, 198, 0.4);
-  animation: markerGlow 3s ease-in-out infinite;
-}
-
-.marker-inner {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  background: rgba(13, 17, 23, 0.9);
+  border: 3px solid #40e0d0;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 2;
 }
 
-.marker-note {
-  color: white;
-  font-size: 1.2rem;
+.marker-inner {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #40e0d0, #00ff7f);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marker-symbol {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #0d1117;
   font-weight: bold;
 }
 
 .marker-pulse {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
   border-radius: 50%;
-  border: 2px solid rgba(120, 119, 198, 0.3);
+  border: 2px solid rgba(64, 224, 208, 0.3);
   animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes markerGlow {
-  0%, 100% {
-    box-shadow: 0 0 30px rgba(120, 119, 198, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 50px rgba(255, 119, 198, 0.6);
-  }
 }
 
 @keyframes pulse {
@@ -326,44 +290,44 @@ const props = defineProps({
     opacity: 1;
   }
   100% {
-    transform: scale(1.5);
+    transform: scale(1.4);
     opacity: 0;
   }
 }
 
 .experience-card {
-  width: 45%;
+  flex: 1;
   max-width: 400px;
-  padding: 2rem;
-  border-radius: 20px;
+  margin-right: 2rem;
+  border-radius: 12px;
+  overflow: hidden;
   position: relative;
-  transition: all 0.4s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.experience-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(120, 119, 198, 0.2);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(64, 224, 208, 0.2);
+  }
 }
 
 .card-header {
-  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(64, 224, 208, 0.2);
 }
 
 .company-info {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .company-logo {
   width: 50px;
   height: 50px;
-  object-fit: contain;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 8px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid rgba(64, 224, 208, 0.3);
 }
 
 .title-section {
@@ -371,25 +335,23 @@ const props = defineProps({
 }
 
 .experience-title-text {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  color: #ffffff;
   margin: 0 0 0.5rem 0;
-  line-height: 1.3;
+  color: #ffffff;
 }
 
 .experience-date {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: #40e0d0;
   font-weight: 500;
-  background: rgba(120, 119, 198, 0.2);
-  padding: 4px 12px;
-  border-radius: 15px;
-  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .tech-stack {
-  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .tech-label {
@@ -397,8 +359,7 @@ const props = defineProps({
   align-items: center;
   gap: 0.5rem;
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 0.8rem;
+  color: #00ff7f;
   font-weight: 500;
 }
 
@@ -408,80 +369,73 @@ const props = defineProps({
 
 .tech-icons {
   display: flex;
+  gap: 0.5rem;
   flex-wrap: wrap;
-  gap: 0.8rem;
 }
 
 .tech-item {
-  transition: transform 0.3s ease;
-}
-
-.tech-item:hover {
-  transform: translateY(-3px);
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(64, 224, 208, 0.3);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.1);
+    border-color: rgba(64, 224, 208, 0.6);
+  }
 }
 
 .tech-image {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 4px;
-  transition: all 0.3s ease;
-}
-
-.tech-item:hover .tech-image {
-  background: rgba(255, 255, 255, 0.1);
-  transform: scale(1.1);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .card-content {
-  position: relative;
+  padding: 1.5rem;
 }
 
 .experience-description {
-  color: rgba(255, 255, 255, 0.9);
+  color: #c9d1d9;
   line-height: 1.6;
   margin: 0;
-  font-size: 0.95rem;
 }
 
-.card-wave {
+.card-code-flow {
   position: absolute;
   bottom: 0;
   left: 0;
-  right: 0;
+  width: 100%;
   height: 3px;
   overflow: hidden;
-  border-radius: 0 0 20px 20px;
 }
 
-.wave-line {
+.flow-line {
   position: absolute;
-  bottom: 0;
-  left: -100%;
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #7877c6, #ff77c6, transparent);
-  animation: waveMove 3s linear infinite;
+  background: linear-gradient(90deg, transparent, #40e0d0, transparent);
+  animation: flowMove 4s linear infinite;
 }
 
-.wave-line:nth-child(2) {
-  animation-delay: 1s;
-  background: linear-gradient(90deg, transparent, #ff77c6, #78dbff, transparent);
+.flow-line:nth-child(2) {
+  animation-delay: 1.3s;
+  background: linear-gradient(90deg, transparent, #00ff7f, transparent);
 }
 
-.wave-line:nth-child(3) {
-  animation-delay: 2s;
-  background: linear-gradient(90deg, transparent, #78dbff, #7877c6, transparent);
+.flow-line:nth-child(3) {
+  animation-delay: 2.6s;
+  background: linear-gradient(90deg, transparent, #1e90ff, transparent);
 }
 
-@keyframes waveMove {
+@keyframes flowMove {
   0% {
-    left: -100%;
+    transform: translateX(-100%);
   }
   100% {
-    left: 100%;
+    transform: translateX(100%);
   }
 }
 
@@ -491,75 +445,66 @@ const props = defineProps({
   }
   
   .timeline-track {
-    left: 2rem;
+    left: 30px;
+    transform: none;
   }
   
-  .timeline-item {
-    justify-content: flex-start !important;
-    
-    .experience-card {
-      margin-left: 4rem !important;
-      margin-right: 0 !important;
-      width: calc(100% - 5rem);
-      max-width: none;
-    }
+  .timeline-item,
+  .timeline-item-reverse {
+    flex-direction: row;
+    padding-left: 80px;
   }
   
   .timeline-marker {
-    left: 2rem;
+    left: 30px;
     transform: translateX(-50%);
   }
   
-  .marker-outer {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .marker-inner {
-    width: 28px;
-    height: 28px;
-  }
-  
-  .marker-note {
-    font-size: 0.9rem;
-  }
-  
   .experience-card {
-    padding: 1.5rem;
+    margin-right: 0;
+    margin-left: 0;
+    max-width: none;
   }
   
   .company-info {
     flex-direction: column;
-    align-items: center;
     text-align: center;
-    gap: 0.8rem;
+    gap: 0.5rem;
   }
   
-  .tech-icons {
-    justify-content: center;
+  .tech-stack {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .experience-title {
-    font-size: 1.8rem;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .timeline-item {
-    .experience-card {
-      margin-left: 3rem !important;
-      width: calc(100% - 4rem);
-    }
+  .timeline-item,
+  .timeline-item-reverse {
+    padding-left: 60px;
   }
   
   .timeline-marker {
-    left: 1.5rem;
+    left: 20px;
   }
   
   .timeline-track {
-    left: 1.5rem;
+    left: 20px;
+  }
+  
+  .marker-outer {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .marker-inner {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .marker-symbol {
+    font-size: 0.6rem;
   }
 }
 </style>
