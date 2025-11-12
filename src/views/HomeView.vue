@@ -4,8 +4,9 @@ import Head from "@/components/head.vue";
 import Timeline from "@/components/timeline.vue";
 import Experience from "@/components/experience.vue";
 import Project from "@/components/project.vue";
+import ContactForm from "@/components/ContactForm.vue";
 const events = [
-  { title: 'Koesio - Alternance développeur web fullstack', description: 'Développement d’un système de gestion des permissions et de sécurité, puis maintenance évolutive et corrective de deux applications internes (bugs, nouvelles fonctionnalités). Renforcement de mes compétences en développement back-end, sécurité et support utilisateur.\n' +
+  { title: 'Koesio - Alternance développeur web fullstack', description: 'Développement d\'un système de gestion des permissions et de sécurité, puis maintenance évolutive et corrective de deux applications internes (bugs, nouvelles fonctionnalités). Renforcement de mes compétences en développement back-end, sécurité et support utilisateur.\n' +
         '\n', date: '2024-2025',src:'koesio.png'
     ,img:['laravel-icon.png','Vue.png','docker.png','elasticsearch-logo.png','Git_Logo_full.png','Postgresql.png']
   },
@@ -21,8 +22,8 @@ const events = [
   <Navbar/>
   <Head/>
   <Timeline/>
-  <Experience :events="events"/>
   <Project/>
+  <ContactForm/>
 </template>
 
 

@@ -35,12 +35,6 @@ const isHovered = ref(false);
       <div class="code-symbol">{}</div>
     </div>
     
-    <!-- Project type badge -->
-    <div class="project-badge" :class="props.project.type">
-      <span class="badge-icon">{{ icons[props.project.type] }}</span>
-      <span class="badge-text">{{ props.project.type }}</span>
-    </div>
-    
     <!-- Project image section with fixed dimensions -->
     <div class="image-section">
       <div class="image-container">

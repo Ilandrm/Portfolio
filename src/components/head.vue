@@ -3,6 +3,13 @@ import { onMounted, ref } from "vue";
 
 const images = ref<string[]>([]);
 
+const scrollToContact = () => {
+  const contactSection = document.getElementById('contact');
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 onMounted(() => {
   images.value = [
     'projects/concorde.png',
@@ -18,7 +25,6 @@ onMounted(() => {
 
 <template>
   <div class="hero-section">
-    <!-- Floating code symbols -->
     <div class="code-symbols">
       <div class="symbol symbol-1">&lt;/&gt;</div>
       <div class="symbol symbol-2">{}</div>
@@ -27,12 +33,12 @@ onMounted(() => {
       <div class="symbol symbol-5">;</div>
       <div class="symbol symbol-6">#</div>
     </div>
-    
+
     <div class="hero-content mt-4">
       <div class="profile-section">
         <div class="profile-container">
           <div class="profile-image-wrapper">
-            <img src="../assets/image.png" alt="Ilan Darmon" class="profile-image">
+            <img src="../assets/image.png" alt="Ilan Darmon - Développeur Web & Mobile Fullstack" class="profile-image">
             <div class="profile-ring"></div>
             <div class="profile-ring-2"></div>
           </div>
@@ -44,9 +50,10 @@ onMounted(() => {
 
         <div class="title-section">
           <h1 class="main-title">
-            <span class="title-line">Développeur Web</span>
+            <span class="title-line">Développeur Web & Mobile</span>
             <span class="title-line code-gradient">Fullstack</span>
           </h1>
+          <p class="subtitle-services">Création de sites web et applications sur mesure</p>
           <div class="code-visualizer">
             <div class="code-bar"></div>
             <div class="code-bar"></div>
@@ -56,23 +63,27 @@ onMounted(() => {
           </div>
         </div>
 
-        <button class="cta-button btn-dev code-flow">
-          <span>Découvrir mes projets</span>
-        </button>
+        <div class="cta-buttons">
+          <button @click="scrollToContact" class="cta-button btn-dev code-flow primary">
+            <span>Demander un devis</span>
+          </button>
+          <button class="cta-button btn-dev code-flow secondary">
+            <span>Voir mes réalisations</span>
+          </button>
+        </div>
       </div>
     </div>
 
-    <!-- Projects showcase with development theme -->
     <div class="projects-showcase terminal-glass">
       <div class="showcase-header">
-        <h3 class="showcase-title code-gradient">Mes Créations</h3>
+        <h3 class="showcase-title code-gradient">Mes Réalisations</h3>
         <div class="terminal-indicators">
           <div class="indicator red"></div>
           <div class="indicator yellow"></div>
           <div class="indicator green"></div>
         </div>
       </div>
-      
+
       <div class="carousel-container">
         <div class="carousel">
           <img
@@ -80,44 +91,68 @@ onMounted(() => {
               v-for="(image, index) in [...images, ...images]"
               :key="index"
               :src="image"
-              alt="Project"
+              alt="Projet de développement web"
           />
         </div>
       </div>
     </div>
 
-    <!-- About section with development styling -->
     <div class="about-section">
-      <h2 class="about-title">
+      <h2 class="about-title code-gradient">
         À propos de moi
       </h2>
-      
+
       <div class="about-content terminal-glass">
         <div class="about-text">
           <p class="intro-text">
-            Salut ! Je suis <strong class="code-gradient">Ilan Darmon</strong>, 
-            un passionné d'informatique curieux qui passe son temps à chercher de nouvelles choses à apprendre.
+            Salut ! Je suis <strong class="code-gradient">Ilan Darmon</strong>,
+            développeur web et mobile. Je transforme vos idées en solutions performantes et sur mesure.
           </p>
-          
+
           <div class="description-grid">
             <div class="desc-item">
-              <span class="desc-icon">🎯</span>
-              <p>Ce portfolio vous offre un aperçu détaillé de mes compétences ainsi que de mon parcours académique et professionnel.</p>
+              <span class="desc-icon">🌐</span>
+              <div>
+                <h4>Sites Web Professionnels</h4>
+                <p>Sites vitrines, e-commerce, landing pages optimisés pour le référencement (SEO).</p>
+              </div>
             </div>
-            
+
             <div class="desc-item">
-              <span class="desc-icon">🚀</span>
-              <p>Découvrez les projets informatiques auxquels j'ai participé et mes réalisations techniques.</p>
+              <span class="desc-icon">📱</span>
+              <div>
+                <h4>Applications Mobile</h4>
+                <p>Développement d'applications iOS et Android </p>
+              </div>
             </div>
-            
+
+            <div class="desc-item">
+              <span class="desc-icon">⚙️</span>
+              <div>
+                <h4>Solutions Sur Mesure</h4>
+                <p>Applications web métier, dashboards, API ...</p>
+              </div>
+            </div>
+
+            <div class="desc-item">
+              <span class="desc-icon">🎯</span>
+              <div>
+                <h4>Accompagnement Complet</h4>
+                <p>De l'analyse de vos besoins à la mise en production, je vous accompagne à chaque étape de votre projet.</p>
+              </div>
+            </div>
+
             <div class="desc-item">
               <span class="desc-icon">🤝</span>
-              <p>Si vous cherchez à collaborer ou discuter d'opportunités, n'hésitez pas à me contacter.</p>
+              <div>
+                <h4>Disponible & Réactif</h4>
+                <p>Freelance disponible pour vos projets, maintenance et support technique. Devis sous 48h.</p>
+              </div>
             </div>
           </div>
-          
+
           <p class="closing-text code-gradient">
-            Je vous souhaite une agréable visite et j'espère que mes réalisations sauront captiver votre intérêt !
+            Prêt à donner vie à votre projet ? Contactez-moi pour un devis personnalisé !
           </p>
         </div>
       </div>
@@ -352,7 +387,7 @@ onMounted(() => {
   font-size: 1.1rem;
   padding: 16px 32px;
   margin-top: 1rem;
-  
+
   span {
     display: flex;
     align-items: center;
@@ -496,6 +531,60 @@ onMounted(() => {
   color: #c9d1d9;
 }
 
+.desc-item h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #40e0d0;
+}
+
+.subtitle-services {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0.5rem 0 0 0;
+  font-weight: 400;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cta-button {
+  font-size: 1.1rem;
+  padding: 16px 32px;
+  margin-top: 1rem;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &.primary {
+    background: linear-gradient(135deg, #40e0d0, #00ff7f);
+    color: #0d1117;
+    font-weight: 700;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(64, 224, 208, 0.4);
+    }
+  }
+
+  &.secondary {
+    background: rgba(64, 224, 208, 0.1);
+    border: 2px solid #40e0d0;
+    color: #40e0d0;
+
+    &:hover {
+      background: rgba(64, 224, 208, 0.2);
+    }
+  }
+}
+
 .closing-text {
   font-size: 1.1rem;
   font-weight: 500;
@@ -513,22 +602,22 @@ onMounted(() => {
   .hero-section {
     padding: 1rem;
   }
-  
+
   .profile-image {
     width: 150px;
     height: 150px;
   }
-  
+
   .profile-ring {
     width: 180px;
     height: 180px;
   }
-  
+
   .profile-ring-2 {
     width: 210px;
     height: 210px;
   }
-  
+
   .projects-showcase,
   .about-content {
     padding: 1.5rem;

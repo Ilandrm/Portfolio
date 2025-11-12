@@ -147,35 +147,6 @@ onMounted(() => {
       <p class="projects-subtitle">Une liste de projets développés avec passion</p>
     </div>
 
-    <!-- Filter buttons with development styling -->
-    <div class="filter-section">
-      <div class="filter-buttons terminal-glass">
-        <button
-            :class="['filter-btn', selectedType === 'scolaire' ? 'active' : '']"
-            @click="toggleType('scolaire')"
-        >
-          <span class="btn-icon">🎓</span>
-          <span>Académique</span>
-          <div class="btn-code-flow"></div>
-        </button>
-        <button
-            :class="['filter-btn', selectedType === 'professionnel' ? 'active' : '']"
-            @click="toggleType('professionnel')"
-        >
-          <span class="btn-icon">💼</span>
-          <span>Professionnel</span>
-          <div class="btn-code-flow"></div>
-        </button>
-        <button
-            :class="['filter-btn', selectedType === null ? 'active' : '']"
-            @click="toggleType('')"
-        >
-          <span class="btn-icon">🎯</span>
-          <span>Tous</span>
-          <div class="btn-code-flow"></div>
-        </button>
-      </div>
-    </div>
 
     <!-- Projects grid -->
     <div class="projects-grid">
