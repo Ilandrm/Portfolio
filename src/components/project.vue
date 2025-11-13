@@ -14,7 +14,7 @@ const projects = ref([
   {
     name: "Game Jam 2023",
     src: "saveTheExam.png",
-    type: "scolaire",
+    type: "desktop",
     years: 2023,
     description: "Jeu développé lors d'une Game Jam qui avait comme contrainte imposé les thèmes horreur et musique.",
     technologies: ["Python", "Pygame"],
@@ -23,7 +23,7 @@ const projects = ref([
   {
     name: "Petit Bach",
     src: "icon_petitbach.png",
-    type: "scolaire",
+    type: "web",
     years: 2023,
     description: "Application musicale interactive pour l'apprentissage du solfège et de la composition.",
     technologies: ["Symfony", "JavaScript", "PostgreSQL"],
@@ -32,7 +32,7 @@ const projects = ref([
   {
     name: "Game Jam 2024",
     src: "concorde.png",
-    type: "scolaire",
+    type: "desktop",
     years: 2024,
     description: "Jeu développé lors d'une Game Jam qui avait comme contrainte imposé les thèmes paix et competition entre les nations.",
     technologies: ["Python", "Pygame"],
@@ -41,7 +41,7 @@ const projects = ref([
   {
     name: "Pali Kao Capital",
     src: "LOGO PALI KAO.png",
-    type: "professionnel",
+    type: "web",
     years: 2025,
     description: "Site vitrine pour l'entreprise Pali kao capital",
     technologies: ["Nuxt.js", "Vite"],
@@ -50,7 +50,7 @@ const projects = ref([
   {
     name: "Tower of Heroes",
     src: "mask8.png",
-    type: "scolaire",
+    type: "web",
     years: 2025,
     description: "Jeu de création de heros et d'armes",
     technologies: ["Angular", "Firebase"],
@@ -58,7 +58,7 @@ const projects = ref([
   },
   {
     name: "MMAPI",
-    type: "scolaire",
+    type: "api",
     years: 2025,
     description: "API dedié au monde du MMA",
     technologies: ["Node.js", "Express", "PostgreSQL", "Docker"],
@@ -67,7 +67,7 @@ const projects = ref([
   {
     name: "Lookup",
     src: "lookup.png",
-    type: "scolaire",
+    type: "web",
     years: 2024,
     description: "Moteur de recherche detaillé de pokemon.",
     technologies: ["JavaScript"],
@@ -76,25 +76,16 @@ const projects = ref([
   {
     name: "App-Stage",
     src: "stage.jpg",
-    type: "scolaire",
+    type: "desktop",
     years: 2024,
     description: "Application de gestion des stages étudiants et suivi des entreprises.",
     technologies: ["Symfony","Java","PostgreSQL"],
     link: "https://github.com/votre-username/app-stage"
   },
   {
-    name: "Suki",
-    src: "suki4.png",
-    type: "scolaire",
-    years: 2023,
-    description: "Application de gestion de sortie de ski.",
-    technologies: ["Java"],
-    link: "https://github.com/votre-username/suki"
-  },
-  {
     name: "Kosmos",
     src: "earth.jpg",
-    type: "professionnel",
+    type: "web",
     years: 2025,
     description: "Jeu developpé dans le cadre d'une missions que j'ai eu en entreprise, entierment réalisé en vibe coding.",
     technologies: ["Vue.js", "Three.js"],
@@ -124,7 +115,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="projects-section">
+  <div class="projects-section" id="project">
     <!-- Code decoration -->
     <div class="projects-decoration">
       <div class="code-lines">
@@ -147,7 +138,53 @@ onMounted(() => {
       <p class="projects-subtitle">Une liste de projets développés avec passion</p>
     </div>
 
+    <!-- Filter buttons with development styling -->
+    <div class="filter-section">
+      <div class="filter-buttons terminal-glass">
+        <button
+            :class="['filter-btn', selectedType === 'scolaire' ? 'active' : '']"
+            @click="toggleType('web')"
+        >
+          <span class="btn-icon">🌐</span>
+          <span>Web</span>
+          <div class="btn-code-flow"></div>
+        </button>
+        <button
+            :class="['filter-btn', selectedType === 'professionnel' ? 'active' : '']"
+            @click="toggleType('api')"
+        >
+          <span class="btn-icon">💼</span>
+          <span>API</span>
+          <div class="btn-code-flow"></div>
+        </button>
+        <button
+            :class="['filter-btn', selectedType === 'desktop' ? 'active' : '']"
+            @click="toggleType('desktop')"
+        >
+          <span class="btn-icon">️️🖥️</span>
+          <span>Desktop</span>
+          <div class="btn-code-flow"></div>
+        </button>
 
+        <button
+            :class="['filter-btn', selectedType === mobile ? 'active' : '']"
+            @click="toggleType('mobile')"
+        >
+          <span class="btn-icon">📱</span>
+          <span>Mobile</span>
+          <div class="btn-code-flow"></div>
+        </button>
+
+        <button
+            :class="['filter-btn', selectedType === null ? 'active' : '']"
+            @click="toggleType('')"
+        >
+          <span class="btn-icon">🎯</span>
+          <span>Tous</span>
+          <div class="btn-code-flow"></div>
+        </button>
+      </div>
+    </div>
     <!-- Projects grid -->
     <div class="projects-grid">
       <div 

@@ -5,7 +5,7 @@ const props = defineProps<{
   project: {
     src?: string;
     name: string;
-    type: 'scolaire' | 'professionnel' | 'personnel';
+    type: 'web' | 'mobile' | 'desktop' | 'api';
     years: number;
     description?: string;
     technologies?: string[];
@@ -14,9 +14,10 @@ const props = defineProps<{
 }>();
 
 const icons = {
-  scolaire: '🎓',
-  professionnel: '💼',
-  personnel: '🌱',
+  web: '🌐',
+  api: '💼',
+  desktop: '🖥️',
+  mobile: '📱',
 };
 
 const isHovered = ref(false);
@@ -34,7 +35,11 @@ const isHovered = ref(false);
       <div class="code-symbol">&lt;/&gt;</div>
       <div class="code-symbol">{}</div>
     </div>
-    
+    <!-- Project type badge -->
+    <div class="project-badge" :class="props.project.type">
+      <span class="badge-icon">{{ icons[props.project.type] }}</span>
+      <span class="badge-text">{{ props.project.type }}</span>
+    </div>
     <!-- Project image section with fixed dimensions -->
     <div class="image-section">
       <div class="image-container">

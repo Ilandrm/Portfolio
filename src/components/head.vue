@@ -9,13 +9,18 @@ const scrollToContact = () => {
     contactSection.scrollIntoView({ behavior: 'smooth' });
   }
 };
-
+const scrollToCreation = () => {
+  const creationSection = document.getElementById('project');
+  if (creationSection) {
+    creationSection.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 onMounted(() => {
   images.value = [
     'projects/concorde.png',
     'projects/icon_petitbach.png',
     'projects/LOGO PALI KAO.png',
-    'projects/lookup.png',
+    'projects/lookup.pnullng',
     'projects/suki4.png',
     'projects/mask8.png',
     'projects/saveTheExam.png',
@@ -67,7 +72,7 @@ onMounted(() => {
           <button @click="scrollToContact" class="cta-button btn-dev code-flow primary">
             <span>Demander un devis</span>
           </button>
-          <button class="cta-button btn-dev code-flow secondary">
+          <button @click="scrollToCreation" class="cta-button btn-dev code-flow secondary">
             <span>Voir mes réalisations</span>
           </button>
         </div>
