@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-
+import axios from "axios";
 const formData = ref({
   name: '',
   email: '',
@@ -23,32 +23,20 @@ const projectTypes = [
 
 const handleSubmit = async () => {
   isSubmitting.value = true;
-  
-  try {
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    console.log('Form submitted:', formData.value);
-    submitStatus.value = 'success';
-    
-    formData.value = {
-      name: '',
-      email: '',
-      phone: '',
-      projectType: '',
-      message: ''
-    };
-    
-    setTimeout(() => {
-      submitStatus.value = 'idle';
-    }, 5000);
-  } catch (error) {
-    submitStatus.value = 'error';
-    setTimeout(() => {
-      submitStatus.value = 'idle';
-    }, 5000);
-  } finally {
-    isSubmitting.value = false;
-  }
+    try {
+      await axios.post('http://localhost:3001/send-email', {
+        nom: formData.value.name,
+        email: formData.value.email,
+        projectType: formData.value.projectType,
+        message: formData.value.message
+      })
+      formData.value.name = ""
+      formData.value.projectType = ""
+      formData.value.email = ""
+      formData.value.message = ""
+    } catch (error) {
+      console.error(error)
+    }
 };
 </script>
 
