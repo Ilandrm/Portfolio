@@ -35,10 +35,6 @@ const copyToClip = () => {
           <span class="social-icon">🐱</span>
           GitHub
         </a>
-        <a href="https://gricad-gitlab.univ-grenoble-alpes.fr/darmoni" class="social-link">
-          <span class="social-icon">🦊</span>
-          GitLab
-        </a>
       </div>
     </div>
   </div>

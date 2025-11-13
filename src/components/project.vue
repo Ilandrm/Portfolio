@@ -18,16 +18,16 @@ const projects = ref([
     years: 2023,
     description: "Jeu développé lors d'une Game Jam qui avait comme contrainte imposé les thèmes horreur et musique.",
     technologies: ["Python", "Pygame"],
-    link: "https://github.com/votre-username/game-jam-2023"
+    link: "https://github.com/Yaniissou/JamJam2023"
   },
   {
     name: "Petit Bach",
     src: "icon_petitbach.png",
     type: "web",
     years: 2023,
-    description: "Application musicale interactive pour l'apprentissage du solfège et de la composition.",
+    description: "Application web ludique pour aider les collegiens dans les matières musicale.",
     technologies: ["Symfony", "JavaScript", "PostgreSQL"],
-    link: "https://github.com/votre-username/petit-bach"
+    link: "https://github.com/Ilandrm/petitBach"
   },
   {
     name: "Game Jam 2024",
@@ -36,7 +36,7 @@ const projects = ref([
     years: 2024,
     description: "Jeu développé lors d'une Game Jam qui avait comme contrainte imposé les thèmes paix et competition entre les nations.",
     technologies: ["Python", "Pygame"],
-    link: "https://github.com/votre-username/game-jam-2024"
+    link: "https://github.com/Yaniissou/JamJam2024"
   },
   {
     name: "Pali Kao Capital",
@@ -53,8 +53,9 @@ const projects = ref([
     type: "web",
     years: 2025,
     description: "Jeu de création de heros et d'armes",
+    objectif: "Approfondir differents concepts d'Angular",
     technologies: ["Angular", "Firebase"],
-    link: "https://github.com/votre-username/tower-of-heroes"
+    link: "https://github.com/Ilandrm/TOH"
   },
   {
     name: "MMAPI",
@@ -62,7 +63,7 @@ const projects = ref([
     years: 2025,
     description: "API dedié au monde du MMA",
     technologies: ["Node.js", "Express", "PostgreSQL", "Docker"],
-    link: "https://github.com/votre-username/mmapi"
+    link: "https://github.com/Ilandrm/MMAPI"
   },
   {
     name: "Lookup",
@@ -71,25 +72,25 @@ const projects = ref([
     years: 2024,
     description: "Moteur de recherche detaillé de pokemon.",
     technologies: ["JavaScript"],
-    link: "https://github.com/votre-username/lookup"
-  },
-  {
-    name: "App-Stage",
-    src: "stage.jpg",
-    type: "desktop",
-    years: 2024,
-    description: "Application de gestion des stages étudiants et suivi des entreprises.",
-    technologies: ["Symfony","Java","PostgreSQL"],
-    link: "https://github.com/votre-username/app-stage"
+    link: "https://github.com/lynirl/pokemon-lookup"
   },
   {
     name: "Kosmos",
     src: "earth.jpg",
     type: "web",
     years: 2025,
-    description: "Jeu developpé dans le cadre d'une missions que j'ai eu en entreprise, entierment réalisé en vibe coding.",
+    description: "Jeu developpé autours du theme de l'espace dans le cadre d'une missions que j'ai eu en entreprise",
     technologies: ["Vue.js", "Three.js"],
-    link: "https://github.com/votre-username/kosmos"
+    link: "https://github.com/Ilandrm/Kosmos"
+  },
+  {
+    name: "Infox",
+    src: "INFOX-ecriture.png",
+    type: "mobile",
+    years: 2025,
+    description: "Application pour la lutte contre la desinformation sur les reseaux sociaux",
+    technologies: ["React native"],
+    link: "https://github.com/Ilandrm/Infox"
   }
 ]);
 

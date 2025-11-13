@@ -20,8 +20,7 @@ onMounted(() => {
     'projects/concorde.png',
     'projects/icon_petitbach.png',
     'projects/LOGO PALI KAO.png',
-    'projects/lookup.pnullng',
-    'projects/suki4.png',
+    'projects/lookup.png',
     'projects/mask8.png',
     'projects/saveTheExam.png',
   ];
