@@ -1,0 +1,88 @@
+/* Development/IT Theme - Modern Portfolio */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #0d1117 0%, #161b22 25%, #21262d 50%, #0d1117 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Animated background code patterns */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(64, 224, 208, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 255, 127, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(30, 144, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 60% 70%, rgba(255, 215, 0, 0.05) 0%, transparent 50%);
+    animation: codeFlow 10s ease-in-out infinite alternate;
+    z-index: -1;
+}
+
+@keyframes codeFlow {
+    0% {
+        opacity: 0.4;
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.02) rotate(1deg);
+    }
+    100% {
+        opacity: 0.5;
+        transform: scale(1.03) rotate(-1deg);
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/roboto/Roboto-Regular.ttf') format('ttf'),
+    url('/roboto/Roboto-Regular.ttf') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'specialFont';
+    src: url('/QGYyz_MVcBeNP4NjuGObqx1XmO1I4TC1O4a0Ew.woff2') format('woff2'),
+    url('/QGYyz_MVcBeNP4NjuGObqx1XmO1I4TC1O4a0Ew.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+#app {
+    font-family: 'Inter', 'JetBrains Mono', 'specialFont', monospace;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #ffffff;
+}
+
+/* Scrollbar styling - Terminal theme */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(33, 38, 45, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #40e0d0, #00ff7f);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #5ff5e5, #32ff9a);
+}
