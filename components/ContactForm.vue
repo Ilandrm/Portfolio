@@ -28,12 +28,15 @@ const handleSubmit = async () => {
         nom: formData.value.name,
         email: formData.value.email,
         projectType: formData.value.projectType,
-        message: formData.value.message
+        message: formData.value.message,
+        phone: formData.value.phone,
       })
       formData.value.name = ""
       formData.value.projectType = ""
+      formData.value.phone = ""
       formData.value.email = ""
       formData.value.message = ""
+      isSubmitting.value = false
     } catch (error) {
       console.error(error)
     }
