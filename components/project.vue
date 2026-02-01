@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from "vue";
+import {getProjects} from "~/services/getProject";
 
 const isActive = ref(false);
 const selectedType = ref<string | null>(null);
@@ -9,89 +10,7 @@ const toggleType = (type: string) => {
   selectedType.value = selectedType.value === type ? null : type;
 };
 
-const projects = ref([
-  {
-    name: "Game Jam 2023",
-    src: "saveTheExam.png",
-    type: "desktop",
-    years: 2023,
-    description: "Jeu développé lors d'une Game Jam qui avait comme contrainte imposé les thèmes horreur et musique.",
-    technologies: ["Python", "Pygame"],
-    link: "https://github.com/Yaniissou/JamJam2023"
-  },
-  {
-    name: "Petit Bach",
-    src: "icon_petitbach.png",
-    type: "web",
-    years: 2023,
-    description: "Application web ludique pour aider les collegiens dans les matières musicale.",
-    technologies: ["Symfony", "JavaScript", "PostgreSQL"],
-    link: "https://github.com/Ilandrm/petitBach"
-  },
-  {
-    name: "Game Jam 2024",
-    src: "concorde.png",
-    type: "desktop",
-    years: 2024,
-    description: "Jeu développé lors d'une Game Jam qui avait comme contrainte imposé les thèmes paix et competition entre les nations.",
-    technologies: ["Python", "Pygame"],
-    link: "https://github.com/Yaniissou/JamJam2024"
-  },
-  {
-    name: "Pali Kao Capital",
-    src: "LOGO PALI KAO.png",
-    type: "web",
-    years: 2025,
-    description: "Site vitrine pour l'entreprise Pali kao capital",
-    technologies: ["Nuxt.js", "Vite"],
-    link: "https://palikao-capital.com"
-  },
-  {
-    name: "Tower of Heroes",
-    src: "mask8.png",
-    type: "web",
-    years: 2025,
-    description: "Jeu de création de heros et d'armes",
-    objectif: "Approfondir differents concepts d'Angular",
-    technologies: ["Angular", "Firebase"],
-    link: "https://github.com/Ilandrm/TOH"
-  },
-  {
-    name: "MMAPI",
-    type: "api",
-    years: 2025,
-    description: "API dedié au monde du MMA",
-    technologies: ["Node.js", "Express", "PostgreSQL", "Docker"],
-    link: "https://github.com/Ilandrm/MMAPI"
-  },
-  {
-    name: "Lookup",
-    src: "lookup.png",
-    type: "web",
-    years: 2024,
-    description: "Moteur de recherche detaillé de pokemon.",
-    technologies: ["JavaScript"],
-    link: "https://github.com/lynirl/pokemon-lookup"
-  },
-  {
-    name: "Kosmos",
-    src: "earth.jpg",
-    type: "web",
-    years: 2025,
-    description: "Jeu developpé autours du theme de l'espace dans le cadre d'une missions que j'ai eu en entreprise",
-    technologies: ["Vue.js", "Three.js"],
-    link: "https://github.com/Ilandrm/Kosmos"
-  },
-  {
-    name: "Infox",
-    src: "INFOX-ecriture.png",
-    type: "mobile",
-    years: 2025,
-    description: "Application pour la lutte contre la desinformation sur les reseaux sociaux",
-    technologies: ["React native"],
-    link: "https://github.com/Ilandrm/Infox"
-  }
-]);
+const projects = getProjects();
 
 const filteredProjects = computed(() =>
     !selectedType.value
@@ -138,7 +57,6 @@ onMounted(() => {
       <p class="projects-subtitle">Une liste de projets développés avec passion</p>
     </div>
 
-    <!-- Filter buttons with development styling -->
     <div class="filter-section">
       <div class="filter-buttons terminal-glass">
         <button
@@ -220,36 +138,36 @@ onMounted(() => {
         <h3 class="overlay-title code-gradient">{{ activeProject?.name }}</h3>
         <button class="close-btn" @click="getProjectActive(null)">✕</button>
       </div>
-      
+
       <div class="overlay-body">
         <div class="project-image-container" v-if="activeProject?.src">
           <img :src="`projects/${activeProject.src}`" :alt="activeProject.name" class="project-image">
         </div>
-        
+
         <div class="project-details">
           <div class="detail-section">
             <h4 class="detail-title">Description</h4>
             <p class="project-description">{{ activeProject?.description }}</p>
           </div>
-          
+
           <div class="detail-section">
             <h4 class="detail-title">Technologies</h4>
             <div class="tech-stack">
-              <span 
-                v-for="tech in activeProject?.technologies" 
-                :key="tech" 
-                class="tech-tag"
+              <span
+                  v-for="tech in activeProject?.technologies"
+                  :key="tech"
+                  class="tech-tag"
               >
                 {{ tech }}
               </span>
             </div>
           </div>
-          
+
           <div class="detail-section">
             <h4 class="detail-title">Année</h4>
             <span class="project-year">{{ activeProject?.years }}</span>
           </div>
-          
+
           <div class="detail-section" v-if="activeProject?.link">
             <h4 class="detail-title">Lien</h4>
             <a :href="activeProject.link" target="_blank" class="project-link btn-dev">

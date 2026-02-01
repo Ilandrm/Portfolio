@@ -30,17 +30,17 @@ const isHovered = ref(false);
     @mouseenter="isHovered = true"
     @mouseleave="isHovered = false"
   >
-    <!-- Code decoration -->
     <div class="code-decoration">
       <div class="code-symbol">&lt;/&gt;</div>
       <div class="code-symbol">{}</div>
     </div>
-    <!-- Project type badge -->
     <div class="project-badge" :class="props.project.type">
       <span class="badge-icon">{{ icons[props.project.type] }}</span>
       <span class="badge-text">{{ props.project.type }}</span>
     </div>
-    <!-- Project image section with fixed dimensions -->
+    <div v-if="props.project.etat === 'IP'" class="ip-badge">
+      En cours
+    </div>
     <div class="image-section">
       <div class="image-container">
         <div class="image-wrapper">
@@ -413,7 +413,24 @@ const isHovered = ref(false);
 .project-card:hover .card-glow {
   opacity: 1;
 }
-
+.ip-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #ff9800; /* orange vif */
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(255, 152, 0, 0.6);
+  z-index: 4;
+  user-select: none;
+  pointer-events: none;
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
 @media (max-width: 768px) {
   .project-card {
     width: 100%;

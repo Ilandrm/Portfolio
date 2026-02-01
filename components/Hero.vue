@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import {getProjects} from "~/services/getProject";
+import {computed, ref} from "vue";
 
-const images = ref<string[]>([]);
-
+const projects = getProjects();
+const pinned = computed(() => (projects.value || []).filter(p => p?.pin));
 const scrollToContact = () => {
   const contactSection = document.getElementById('contact');
   if (contactSection) {
@@ -15,16 +16,20 @@ const scrollToCreation = () => {
     creationSection.scrollIntoView({ behavior: 'smooth' });
   }
 };
-onMounted(() => {
-  images.value = [
-    'projects/concorde.png',
-    'projects/icon_petitbach.png',
-    'projects/LOGO PALI KAO.png',
-    'projects/lookup.png',
-    'projects/mask8.png',
-    'projects/saveTheExam.png',
-  ];
-});
+const isActive = ref(false);
+
+const activeProject = ref<any>(null);
+
+const getProjectActive = (project: any) => {
+  if (project === null) {
+    isActive.value = false;
+    activeProject.value = null;
+  } else {
+    isActive.value = true;
+    activeProject.value = project;
+  }
+};
+
 </script>
 
 <template>
@@ -80,25 +85,22 @@ onMounted(() => {
 
     <div class="projects-showcase terminal-glass">
       <div class="showcase-header">
-        <h3 class="showcase-title code-gradient">Mes Réalisations</h3>
+        <h3 class="showcase-title code-gradient">Réalisations epinglé</h3>
         <div class="terminal-indicators">
           <div class="indicator red"></div>
           <div class="indicator yellow"></div>
           <div class="indicator green"></div>
         </div>
       </div>
-
-      <div class="carousel-container">
-        <div class="carousel">
-          <img
-              class="project-icon"
-              v-for="(image, index) in [...images, ...images]"
-              :key="index"
-              :src="image"
-              alt="Projet de développement web"
-          />
-        </div>
+      <div class="pin">
+        <ProjectIcon
+            v-for="project in pinned"
+            :key="project.id"
+            :project="project"
+            @active="getProjectActive"
+        />
       </div>
+
     </div>
 
     <div class="about-section">
@@ -162,6 +164,53 @@ onMounted(() => {
       </div>
     </div>
   </div>
+  <div id="overlay" :class="{ show: isActive }" @click="getProjectActive(null)">
+    <div class="overlay-content terminal-glass" @click.stop>
+      <div class="overlay-header">
+        <div class="terminal-controls">
+          <div class="control red"></div>
+          <div class="control yellow"></div>
+          <div class="control green"></div>
+        </div>
+        <h3 class="overlay-title code-gradient">{{ activeProject?.name }}</h3>
+        <button class="close-btn" @click="getProjectActive(null)">✕</button>
+      </div>
+
+      <div class="overlay-body">
+        <div class="project-image-container" v-if="activeProject?.src">
+          <img :src="`projects/${activeProject.src}`" :alt="activeProject.name" class="project-image" />
+        </div>
+
+        <div class="project-details">
+          <div class="detail-section">
+            <h4 class="detail-title">Description</h4>
+            <p class="project-description">{{ activeProject?.description }}</p>
+          </div>
+
+          <div class="detail-section">
+            <h4 class="detail-title">Technologies</h4>
+            <div class="tech-stack">
+            <span v-for="tech in activeProject?.technologies" :key="tech" class="tech-tag">
+              {{ tech }}
+            </span>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <h4 class="detail-title">Année</h4>
+            <span class="project-year">{{ activeProject?.years }}</span>
+          </div>
+
+          <div class="detail-section" v-if="activeProject?.link">
+            <h4 class="detail-title">Lien</h4>
+            <a :href="activeProject.link" target="_blank" class="project-link btn-dev">
+              Voir le projet
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped lang="scss">
@@ -174,7 +223,14 @@ onMounted(() => {
   padding: 2rem;
   overflow: hidden;
 }
-
+.pin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
 .code-symbols {
   position: absolute;
   width: 100%;
@@ -627,4 +683,180 @@ onMounted(() => {
     padding: 1.5rem;
   }
 }
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.overlay-content {
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  border-radius: 12px;
+  overflow: hidden;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+#overlay.show .overlay-content {
+  transform: scale(1);
+}
+
+.overlay-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(64, 224, 208, 0.2);
+}
+
+.terminal-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.control.red {
+  background-color: #ff5f56;
+}
+
+.control.yellow {
+  background-color: #ffbd2e;
+}
+
+.control.green {
+  background-color: #27ca3f;
+}
+
+.overlay-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #ff5f56;
+    background: rgba(255, 95, 86, 0.1);
+  }
+}
+
+.overlay-body {
+  padding: 2rem;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.project-image-container {
+  text-align: center;
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid rgba(64, 224, 208, 0.1);
+}
+
+.project-image {
+  max-width: 100%;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 2px solid rgba(64, 224, 208, 0.2);
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: rgba(64, 224, 208, 0.4);
+    transform: scale(1.02);
+  }
+}
+
+.project-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.detail-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detail-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #40e0d0;
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.project-description {
+  color: #c9d1d9;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  background: rgba(64, 224, 208, 0.1);
+  color: #40e0d0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid rgba(64, 224, 208, 0.3);
+}
+
+.project-year {
+  color: #00ff7f;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.project-link {
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  max-width: 150px;
+}
+
 </style>

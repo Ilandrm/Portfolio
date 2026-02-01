@@ -228,7 +228,6 @@ const handleSubmit = async () => {
   position: absolute;
   top: 2rem;
   left: 2rem;
-  font-family: 'JetBrains Mono', monospace;
   font-size: 0.8rem;
   color: rgba(64, 224, 208, 0.3);
 }
@@ -284,7 +283,6 @@ const handleSubmit = async () => {
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  font-family: 'JetBrains Mono', monospace;
 }
 
 .contact-subtitle {
@@ -314,7 +312,6 @@ const handleSubmit = async () => {
   font-weight: 700;
   margin-bottom: 2rem;
   color: #40e0d0;
-  font-family: 'JetBrains Mono', monospace;
 }
 
 .services-list {
@@ -408,7 +405,6 @@ const handleSubmit = async () => {
 }
 
 .form-title {
-  font-family: 'JetBrains Mono', monospace;
   font-weight: 600;
   color: #40e0d0;
 }
@@ -433,7 +429,6 @@ const handleSubmit = async () => {
   border-radius: 12px;
   color: white;
   font-size: 1rem;
-  font-family: inherit;
   transition: all 0.3s ease;
   
   &:focus {
